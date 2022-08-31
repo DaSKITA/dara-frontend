@@ -1,0 +1,1606 @@
+[
+  {
+    "id": "1",
+    "name": "Facebook",
+    "dsar_url": "https://www.facebook.com/dyi/",
+    "automation": {
+      "format": "automa",
+      "version": "0.1",
+      "definition": {
+        "extVersion": "1.15.3",
+        "name": "Facebook DSAR",
+        "icon": "riGlobalLine",
+        "table": [],
+        "version": "1.15.3",
+        "drawflow": {
+          "nodes": [
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "5oRquIw_AmscZUoLzCAdL-output-1",
+                    "position": "right",
+                    "x": 195.99678554534913,
+                    "y": 28.006174707412722,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 96,
+                "y": 36,
+                "z": 0
+              },
+              "id": "5oRquIw_AmscZUoLzCAdL",
+              "label": "trigger",
+              "position": {
+                "x": 96,
+                "y": 36
+              },
+              "data": {
+                "url": "",
+                "date": "",
+                "days": [],
+                "time": "00:00",
+                "type": "manual",
+                "delay": 5,
+                "interval": 60,
+                "shortcut": "",
+                "isUrlRegex": false,
+                "description": "",
+                "contextTypes": [],
+                "disableBlock": false,
+                "activeInInput": false,
+                "observeElement": {
+                  "selector": "",
+                  "baseSelector": "",
+                  "matchPattern": "",
+                  "baseElOptions": {
+                    "subtree": false,
+                    "childList": true,
+                    "attributes": false,
+                    "characterData": false,
+                    "attributeFilter": []
+                  },
+                  "targetOptions": {
+                    "subtree": false,
+                    "childList": true,
+                    "attributes": false,
+                    "characterData": false,
+                    "attributeFilter": []
+                  }
+                },
+                "contextMenuName": ""
+              },
+              "selected": false
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "ZDnOyReNGu2LvF0eikrVj-output-1",
+                    "position": "right",
+                    "x": 195.99678554534913,
+                    "y": 28.006174707412722,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "ZDnOyReNGu2LvF0eikrVj-input-1",
+                    "position": "left",
+                    "x": -20.001054096221925,
+                    "y": 28.006174707412722,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 388,
+                "y": 36,
+                "z": 0
+              },
+              "id": "ZDnOyReNGu2LvF0eikrVj",
+              "label": "new-tab",
+              "position": {
+                "x": 388,
+                "y": 36
+              },
+              "data": {
+                "url": "https://www.facebook.com/dyi/",
+                "active": true,
+                "inGroup": false,
+                "userAgent": "",
+                "description": "facebook.com/dyi/",
+                "disableBlock": false,
+                "updatePrevTab": false,
+                "waitTabLoaded": false,
+                "customUserAgent": false
+              }
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "faAsDA3AJIVpqI990xxwM-output-1",
+                    "position": "right",
+                    "x": 195.99678554534913,
+                    "y": 28.006174707412722,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "faAsDA3AJIVpqI990xxwM-input-1",
+                    "position": "left",
+                    "x": -20.001054096221925,
+                    "y": 28.006174707412722,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 680,
+                "y": 36,
+                "z": 0
+              },
+              "id": "faAsDA3AJIVpqI990xxwM",
+              "label": "event-click",
+              "position": {
+                "x": 680,
+                "y": 36
+              },
+              "data": {
+                "findBy": "xpath",
+                "markEl": false,
+                "multiple": false,
+                "selector": "/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div[2]/div/div/div/div[2]/div[1]/div/div/div/div/div[2]/div/div[1]/div/div/label/div",
+                "description": "Select Format",
+                "disableBlock": false,
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              }
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "s_42XIl3GJlgnlqeyZ73t-output-1",
+                    "position": "right",
+                    "x": 195.99678554534913,
+                    "y": 28.006174707412722,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "s_42XIl3GJlgnlqeyZ73t-input-1",
+                    "position": "left",
+                    "x": -20.001139068603518,
+                    "y": 28.006174707412722,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 972,
+                "y": 36,
+                "z": 0
+              },
+              "id": "s_42XIl3GJlgnlqeyZ73t",
+              "label": "event-click",
+              "position": {
+                "x": 972,
+                "y": 36
+              },
+              "data": {
+                "findBy": "xpath",
+                "markEl": false,
+                "multiple": false,
+                "selector": "/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[2]/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[2]",
+                "description": " Select JSON",
+                "disableBlock": false,
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              },
+              "selected": false
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "cc102a07-0062-414c-8d9e-d9d32c69bf88-output-1",
+                    "position": "right",
+                    "x": 195.99678554534913,
+                    "y": 28.006174707412722,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "cc102a07-0062-414c-8d9e-d9d32c69bf88-input-1",
+                    "position": "left",
+                    "x": -20.001139068603518,
+                    "y": 28.006174707412722,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 1264,
+                "y": 36,
+                "z": 0
+              },
+              "id": "cc102a07-0062-414c-8d9e-d9d32c69bf88",
+              "label": "event-click",
+              "position": {
+                "x": 1264,
+                "y": 36
+              },
+              "data": {
+                "disableBlock": false,
+                "description": " Select Date Range",
+                "findBy": "xpath",
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000,
+                "selector": "/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div[2]/div/div/div/div[2]/div[1]/div/div/div/div/div[2]/div/div[3]/div/div/label/div/div[1]/div/div",
+                "markEl": false,
+                "multiple": false
+              }
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "c59df3a4-36e3-4027-87df-be306ecea8a1-output-1",
+                    "position": "right",
+                    "x": 195.99678554534913,
+                    "y": 28.006174707412722,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "c59df3a4-36e3-4027-87df-be306ecea8a1-input-1",
+                    "position": "left",
+                    "x": -20.001139068603518,
+                    "y": 28.006174707412722,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 1556,
+                "y": 36,
+                "z": 0
+              },
+              "id": "c59df3a4-36e3-4027-87df-be306ecea8a1",
+              "label": "event-click",
+              "position": {
+                "x": 1556,
+                "y": 36
+              },
+              "data": {
+                "disableBlock": false,
+                "description": " Select All-time",
+                "findBy": "xpath",
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000,
+                "selector": "/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[2]/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[7]/div[1]/div/div/span",
+                "markEl": false,
+                "multiple": false
+              }
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-output-1",
+                    "position": "right",
+                    "x": 195.99695549011233,
+                    "y": 28.006174707412722,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-input-1",
+                    "position": "left",
+                    "x": -20.000969123840335,
+                    "y": 28.006174707412722,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 1848,
+                "y": 36,
+                "z": 0
+              },
+              "id": "fd7f1687-e768-4a5e-8ae9-9c87ad24ae39",
+              "label": "event-click",
+              "position": {
+                "x": 1848,
+                "y": 36
+              },
+              "data": {
+                "findBy": "xpath",
+                "markEl": false,
+                "multiple": false,
+                "selector": "/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div[2]/div/div/div/div[2]/div[3]/div/div/div/div/div[2]/div/div/span/div/div/div[1]/div/span/span",
+                "description": "Request Download",
+                "disableBlock": false,
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              }
+            }
+          ],
+          "edges": [
+            {
+              "id": "vueflow__edge-5oRquIw_AmscZUoLzCAdL-output-1-ZDnOyReNGu2LvF0eikrVj-input-1",
+              "sourceHandle": "5oRquIw_AmscZUoLzCAdL-output-1",
+              "targetHandle": "ZDnOyReNGu2LvF0eikrVj-input-1",
+              "source": "5oRquIw_AmscZUoLzCAdL",
+              "target": "ZDnOyReNGu2LvF0eikrVj",
+              "updatable": true,
+              "selectable": true,
+              "class": "source-5oRquIw_AmscZUoLzCAdL-output-1 target-ZDnOyReNGu2LvF0eikrVj-input-1",
+              "type": "default",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "markerEnd": ""
+            },
+            {
+              "id": "vueflow__edge-ZDnOyReNGu2LvF0eikrVj-output-1-faAsDA3AJIVpqI990xxwM-input-1",
+              "sourceHandle": "ZDnOyReNGu2LvF0eikrVj-output-1",
+              "targetHandle": "faAsDA3AJIVpqI990xxwM-input-1",
+              "source": "ZDnOyReNGu2LvF0eikrVj",
+              "target": "faAsDA3AJIVpqI990xxwM",
+              "updatable": true,
+              "selectable": true,
+              "class": "source-ZDnOyReNGu2LvF0eikrVj-output-1 target-faAsDA3AJIVpqI990xxwM-input-1",
+              "type": "default",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "markerEnd": ""
+            },
+            {
+              "id": "vueflow__edge-faAsDA3AJIVpqI990xxwM-output-1-s_42XIl3GJlgnlqeyZ73t-input-1",
+              "sourceHandle": "faAsDA3AJIVpqI990xxwM-output-1",
+              "targetHandle": "s_42XIl3GJlgnlqeyZ73t-input-1",
+              "source": "faAsDA3AJIVpqI990xxwM",
+              "target": "s_42XIl3GJlgnlqeyZ73t",
+              "updatable": true,
+              "selectable": true,
+              "class": "source-faAsDA3AJIVpqI990xxwM-output-1 target-s_42XIl3GJlgnlqeyZ73t-input-1",
+              "type": "default",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "markerEnd": ""
+            },
+            {
+              "id": "vueflow__edge-s_42XIl3GJlgnlqeyZ73t-output-1-cc102a07-0062-414c-8d9e-d9d32c69bf88-input-1",
+              "sourceHandle": "s_42XIl3GJlgnlqeyZ73t-output-1",
+              "targetHandle": "cc102a07-0062-414c-8d9e-d9d32c69bf88-input-1",
+              "source": "s_42XIl3GJlgnlqeyZ73t",
+              "target": "cc102a07-0062-414c-8d9e-d9d32c69bf88",
+              "updatable": true,
+              "selectable": true,
+              "class": "source-s_42XIl3GJlgnlqeyZ73t-output-1 target-cc102a07-0062-414c-8d9e-d9d32c69bf88-input-1",
+              "type": "default",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "markerEnd": ""
+            },
+            {
+              "id": "vueflow__edge-cc102a07-0062-414c-8d9e-d9d32c69bf88-output-1-c59df3a4-36e3-4027-87df-be306ecea8a1-input-1",
+              "sourceHandle": "cc102a07-0062-414c-8d9e-d9d32c69bf88-output-1",
+              "targetHandle": "c59df3a4-36e3-4027-87df-be306ecea8a1-input-1",
+              "source": "cc102a07-0062-414c-8d9e-d9d32c69bf88",
+              "target": "c59df3a4-36e3-4027-87df-be306ecea8a1",
+              "updatable": true,
+              "selectable": true,
+              "class": "source-cc102a07-0062-414c-8d9e-d9d32c69bf88-output-1 target-c59df3a4-36e3-4027-87df-be306ecea8a1-input-1",
+              "type": "default",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "markerEnd": ""
+            },
+            {
+              "id": "vueflow__edge-c59df3a4-36e3-4027-87df-be306ecea8a1-output-1-fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-input-1",
+              "sourceHandle": "c59df3a4-36e3-4027-87df-be306ecea8a1-output-1",
+              "targetHandle": "fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-input-1",
+              "source": "c59df3a4-36e3-4027-87df-be306ecea8a1",
+              "target": "fd7f1687-e768-4a5e-8ae9-9c87ad24ae39",
+              "updatable": true,
+              "selectable": true,
+              "class": "source-c59df3a4-36e3-4027-87df-be306ecea8a1-output-1 target-fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-input-1",
+              "type": "default",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "markerEnd": ""
+            }
+          ],
+          "position": [
+            0.8619528619528865,
+            445.7828282828283
+          ],
+          "zoom": 0.7182940516273849
+        },
+        "settings": {
+          "onError": "stop-workflow",
+          "saveLog": true,
+          "debugMode": false,
+          "blockDelay": 0,
+          "restartTimes": 3,
+          "reuseLastState": false,
+          "inputAutocomplete": true,
+          "executedBlockOnWeb": false
+        },
+        "globalData": "[{ \"key\": \"value\" }]",
+        "description": "",
+        "includedWorkflows": {},
+        "id": "s74X2LYol0UfMTe3qedvW"
+      }
+    }
+  },
+  {
+    "id": "2",
+    "name": "Google",
+    "dsar_url": "https://takeout.google.com/",
+    "automation": {
+      "format": "automa",
+      "version": "0.1",
+      "definition": {
+        "extVersion": "1.15.3",
+        "name": "Google DSAR",
+        "icon": "riGlobalLine",
+        "table": [],
+        "version": "1.15.3",
+        "drawflow": {
+          "zoom": 0.6,
+          "edges": [
+            {
+              "z": 0,
+              "id": "vueflow__edge-w8mVgv2A0WjHWMafV8sCM-output-1--fKQEarOlHLrmPXLrncsX-input-1",
+              "type": "default",
+              "class": "source-w8mVgv2A0WjHWMafV8sCM-output-1 target--fKQEarOlHLrmPXLrncsX-input-1",
+              "source": "w8mVgv2A0WjHWMafV8sCM",
+              "target": "-fKQEarOlHLrmPXLrncsX",
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "markerEnd": "",
+              "updatable": true,
+              "selectable": true,
+              "sourceHandle": "w8mVgv2A0WjHWMafV8sCM-output-1",
+              "targetHandle": "-fKQEarOlHLrmPXLrncsX-input-1"
+            },
+            {
+              "z": 0,
+              "id": "vueflow__edge--fKQEarOlHLrmPXLrncsX-output-1-V2Ouw0U07R2apA1P7e5ha-input-1",
+              "type": "default",
+              "class": "source--fKQEarOlHLrmPXLrncsX-output-1 target-V2Ouw0U07R2apA1P7e5ha-input-1",
+              "source": "-fKQEarOlHLrmPXLrncsX",
+              "target": "V2Ouw0U07R2apA1P7e5ha",
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "markerEnd": "",
+              "updatable": true,
+              "selectable": true,
+              "sourceHandle": "-fKQEarOlHLrmPXLrncsX-output-1",
+              "targetHandle": "V2Ouw0U07R2apA1P7e5ha-input-1"
+            },
+            {
+              "z": 0,
+              "id": "vueflow__edge-V2Ouw0U07R2apA1P7e5ha-output-1-SPLNKwfGxvNV74tCsC0Vt-input-1",
+              "type": "default",
+              "class": "source-V2Ouw0U07R2apA1P7e5ha-output-1 target-SPLNKwfGxvNV74tCsC0Vt-input-1",
+              "source": "V2Ouw0U07R2apA1P7e5ha",
+              "target": "SPLNKwfGxvNV74tCsC0Vt",
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "markerEnd": "",
+              "updatable": true,
+              "selectable": true,
+              "sourceHandle": "V2Ouw0U07R2apA1P7e5ha-output-1",
+              "targetHandle": "SPLNKwfGxvNV74tCsC0Vt-input-1"
+            },
+            {
+              "z": 0,
+              "id": "vueflow__edge-SPLNKwfGxvNV74tCsC0Vt-output-1-k0OlbCu6dNsWF1dRZXKGN-input-1",
+              "type": "default",
+              "class": "source-SPLNKwfGxvNV74tCsC0Vt-output-1 target-k0OlbCu6dNsWF1dRZXKGN-input-1",
+              "source": "SPLNKwfGxvNV74tCsC0Vt",
+              "target": "k0OlbCu6dNsWF1dRZXKGN",
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "markerEnd": "",
+              "updatable": true,
+              "selectable": true,
+              "sourceHandle": "SPLNKwfGxvNV74tCsC0Vt-output-1",
+              "targetHandle": "k0OlbCu6dNsWF1dRZXKGN-input-1"
+            },
+            {
+              "z": 0,
+              "id": "vueflow__edge-k0OlbCu6dNsWF1dRZXKGN-output-1-I8f5p7oW8e03e-XWqDk1x-input-1",
+              "type": "default",
+              "class": "source-k0OlbCu6dNsWF1dRZXKGN-output-1 target-I8f5p7oW8e03e-XWqDk1x-input-1",
+              "source": "k0OlbCu6dNsWF1dRZXKGN",
+              "target": "I8f5p7oW8e03e-XWqDk1x",
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "markerEnd": "",
+              "updatable": true,
+              "selectable": true,
+              "sourceHandle": "k0OlbCu6dNsWF1dRZXKGN-output-1",
+              "targetHandle": "I8f5p7oW8e03e-XWqDk1x-input-1"
+            },
+            {
+              "z": 0,
+              "id": "vueflow__edge-I8f5p7oW8e03e-XWqDk1x-output-1-E4eOzzmpYkMgCeK_QAtv6-input-1",
+              "type": "default",
+              "class": "source-I8f5p7oW8e03e-XWqDk1x-output-1 target-E4eOzzmpYkMgCeK_QAtv6-input-1",
+              "source": "I8f5p7oW8e03e-XWqDk1x",
+              "target": "E4eOzzmpYkMgCeK_QAtv6",
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "markerEnd": "",
+              "updatable": true,
+              "selectable": true,
+              "sourceHandle": "I8f5p7oW8e03e-XWqDk1x-output-1",
+              "targetHandle": "E4eOzzmpYkMgCeK_QAtv6-input-1"
+            },
+            {
+              "z": 0,
+              "id": "vueflow__edge-E4eOzzmpYkMgCeK_QAtv6-output-1-H8QFA-V45rfPBhHncExl8-input-1",
+              "type": "default",
+              "class": "source-E4eOzzmpYkMgCeK_QAtv6-output-1 target-H8QFA-V45rfPBhHncExl8-input-1",
+              "source": "E4eOzzmpYkMgCeK_QAtv6",
+              "target": "H8QFA-V45rfPBhHncExl8",
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "markerEnd": "",
+              "updatable": true,
+              "selectable": true,
+              "sourceHandle": "E4eOzzmpYkMgCeK_QAtv6-output-1",
+              "targetHandle": "H8QFA-V45rfPBhHncExl8-input-1"
+            }
+          ],
+          "nodes": [
+            {
+              "id": "w8mVgv2A0WjHWMafV8sCM",
+              "data": {
+                "url": "",
+                "date": "",
+                "days": [],
+                "time": "00:00",
+                "type": "manual",
+                "delay": 5,
+                "interval": 60,
+                "shortcut": "",
+                "isUrlRegex": false,
+                "description": "",
+                "contextTypes": [],
+                "disableBlock": false,
+                "activeInInput": false,
+                "observeElement": {
+                  "selector": "",
+                  "baseSelector": "",
+                  "matchPattern": "",
+                  "baseElOptions": {
+                    "subtree": false,
+                    "childList": true,
+                    "attributes": false,
+                    "characterData": false,
+                    "attributeFilter": []
+                  },
+                  "targetOptions": {
+                    "subtree": false,
+                    "childList": true,
+                    "attributes": false,
+                    "characterData": false,
+                    "attributeFilter": []
+                  }
+                },
+                "contextMenuName": ""
+              },
+              "type": "BlockBasic",
+              "label": "trigger",
+              "position": {
+                "x": 96,
+                "y": 36
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "x": 195.99995930989584,
+                    "y": 28.000005086263023,
+                    "id": "w8mVgv2A0WjHWMafV8sCM-output-1",
+                    "width": 16,
+                    "height": 16,
+                    "position": "right"
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 96,
+                "y": 36,
+                "z": 0
+              }
+            },
+            {
+              "id": "-fKQEarOlHLrmPXLrncsX",
+              "data": {
+                "url": "https://takeout.google.com/",
+                "active": true,
+                "inGroup": false,
+                "userAgent": "",
+                "description": "",
+                "disableBlock": false,
+                "updatePrevTab": false,
+                "waitTabLoaded": false,
+                "customUserAgent": false
+              },
+              "type": "BlockBasic",
+              "label": "new-tab",
+              "position": {
+                "x": 388,
+                "y": 36
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "x": 195.99995930989584,
+                    "y": 28.000005086263023,
+                    "id": "-fKQEarOlHLrmPXLrncsX-output-1",
+                    "width": 16,
+                    "height": 16,
+                    "position": "right"
+                  }
+                ],
+                "target": [
+                  {
+                    "x": -20,
+                    "y": 28.000005086263023,
+                    "id": "-fKQEarOlHLrmPXLrncsX-input-1",
+                    "width": 16,
+                    "height": 16,
+                    "position": "left"
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 388,
+                "y": 36,
+                "z": 0
+              }
+            },
+            {
+              "id": "V2Ouw0U07R2apA1P7e5ha",
+              "data": {
+                "findBy": "xpath",
+                "markEl": false,
+                "multiple": false,
+                "selector": "/html/body/c-wiz/div/c-wiz/div/div[2]/div[2]/c-wiz/div/div/div/div/div[2]/c-wiz[1]/div/div[3]/div/div[1]/div[2]/button[2]",
+                "description": "Auswahl aufheben",
+                "disableBlock": false,
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              },
+              "type": "BlockBasic",
+              "label": "event-click",
+              "position": {
+                "x": 680,
+                "y": 36
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "x": 195.99995930989584,
+                    "y": 28.000005086263023,
+                    "id": "V2Ouw0U07R2apA1P7e5ha-output-1",
+                    "width": 16,
+                    "height": 16,
+                    "position": "right"
+                  }
+                ],
+                "target": [
+                  {
+                    "x": -20,
+                    "y": 28.000005086263023,
+                    "id": "V2Ouw0U07R2apA1P7e5ha-input-1",
+                    "width": 16,
+                    "height": 16,
+                    "position": "left"
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 680,
+                "y": 36,
+                "z": 0
+              }
+            },
+            {
+              "id": "SPLNKwfGxvNV74tCsC0Vt",
+              "data": {
+                "findBy": "xpath",
+                "markEl": false,
+                "multiple": false,
+                "selector": "/html/body/c-wiz/div/c-wiz/div/div[2]/div[2]/c-wiz/div/div/div/div/div[2]/c-wiz[1]/div/div[3]/div/div[1]/div[2]/button[1]",
+                "description": "Alle auswählen",
+                "disableBlock": false,
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              },
+              "type": "BlockBasic",
+              "label": "event-click",
+              "position": {
+                "x": 972,
+                "y": 36
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "x": 195.99995930989584,
+                    "y": 28.000005086263023,
+                    "id": "SPLNKwfGxvNV74tCsC0Vt-output-1",
+                    "width": 16,
+                    "height": 16,
+                    "position": "right"
+                  }
+                ],
+                "target": [
+                  {
+                    "x": -20,
+                    "y": 28.000005086263023,
+                    "id": "SPLNKwfGxvNV74tCsC0Vt-input-1",
+                    "width": 16,
+                    "height": 16,
+                    "position": "left"
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 972,
+                "y": 36,
+                "z": 0
+              }
+            },
+            {
+              "id": "k0OlbCu6dNsWF1dRZXKGN",
+              "data": {
+                "incX": false,
+                "incY": false,
+                "findBy": "cssSelector",
+                "markEl": false,
+                "smooth": true,
+                "scrollX": 0,
+                "scrollY": 6498,
+                "multiple": false,
+                "selector": "html",
+                "description": "",
+                "disableBlock": false,
+                "scrollIntoView": false,
+                "waitForSelector": false,
+                "waitSelectorTimeout": 5000
+              },
+              "type": "BlockBasic",
+              "label": "element-scroll",
+              "position": {
+                "x": 1264,
+                "y": 36
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "x": 196.00006103515625,
+                    "y": 28.000005086263023,
+                    "id": "k0OlbCu6dNsWF1dRZXKGN-output-1",
+                    "width": 16,
+                    "height": 16,
+                    "position": "right"
+                  }
+                ],
+                "target": [
+                  {
+                    "x": -20,
+                    "y": 28.000005086263023,
+                    "id": "k0OlbCu6dNsWF1dRZXKGN-input-1",
+                    "width": 16,
+                    "height": 16,
+                    "position": "left"
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 1264,
+                "y": 36,
+                "z": 0
+              }
+            },
+            {
+              "id": "I8f5p7oW8e03e-XWqDk1x",
+              "data": {
+                "findBy": "xpath",
+                "markEl": false,
+                "multiple": false,
+                "selector": "//*[@id=\"i7\"]/div/div[2]/button",
+                "description": "Nächster Schritt",
+                "disableBlock": false,
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              },
+              "type": "BlockBasic",
+              "label": "event-click",
+              "position": {
+                "x": 1556,
+                "y": 36
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "x": 196.00016276041669,
+                    "y": 28.000005086263023,
+                    "id": "I8f5p7oW8e03e-XWqDk1x-output-1",
+                    "width": 16,
+                    "height": 16,
+                    "position": "right"
+                  }
+                ],
+                "target": [
+                  {
+                    "x": -20,
+                    "y": 28.000005086263023,
+                    "id": "I8f5p7oW8e03e-XWqDk1x-input-1",
+                    "width": 16,
+                    "height": 16,
+                    "position": "left"
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 1556,
+                "y": 36,
+                "z": 0
+              }
+            },
+            {
+              "id": "E4eOzzmpYkMgCeK_QAtv6",
+              "data": {
+                "incX": false,
+                "incY": false,
+                "findBy": "cssSelector",
+                "markEl": false,
+                "smooth": true,
+                "scrollX": 0,
+                "scrollY": 322,
+                "multiple": false,
+                "selector": "html",
+                "description": "",
+                "disableBlock": false,
+                "scrollIntoView": false,
+                "waitForSelector": false,
+                "waitSelectorTimeout": 5000
+              },
+              "type": "BlockBasic",
+              "label": "element-scroll",
+              "position": {
+                "x": 1848,
+                "y": 36
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "x": 195.99995930989584,
+                    "y": 27.999979654947918,
+                    "id": "E4eOzzmpYkMgCeK_QAtv6-output-1",
+                    "width": 16,
+                    "height": 16,
+                    "position": "right"
+                  }
+                ],
+                "target": [
+                  {
+                    "x": -20,
+                    "y": 27.999979654947918,
+                    "id": "E4eOzzmpYkMgCeK_QAtv6-input-1",
+                    "width": 16,
+                    "height": 16,
+                    "position": "left"
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 1848,
+                "y": 36,
+                "z": 0
+              }
+            },
+            {
+              "id": "H8QFA-V45rfPBhHncExl8",
+              "data": {
+                "findBy": "xpath",
+                "markEl": true,
+                "multiple": false,
+                "selector": "//*[@id=\"i10\"]/div/div[2]/button",
+                "description": "Export erstellen",
+                "disableBlock": false,
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              },
+              "type": "BlockBasic",
+              "label": "event-click",
+              "position": {
+                "x": 2140,
+                "y": 36
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "x": 195.99995930989584,
+                    "y": 27.999979654947918,
+                    "id": "H8QFA-V45rfPBhHncExl8-output-1",
+                    "width": 16,
+                    "height": 16,
+                    "position": "right"
+                  }
+                ],
+                "target": [
+                  {
+                    "x": -20,
+                    "y": 27.999979654947918,
+                    "id": "H8QFA-V45rfPBhHncExl8-input-1",
+                    "width": 16,
+                    "height": 16,
+                    "position": "left"
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 2140,
+                "y": 36,
+                "z": 0
+              }
+            }
+          ],
+          "position": [
+            -359.4000000000001,
+            421.3
+          ]
+        },
+        "settings": {
+          "publicId": "",
+          "restartTimes": 3,
+          "notification": true,
+          "tabLoadTimeout": 30000,
+          "inputAutocomplete": true,
+          "insertDefaultColumn": true,
+          "defaultColumnName": "column",
+          "onError": "stop-workflow",
+          "saveLog": true,
+          "debugMode": false,
+          "blockDelay": 0,
+          "reuseLastState": false,
+          "executedBlockOnWeb": false
+        },
+        "globalData": "[{ \"key\": \"value\" }]",
+        "description": "",
+        "includedWorkflows": {}
+      }
+    }
+  },
+  {
+    "id": "3",
+    "name": "Apple",
+    "dsar_url": "https://privacy.apple.com/account",
+    "automation": {
+      "format": "automa",
+      "version": "0.1",
+      "definition": {
+        "extVersion": "1.15.3",
+        "name": "Apple DSAR",
+        "icon": "riGlobalLine",
+        "table": [],
+        "version": "1.13.2",
+        "drawflow": {
+          "drawflow": {
+            "Home": {
+              "data": {
+                "-XoFzKsVo7ae3GEfjnq1q": {
+                  "id": "-XoFzKsVo7ae3GEfjnq1q",
+                  "data": {
+                    "findBy": "cssSelector",
+                    "markEl": false,
+                    "multiple": false,
+                    "selector": "#webAppContent > privacy-app > app-container > div > main > div > privacy-home > idms-flow > div > archive-flow > idms-flow > div > archive-app-list-step > div > div > div.row.button-bar.bottom > button:nth-child(2)",
+                    "description": "Continue",
+                    "disableBlock": false,
+                    "waitForSelector": true,
+                    "waitSelectorTimeout": 5000
+                  },
+                  "html": "BlockBasic",
+                  "name": "event-click",
+                  "class": "event-click",
+                  "pos_x": 365,
+                  "pos_y": 449,
+                  "inputs": {
+                    "input_1": {
+                      "connections": [
+                        {
+                          "node": "05dd2548-d2ed-4955-a871-40e0d99b14d6",
+                          "input": "output_1"
+                        }
+                      ]
+                    }
+                  },
+                  "outputs": {
+                    "output_1": {
+                      "connections": [
+                        {
+                          "node": "5c5b7edb-1687-40cd-8002-67147089ee65",
+                          "output": "input_1"
+                        }
+                      ]
+                    }
+                  },
+                  "typenode": "vue"
+                },
+                "lMU2C_gLkXDhQtUu2rfND": {
+                  "id": "lMU2C_gLkXDhQtUu2rfND",
+                  "data": {
+                    "url": "https://privacy.apple.com/account",
+                    "active": true,
+                    "inGroup": false,
+                    "userAgent": "",
+                    "description": "Open privacy.apple.com",
+                    "disableBlock": false,
+                    "updatePrevTab": false,
+                    "waitTabLoaded": false,
+                    "customUserAgent": false
+                  },
+                  "html": "BlockBasic",
+                  "name": "new-tab",
+                  "class": "new-tab",
+                  "pos_x": 260,
+                  "pos_y": 300,
+                  "inputs": {
+                    "input_1": {
+                      "connections": [
+                        {
+                          "node": "ooNFfXPTY-Sd73p41h4sq",
+                          "input": "output_1"
+                        }
+                      ]
+                    }
+                  },
+                  "outputs": {
+                    "output_1": {
+                      "connections": [
+                        {
+                          "node": "f58027ea-730a-4f9e-8597-7f7a72d64161",
+                          "output": "input_1"
+                        }
+                      ]
+                    }
+                  },
+                  "typenode": "vue"
+                },
+                "ooNFfXPTY-Sd73p41h4sq": {
+                  "id": "ooNFfXPTY-Sd73p41h4sq",
+                  "data": {
+                    "url": "",
+                    "date": "",
+                    "days": [],
+                    "time": "00:00",
+                    "type": "manual",
+                    "delay": 5,
+                    "interval": 60,
+                    "shortcut": "",
+                    "isUrlRegex": false,
+                    "description": "",
+                    "contextTypes": [],
+                    "disableBlock": false,
+                    "activeInInput": false,
+                    "observeElement": {
+                      "selector": "",
+                      "baseSelector": "",
+                      "matchPattern": "",
+                      "baseElOptions": {
+                        "subtree": false,
+                        "childList": true,
+                        "attributes": false,
+                        "characterData": false,
+                        "attributeFilter": []
+                      },
+                      "targetOptions": {
+                        "subtree": false,
+                        "childList": true,
+                        "attributes": false,
+                        "characterData": false,
+                        "attributeFilter": []
+                      }
+                    },
+                    "contextMenuName": ""
+                  },
+                  "html": "BlockBasic",
+                  "name": "trigger",
+                  "class": "trigger",
+                  "pos_x": 50,
+                  "pos_y": 300,
+                  "inputs": {},
+                  "outputs": {
+                    "output_1": {
+                      "connections": [
+                        {
+                          "node": "lMU2C_gLkXDhQtUu2rfND",
+                          "output": "input_1"
+                        }
+                      ]
+                    }
+                  },
+                  "typenode": "vue"
+                },
+                "05dd2548-d2ed-4955-a871-40e0d99b14d6": {
+                  "id": "05dd2548-d2ed-4955-a871-40e0d99b14d6",
+                  "data": {
+                    "findBy": "cssSelector",
+                    "markEl": false,
+                    "multiple": false,
+                    "selector": "#webAppContent > privacy-app > app-container > div > main > div > privacy-home > idms-flow > div > archive-flow > idms-flow > div > archive-app-list-step > div > div > div.row.button-bar.top > div:nth-child(2) > div > button",
+                    "description": "Select all",
+                    "disableBlock": false,
+                    "waitForSelector": true,
+                    "waitSelectorTimeout": 5000
+                  },
+                  "html": "BlockBasic",
+                  "name": "event-click",
+                  "class": "event-click",
+                  "pos_x": 94,
+                  "pos_y": 449,
+                  "inputs": {
+                    "input_1": {
+                      "connections": [
+                        {
+                          "node": "f7d8755c-dfcb-4e60-af79-f66e7bdae070",
+                          "input": "output_1"
+                        }
+                      ]
+                    }
+                  },
+                  "outputs": {
+                    "output_1": {
+                      "connections": [
+                        {
+                          "node": "-XoFzKsVo7ae3GEfjnq1q",
+                          "output": "input_1"
+                        }
+                      ]
+                    }
+                  },
+                  "typenode": "vue"
+                },
+                "5c5b7edb-1687-40cd-8002-67147089ee65": {
+                  "id": "5c5b7edb-1687-40cd-8002-67147089ee65",
+                  "data": {
+                    "findBy": "xpath",
+                    "markEl": false,
+                    "multiple": false,
+                    "selector": "/html/body/div[1]/privacy-app/app-container/div/main/div/privacy-home/idms-flow/div/archive-flow/idms-flow/div/archive-filesize-step/div/div/idms-step/div/div/div/div[3]/idms-toolbar/div/div/div/button[1]/div",
+                    "description": "Complete request",
+                    "disableBlock": false,
+                    "waitForSelector": true,
+                    "waitSelectorTimeout": 5000
+                  },
+                  "html": "BlockBasic",
+                  "name": "event-click",
+                  "class": "event-click",
+                  "pos_x": 644,
+                  "pos_y": 447,
+                  "inputs": {
+                    "input_1": {
+                      "connections": [
+                        {
+                          "node": "-XoFzKsVo7ae3GEfjnq1q",
+                          "input": "output_1"
+                        }
+                      ]
+                    }
+                  },
+                  "outputs": {
+                    "output_1": {
+                      "connections": []
+                    }
+                  },
+                  "typenode": "vue"
+                },
+                "f58027ea-730a-4f9e-8597-7f7a72d64161": {
+                  "id": "f58027ea-730a-4f9e-8597-7f7a72d64161",
+                  "data": {
+                    "findBy": "cssSelector",
+                    "markEl": false,
+                    "multiple": false,
+                    "selector": "#webAppContent > privacy-app > app-container > div > main > div > privacy-home > idms-flow > div > sections-step > div > div.column.large-8.small-12.vertical-divider-padding.icon-section.icon-std-section.gdpr-section-list > div:nth-child(1) > div.icon-section-content > idms-button > div > button > span",
+                    "description": "Data request",
+                    "disableBlock": false,
+                    "waitForSelector": true,
+                    "waitSelectorTimeout": 5000
+                  },
+                  "html": "BlockBasic",
+                  "name": "event-click",
+                  "class": "event-click",
+                  "pos_x": 595,
+                  "pos_y": 301,
+                  "inputs": {
+                    "input_1": {
+                      "connections": [
+                        {
+                          "node": "lMU2C_gLkXDhQtUu2rfND",
+                          "input": "output_1"
+                        }
+                      ]
+                    }
+                  },
+                  "outputs": {
+                    "output_1": {
+                      "connections": [
+                        {
+                          "node": "f7d8755c-dfcb-4e60-af79-f66e7bdae070",
+                          "output": "input_1"
+                        }
+                      ]
+                    }
+                  },
+                  "typenode": "vue"
+                },
+                "f7d8755c-dfcb-4e60-af79-f66e7bdae070": {
+                  "id": "f7d8755c-dfcb-4e60-af79-f66e7bdae070",
+                  "data": {
+                    "findBy": "cssSelector",
+                    "markEl": false,
+                    "multiple": false,
+                    "selector": "#webAppContent > privacy-app > app-container > div > main > div > privacy-home > idms-flow > div > archive-flow > idms-flow > div > archive-app-list-step > div > div > div.row.button-bar.middle > div.column.large-4.medium-5.small-12 > div > button",
+                    "description": "Select all",
+                    "disableBlock": false,
+                    "waitForSelector": true,
+                    "waitSelectorTimeout": 5000
+                  },
+                  "html": "BlockBasic",
+                  "name": "event-click",
+                  "class": "event-click",
+                  "pos_x": 885,
+                  "pos_y": 301,
+                  "inputs": {
+                    "input_1": {
+                      "connections": [
+                        {
+                          "node": "f58027ea-730a-4f9e-8597-7f7a72d64161",
+                          "input": "output_1"
+                        }
+                      ]
+                    }
+                  },
+                  "outputs": {
+                    "output_1": {
+                      "connections": [
+                        {
+                          "node": "05dd2548-d2ed-4955-a871-40e0d99b14d6",
+                          "output": "input_1"
+                        }
+                      ]
+                    }
+                  },
+                  "typenode": "vue"
+                }
+              }
+            }
+          }
+        },
+        "settings": {
+          "onError": "stop-workflow",
+          "saveLog": true,
+          "debugMode": false,
+          "blockDelay": 0,
+          "restartTimes": 3,
+          "reuseLastState": false,
+          "inputAutocomplete": true,
+          "executedBlockOnWeb": false
+        },
+        "globalData": "[{ \"key\": \"value\" }]",
+        "description": "",
+        "includedWorkflows": {}
+      }
+    }
+  },
+  {
+    "id": "4",
+    "name": "Amazon",
+    "dsar_url": "https://www.amazon.de/gp/privacycentral/dsar/preview.html",
+    "automation": {
+      "format": "automa",
+      "version": "0.1",
+      "definition": {
+        "extVersion": "1.15.3",
+        "name": "Amazon DSAR",
+        "icon": "riGlobalLine",
+        "table": [],
+        "version": "1.15.3",
+        "drawflow": {
+          "nodes": [
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "IOVhWGxGnJb7Q1rQv4Cjv-output-1",
+                    "position": "right",
+                    "x": 195.99999060997595,
+                    "y": 27.99999530498798,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 50,
+                "y": 300,
+                "z": 0
+              },
+              "position": {
+                "x": 50,
+                "y": 300
+              },
+              "id": "IOVhWGxGnJb7Q1rQv4Cjv",
+              "label": "trigger",
+              "data": {
+                "disableBlock": false,
+                "description": "",
+                "type": "manual",
+                "interval": 60,
+                "delay": 5,
+                "date": "",
+                "time": "00:00",
+                "url": "",
+                "shortcut": "",
+                "activeInInput": false,
+                "isUrlRegex": false,
+                "days": [],
+                "contextMenuName": "",
+                "contextTypes": [],
+                "observeElement": {
+                  "selector": "",
+                  "baseSelector": "",
+                  "matchPattern": "",
+                  "targetOptions": {
+                    "subtree": false,
+                    "childList": true,
+                    "attributes": false,
+                    "attributeFilter": [],
+                    "characterData": false
+                  },
+                  "baseElOptions": {
+                    "subtree": false,
+                    "childList": true,
+                    "attributes": false,
+                    "attributeFilter": [],
+                    "characterData": false
+                  }
+                }
+              },
+              "selected": false
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "drOrv1sbmNv0EHk6BUzvc-output-1",
+                    "position": "right",
+                    "x": 196.00003756009616,
+                    "y": 27.99999530498798,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "drOrv1sbmNv0EHk6BUzvc-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 27.99999530498798,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 327.6923076923076,
+                "y": 300.7692307692308,
+                "z": 0
+              },
+              "id": "drOrv1sbmNv0EHk6BUzvc",
+              "label": "new-tab",
+              "data": {
+                "disableBlock": false,
+                "description": "Go to request page",
+                "url": "https://www.amazon.de/gp/privacycentral/dsar/create.html?data-category=all-data-categories",
+                "userAgent": "",
+                "active": false,
+                "inGroup": false,
+                "waitTabLoaded": false,
+                "updatePrevTab": false,
+                "customUserAgent": false
+              },
+              "position": {
+                "x": 327.6923076923076,
+                "y": 300.7692307692308
+              },
+              "selected": false
+            }
+          ],
+          "edges": [
+            {
+              "id": "SRSRXPrrKhOlaXIhCffAX",
+              "source": "IOVhWGxGnJb7Q1rQv4Cjv",
+              "target": "drOrv1sbmNv0EHk6BUzvc",
+              "targetHandle": "drOrv1sbmNv0EHk6BUzvc-input-1",
+              "sourceHandle": "IOVhWGxGnJb7Q1rQv4Cjv-output-1",
+              "class": "source-IOVhWGxGnJb7Q1rQv4Cjv-output-1 targte-drOrv1sbmNv0EHk6BUzvc-input-1",
+              "type": "default",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "updatable": true,
+              "selectable": true,
+              "markerEnd": ""
+            }
+          ],
+          "position": [
+            0,
+            0
+          ],
+          "zoom": 1.3
+        },
+        "settings": {
+          "publicId": "",
+          "blockDelay": 0,
+          "saveLog": true,
+          "debugMode": false,
+          "restartTimes": 3,
+          "notification": true,
+          "reuseLastState": false,
+          "inputAutocomplete": true,
+          "onError": "stop-workflow",
+          "executedBlockOnWeb": false,
+          "insertDefaultColumn": false,
+          "defaultColumnName": "column"
+        },
+        "globalData": "{\n\t\"key\": \"value\"\n}",
+        "description": "",
+        "includedWorkflows": {}
+      }
+    }
+  }
+]
