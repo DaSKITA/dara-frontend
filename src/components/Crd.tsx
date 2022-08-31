@@ -1,5 +1,7 @@
-import { Grid, Card, CardActionArea, CardHeader, capitalize, CardActions, Button } from '@mui/material';
+import { Grid, Card, CardActionArea, CardHeader, capitalize, CardActions, Button, CircularProgress } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
+import React from 'react';
+import { green } from '@mui/material/colors';
 // import GetAppIcon from '@mui/icons-material/GetApp';
 // import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
@@ -37,18 +39,46 @@ const useStyles = makeStyles((theme) => ({
 }));
 */
 
-const onClick = (wf: any) => {
-  const event = new CustomEvent('__automa-ext__', {
-    'detail': {
-      'type': 'execute-workflow',
-      'data': { "workflow": wf }
-    }
-  });
-  window.dispatchEvent(event);
-}
-
-
 export const Crd = ({ controller }: any) => {
+
+  const [loading, setLoading] = React.useState(false);
+  const [success, setSuccess] = React.useState(false);
+  const timer = React.useRef<number>();
+
+  const buttonSx = {
+    ...(success && {
+      bgcolor: green[500],
+      '&:hover': {
+        bgcolor: green[700],
+      },
+    }),
+  };
+
+  React.useEffect(() => {
+    return () => {
+      clearTimeout(timer.current);
+    };
+  }, []);
+
+  const onClick = (wf: any) => {
+    /*
+    if (!loading) {
+      setSuccess(false);
+      setLoading(true);
+      timer.current = window.setTimeout(() => {
+        setSuccess(true);
+        setLoading(false);
+      }, 2000);
+    }
+    */
+    const event = new CustomEvent('__automa-ext__', {
+      'detail': {
+        'type': 'execute-workflow',
+        'data': { "workflow": wf }
+      }
+    });
+    window.dispatchEvent(event);
+  }
 
   return (
     <>
@@ -65,14 +95,14 @@ export const Crd = ({ controller }: any) => {
                 component: "h2"
               }}
               subheader="Data Request Page"
-              /*
-              avatar={
-                <Avatar
-                  alt={capitalize(connector.name) + ' logo'}
-                  src={"https://besticon.herokuapp.com/icon?size=32..200..500&url=" + connector.hostnames[0]}
-                />
-              }
-              */
+            /*
+            avatar={
+              <Avatar
+                alt={capitalize(connector.name) + ' logo'}
+                src={"https://besticon.herokuapp.com/icon?size=32..200..500&url=" + connector.hostnames[0]}
+              />
+            }
+            */
             />
           </CardActionArea>
           <CardActions disableSpacing>
@@ -80,6 +110,7 @@ export const Crd = ({ controller }: any) => {
               <Button
                 size="small"
                 variant="text"
+                sx={buttonSx}
                 style={{
                   textTransform: 'none',
                 }}
@@ -91,6 +122,19 @@ export const Crd = ({ controller }: any) => {
                 Request Data
               </Button>
             }
+            { controller.automation && loading && (
+              <CircularProgress
+                size={24}
+                sx={{
+                  color: green[500],
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  marginTop: '-12px',
+                  marginLeft: '-12px',
+                }}
+              />
+            )}
             {/*
             <Button
               className={classes.expand}

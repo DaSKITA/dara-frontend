@@ -37,11 +37,10 @@
 
 ### Pro
 - all local execution: less complexity, and privacy/security complications
-- 
 
 ### Contra
 - We need to develop our own automa version 
-    - since automa is still based on extension-manifest v2, we can't submit our version in the (chrome) extension store
+    - since automa is still based on extension-manifest v2, we can't submit our (v2-based) version in the (chrome) extension store
 - The extension API is not likely to be merged in the main extension.
 
 
