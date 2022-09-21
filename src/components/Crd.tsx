@@ -31,15 +31,6 @@ export const Crd = ({ controller }: any) => {
   const automaEvent = '__automa-ext__';
   let currentWorkflowTabId = 0;
 
-  const buttonSx = {
-    ...(loading && {
-      //bgcolor: grey[200],
-      '&:hover': {
-        // bgcolor: grey[400],
-      },
-    }),
-  };
-
   const executeWorkflowEvent = new CustomEvent( automaEvent, {
       'detail': {
         'type': 'execute-workflow',
@@ -118,7 +109,7 @@ export const Crd = ({ controller }: any) => {
       setLoading(false);
       clearTimeout(timer.current);
       window.removeEventListener('message', eventHandler);
-      enqueueSnackbar(`[${controller.name}] Successfuly requested your data`, {variant: 'success'});
+      enqueueSnackbar(`[${controller.name}] Successfuly requested your data.`, {variant: 'success'});
 
       // Todo: Inform user about how and when the data will be transmitted to them. 
       // This could be done via a controller-specific modal offering information. Possibly offer a calendar reminder ics?
@@ -128,11 +119,11 @@ export const Crd = ({ controller }: any) => {
       console.log(currentWorkflowTabId);
       currentWorkflowTabId = event.data.workflowTabId;
       console.log(currentWorkflowTabId);
-      enqueueSnackbar(`[${controller.name}] Executing the click path`, {variant: 'info'});
+      enqueueSnackbar(`[${controller.name}] Executing the click path.`, {variant: 'info'});
       
       // A previous request is still pending
     } else if ( event.data.workflow_state === 'request-pending') {
-      enqueueSnackbar(`[${controller.name}] A previous request is still pending`, {variant: 'info'});
+      enqueueSnackbar(`[${controller.name}] A previous request is still pending.`, {variant: 'info'});
       setSuccess(true);
       setLoading(false);
       clearTimeout(timer.current);
@@ -142,14 +133,14 @@ export const Crd = ({ controller }: any) => {
     } else if ( event.data.workflow_state === 'interaction-needed') {
       currentWorkflowTabId = event.data.workflowTabId;
       clearTimeout(timer.current);
-      enqueueSnackbar(`[${controller.name}] Manual input is required to finish the request`, {variant: 'warning', action: openTabAction, persist: true});
+      enqueueSnackbar(`[${controller.name}] Manual input is required to finish the request.`, {variant: 'warning', action: openTabAction, persist: true});
       
       // The execution failed
     } else if ( event.data.workflow_state === 'failed') {
       endExecution();
       
       // Offer to repeat execution with tab in foreground
-      enqueueSnackbar(`[${controller.name}] Could not finish request`, {variant: 'error', action: restartWfForeground, persist: true})
+      enqueueSnackbar(`[${controller.name}] Could not finish request.`, {variant: 'error', action: restartWfForeground, persist: true})
     }
   }
   
@@ -162,7 +153,7 @@ export const Crd = ({ controller }: any) => {
         endExecution();
         
         // Offer to repeat execution with tab in foreground
-        enqueueSnackbar(`[${controller.name}] Request submission time out reached`, {variant: 'error', action: restartWfForeground, persist: true})
+        enqueueSnackbar(`[${controller.name}] Request submission time out reached.`, {variant: 'error', action: restartWfForeground, persist: true})
       }, 15000);
     }
     window.dispatchEvent(executeWorkflowEvent);
@@ -200,7 +191,7 @@ export const Crd = ({ controller }: any) => {
                 size="small"
                 variant="outlined"
                 loading={loading}
-                sx={buttonSx}
+                disabled={ success ? true : false }
                 style={{
                   textTransform: 'none',
                 }}
