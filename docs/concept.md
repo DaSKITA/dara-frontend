@@ -49,3 +49,8 @@
 - The API is based on chrome message passing.
 - API access is granted on a user-configurable known domain white list.
 - The workflows are retrieved from a backend - handling updating and statistics of the stored wfs
+
+
+## Learning
+- In the best case we keep old clickpaths and can train on them.
+- There are some situations where a clickpath recording becomes difficult - we should document these cases.

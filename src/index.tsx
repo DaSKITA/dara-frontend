@@ -5,6 +5,7 @@ import CardGrid from "./CardGrid";
 import reportWebVitals from './reportWebVitals';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline  from '@mui/material/CssBaseline';
+import { SnackbarProvider } from 'notistack';
 
 const darkTheme = createTheme({
   palette: {
@@ -19,7 +20,9 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <CardGrid />
+      <SnackbarProvider maxSnack={3} preventDuplicate>
+        <CardGrid />
+      </SnackbarProvider>
     </ThemeProvider>
   </React.StrictMode>
 );

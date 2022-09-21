@@ -1,83 +1,172 @@
-import { Grid, Card, CardActionArea, CardHeader, capitalize, CardActions, Button, CircularProgress } from '@mui/material';
+import { Grid, Card, CardActionArea, CardHeader, capitalize, CardActions, Button, Avatar, IconButton } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
+import CheckIcon from '@mui/icons-material/Check';
+import ErrorIcon from '@mui/icons-material/Error';
+import BusinessIcon from '@mui/icons-material/Business';
+import LoadingButton from '@mui/lab/LoadingButton';
+import CloseIcon from '@mui/icons-material/Close';
 import React from 'react';
-import { green } from '@mui/material/colors';
-// import GetAppIcon from '@mui/icons-material/GetApp';
-// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
-/*
-const useStyles = makeStyles((theme) => ({
-  cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-  },
-  cardMedia: {
-    paddingTop: '56.25%', // 16:9
-  },
-  cardContent: {
-    flexGrow: 1,
-  },
-  cardHeader: {
-    flexGrow: 1
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
-  },
-  expand: {
-    marginLeft: 'auto'
-  },
-  expandIcon: {
-    transform: 'rotate(0deg)',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expandIconOpen: {
-    transform: 'rotate(180deg)',
-  },
-}));
-*/
+import { useSnackbar, SnackbarKey } from 'notistack';
 
 export const Crd = ({ controller }: any) => {
-
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
+  const [failed, setFailed] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
+  // const [selectedValue, setSelectedValue] = React.useState("");
+
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  {/*
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (value: string) => {
+    setOpen(false);
+    setSelectedValue(value);
+  };
+  */}
+
   const timer = React.useRef<number>();
+  const automaEvent = '__automa-ext__';
+  let currentWorkflowTabId = 0;
 
   const buttonSx = {
-    ...(success && {
-      bgcolor: green[500],
+    ...(loading && {
+      //bgcolor: grey[200],
       '&:hover': {
-        bgcolor: green[700],
+        // bgcolor: grey[400],
       },
     }),
   };
 
-  React.useEffect(() => {
-    return () => {
-      clearTimeout(timer.current);
-    };
-  }, []);
+  const executeWorkflowEvent = new CustomEvent( automaEvent, {
+      'detail': {
+        'type': 'execute-workflow',
+        'data': { "workflow": controller.automation.definition }
+      }
+  });
+  const closeTabEvent = new CustomEvent( automaEvent, {
+    'detail': {
+      'type': 'remove-tab',
+      'data': { "tabId": currentWorkflowTabId }
+    }
+  });
+  const openTabEvent = new CustomEvent( automaEvent, {
+      'detail': {
+        'type': 'set-active-tab',
+        'data': { "tabId": currentWorkflowTabId }
+      }
+  });
 
-  const onClick = (wf: any) => {
-    /*
+  const openTabAction = (snackbarId: SnackbarKey | undefined) => (
+    <>
+      <Button 
+        color="inherit" 
+        onClick={() => { 
+          window.dispatchEvent(openTabEvent);
+          closeSnackbar(snackbarId); 
+        }}>
+        OPEN TAB
+      </Button>
+      <IconButton
+        size="small"
+        onClick={() => { closeSnackbar(snackbarId)}}
+      >
+        <CloseIcon fontSize="small" />
+      </IconButton>
+    </>
+  );
+
+  const restartWfForeground = (snackbarId: SnackbarKey | undefined) => (
+    <>
+      <Button color="inherit" onClick={() => { 
+          window.dispatchEvent(executeWorkflowEvent);
+          window.addEventListener('message', eventHandler);
+
+          closeSnackbar(snackbarId); 
+          window.dispatchEvent(openTabEvent);
+          
+        }}>
+        RESTART
+      </Button>
+      <IconButton
+        size="small"
+        onClick={() => { 
+          closeSnackbar(snackbarId);
+          endExecution();
+        }}
+      >
+        <CloseIcon fontSize="small" />
+      </IconButton>
+    </>
+  );
+
+  function endExecution() {
+    setFailed(true);
+    setLoading(false);
+    clearTimeout(timer.current);
+    window.removeEventListener('message', eventHandler);
+    window.dispatchEvent(closeTabEvent);
+  }
+
+  function eventHandler(event:any) {
+
+    // The execution was completed successfully
+    if (event.data.workflow_state === 'completed') {
+      setSuccess(true);
+      setLoading(false);
+      clearTimeout(timer.current);
+      window.removeEventListener('message', eventHandler);
+      enqueueSnackbar(`[${controller.name}] Successfuly requested your data`, {variant: 'success'});
+
+      // Todo: Inform user about how and when the data will be transmitted to them. 
+      // This could be done via a controller-specific modal offering information. Possibly offer a calendar reminder ics?
+    
+      // The workflow execution started
+    } else if ( event.data.workflow_state === 'started') {
+      console.log(currentWorkflowTabId);
+      currentWorkflowTabId = event.data.workflowTabId;
+      console.log(currentWorkflowTabId);
+      enqueueSnackbar(`[${controller.name}] Executing the click path`, {variant: 'info'});
+      
+      // A previous request is still pending
+    } else if ( event.data.workflow_state === 'request-pending') {
+      enqueueSnackbar(`[${controller.name}] A previous request is still pending`, {variant: 'info'});
+      setSuccess(true);
+      setLoading(false);
+      clearTimeout(timer.current);
+      // Todo: Inform user about how and when the data will be transmitted to them. 
+
+      // We require user interaction to proceed
+    } else if ( event.data.workflow_state === 'interaction-needed') {
+      currentWorkflowTabId = event.data.workflowTabId;
+      clearTimeout(timer.current);
+      enqueueSnackbar(`[${controller.name}] Manual input is required to finish the request`, {variant: 'warning', action: openTabAction, persist: true});
+      
+      // The execution failed
+    } else if ( event.data.workflow_state === 'failed') {
+      endExecution();
+      
+      // Offer to repeat execution with tab in foreground
+      enqueueSnackbar(`[${controller.name}] Could not finish request`, {variant: 'error', action: restartWfForeground, persist: true})
+    }
+  }
+  
+  const onClickExecuteRequest = () => {
+    
     if (!loading) {
       setSuccess(false);
       setLoading(true);
       timer.current = window.setTimeout(() => {
-        setSuccess(true);
-        setLoading(false);
-      }, 2000);
+        endExecution();
+        
+        // Offer to repeat execution with tab in foreground
+        enqueueSnackbar(`[${controller.name}] Request submission time out reached`, {variant: 'error', action: restartWfForeground, persist: true})
+      }, 15000);
     }
-    */
-    const event = new CustomEvent('__automa-ext__', {
-      'detail': {
-        'type': 'execute-workflow',
-        'data': { "workflow": wf }
-      }
-    });
-    window.dispatchEvent(event);
+    window.dispatchEvent(executeWorkflowEvent);
+    window.addEventListener('message', eventHandler);
   }
 
   return (
@@ -95,67 +184,57 @@ export const Crd = ({ controller }: any) => {
                 component: "h2"
               }}
               subheader="Data Request Page"
-            /*
-            avatar={
-              <Avatar
-                alt={capitalize(connector.name) + ' logo'}
-                src={"https://besticon.herokuapp.com/icon?size=32..200..500&url=" + connector.hostnames[0]}
-              />
-            }
-            */
+              avatar={
+                <Avatar
+                  alt={capitalize(controller.name) + ' logo'}
+                  // src={"https://besticon.herokuapp.com/icon?size=32..200..500&url=" + controller.hostnames[0]}
+                >
+                  <BusinessIcon/>
+                </Avatar>
+              }
             />
           </CardActionArea>
-          <CardActions disableSpacing>
+          <CardActions>
             {controller.automation &&
-              <Button
+              <LoadingButton
                 size="small"
-                variant="text"
+                variant="outlined"
+                loading={loading}
                 sx={buttonSx}
                 style={{
                   textTransform: 'none',
                 }}
-                startIcon={
-                  <SendIcon fontSize='inherit' />
+                endIcon={
+                  success ? <CheckIcon /> 
+                  : failed ? <ErrorIcon /> 
+                  : <SendIcon />
                 }
-                onClick={() => onClick(controller.automation.definition)}
+                loadingPosition="end"
+                onClick={() => onClickExecuteRequest()}
               >
-                Request Data
-              </Button>
+                {success ? "Requested Data" : "Request Data"}
+              </LoadingButton>
             }
-            { controller.automation && loading && (
-              <CircularProgress
-                size={24}
-                sx={{
-                  color: green[500],
-                  position: 'absolute',
-                  top: '50%',
-                  left: '50%',
-                  marginTop: '-12px',
-                  marginLeft: '-12px',
-                }}
-              />
-            )}
-            {/*
-            <Button
-              className={classes.expand}
-              onClick={handleExpandClick}
-              aria-expanded={expanded}
-              aria-label="show more"
-              style={{
-                textTransform:'none',
-              }}
-              endIcon={
-                <ExpandMoreIcon
-                  className={clsx(classes.expandIcon, {
-                    [classes.expandIconOpen]: expanded,
-                  })}
-                />
-              }
-            >
-              Info
-            </Button>
-            */}
           </CardActions>
+          
+          {/* For now just use Snackbar and no Dialog
+          <Dialog onClose={handleClose} open={open}>
+            <DialogTitle
+              sx={{ m: 0, p: 2 }}>
+                Requesting data from {controller.name}
+            </DialogTitle>
+            {loading && <LinearProgress />}
+            <DialogContent dividers>
+              <Typography gutterBottom>
+                DARA is now opening {controller.name}s data request page in another tab 
+                and tries to submit an access request on your behalf. If we encounter any
+                problems they will show up here.
+              </Typography>
+              <Alert severity="info" variant="outlined">Submitted the click path to our extension.</Alert>
+              
+            </DialogContent>
+          </Dialog>
+          */}
         </Card>
       </Grid>
     </>
