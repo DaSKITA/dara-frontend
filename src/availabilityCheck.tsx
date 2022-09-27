@@ -3,6 +3,8 @@ import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import { useSnackbar } from 'notistack';
+
 
 export const checkExtensionAvailability = () => {
     if (document.body.getAttribute('data-atm-ext-installed')) {
@@ -13,16 +15,21 @@ export const checkExtensionAvailability = () => {
 }
 
 export default function ExtensionAvailabilityCheck() {
+    const { enqueueSnackbar } = useSnackbar();
     const [open, setOpen] = React.useState(false);
 
-    const handleClose = (event:any, reason:any) => {
+    const handleClose = (event: any, reason: any) => {
         if (reason && reason === "backdropClick")
             return;
         setOpen(false);
     }
 
     React.useEffect(() => {
-        setOpen(!checkExtensionAvailability());
+        if (checkExtensionAvailability()) {
+            enqueueSnackbar(`Browser extension is available, ready to go!`)
+        } else {
+            setOpen(true);
+        }
     }, []);
 
     return (

@@ -105,9 +105,7 @@ export const Crd = ({ controller }: any) => {
     
       // The workflow execution started
     } else if ( event.data.workflow_state === 'started') {
-      console.log(currentWorkflowTabId);
       currentWorkflowTabId = event.data.workflowTabId;
-      console.log(currentWorkflowTabId);
       enqueueSnackbar(`[${controller.name}] Executing the click path.`, {variant: 'info'});
       
       // A previous request is still pending

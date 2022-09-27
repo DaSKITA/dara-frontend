@@ -21,9 +21,9 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <ExtensionAvailabilityCheck />
       <SnackbarProvider maxSnack={3} preventDuplicate>
         <CardGrid />
+        <ExtensionAvailabilityCheck />
       </SnackbarProvider>
     </ThemeProvider>
   </React.StrictMode>
