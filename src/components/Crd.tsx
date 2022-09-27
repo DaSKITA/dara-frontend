@@ -7,25 +7,14 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import CloseIcon from '@mui/icons-material/Close';
 import React from 'react';
 import { useSnackbar, SnackbarKey } from 'notistack';
+import { checkExtensionAvailability } from '../availabilityCheck'
 
 export const Crd = ({ controller }: any) => {
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
   const [failed, setFailed] = React.useState(false);
-  // const [open, setOpen] = React.useState(false);
-  // const [selectedValue, setSelectedValue] = React.useState("");
 
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
-  {/*
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = (value: string) => {
-    setOpen(false);
-    setSelectedValue(value);
-  };
-  */}
 
   const timer = React.useRef<number>();
   const automaEvent = '__automa-ext__';
@@ -145,6 +134,11 @@ export const Crd = ({ controller }: any) => {
   }
   
   const onClickExecuteRequest = () => {
+
+    if (!checkExtensionAvailability()) {
+      enqueueSnackbar(`Could not reach extension, is it installed?`, {variant: 'error'})
+      return;
+    }
     
     if (!loading) {
       setSuccess(false);
@@ -207,25 +201,6 @@ export const Crd = ({ controller }: any) => {
               </LoadingButton>
             }
           </CardActions>
-          
-          {/* For now just use Snackbar and no Dialog
-          <Dialog onClose={handleClose} open={open}>
-            <DialogTitle
-              sx={{ m: 0, p: 2 }}>
-                Requesting data from {controller.name}
-            </DialogTitle>
-            {loading && <LinearProgress />}
-            <DialogContent dividers>
-              <Typography gutterBottom>
-                DARA is now opening {controller.name}s data request page in another tab 
-                and tries to submit an access request on your behalf. If we encounter any
-                problems they will show up here.
-              </Typography>
-              <Alert severity="info" variant="outlined">Submitted the click path to our extension.</Alert>
-              
-            </DialogContent>
-          </Dialog>
-          */}
         </Card>
       </Grid>
     </>

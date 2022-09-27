@@ -116,8 +116,6 @@ export default function CardGrid() {
             container
             spacing={4}
             direction="row"
-            justifyContent="flex-start"
-            alignItems="flex-start"
           >
             {controllers &&
               controllers.map((controller: any) => (
