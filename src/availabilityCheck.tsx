@@ -4,8 +4,9 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { useSnackbar } from 'notistack';
-import { ReactComponent as ChromeLogo } from './assets/chrome-webstore.svg';
 import { Container } from '@mui/system';
+import chormelogo from './assets/webstore.png';
+import firefoxlogo from './assets/ffaddons.png';
 
 
 export const checkExtensionAvailability = () => {
@@ -50,23 +51,23 @@ export default function ExtensionAvailabilityCheck() {
                     </DialogContentText>
                     <br></br>
                     <DialogContentText id="alert-dialog-description" sx={{ 'text-align': 'center' }} >
-                        You can download it for chrome-based browsers or firefox:
+                        You can download it for Chrome-based browsers or Firefox:
                     </DialogContentText>
                     <br></br>
                     <Container sx={{ 'align': 'center' }}>
                         <table>
                             <tr>
                                 <td>
-                                    <Container sx={{ 'width': '15rem' }}>
+                                    <Container>
                                         <a href="https://chrome.google.com/webstore/detail/automa/heolgaalbnnelipfhbccbkdohecmaimo">
-                                            <ChromeLogo />
+                                            <img height={'60px'} src={chormelogo} alt="Chrome webstore" />
                                         </a>
                                     </Container>
                                 </td>
                                 <td>
-                                    <Container sx={{ 'width': '15rem' }}>
+                                    <Container>
                                         <a href="https://addons.mozilla.org/en-US/firefox/addon/dara/">
-                                            <img src="https://user-images.githubusercontent.com/22908993/166417727-3481fef4-00e5-4cf0-bb03-27fb880d993c.png" alt="Firefox add-ons" />
+                                            <img height={'60px'} src={firefoxlogo} alt="Firefox add-ons" />
                                         </a>
                                     </Container>
                                 </td>
