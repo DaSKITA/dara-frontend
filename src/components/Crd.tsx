@@ -20,38 +20,54 @@ export const Crd = ({ controller }: any) => {
   const automaEvent = '__automa-ext__';
   let currentWorkflowTabId = 0;
 
-  const executeWorkflowEvent = new CustomEvent( automaEvent, {
-      'detail': {
-        'type': 'execute-workflow',
-        'data': { "workflow": controller.automation.definition }
-      }
+  const executeWorkflowEvent = new CustomEvent(automaEvent, {
+    'detail': {
+      'type': 'execute-workflow',
+      'data': { "workflow": controller.automation.definition }
+    }
   });
-  const closeTabEvent = new CustomEvent( automaEvent, {
+
+  const closeTabEvent = () => new CustomEvent(automaEvent, {
     'detail': {
       'type': 'remove-tab',
       'data': { "tabId": currentWorkflowTabId }
     }
   });
-  const openTabEvent = new CustomEvent( automaEvent, {
+
+  const openTabEvent = () => {
+    return new CustomEvent(automaEvent, {
       'detail': {
         'type': 'set-active-tab',
         'data': { "tabId": currentWorkflowTabId }
       }
-  });
+    })
+  };
+
+  const setExecutionTimeout = (timeout: number) => {
+    timer.current = window.setTimeout(() => {
+      endExecution();
+      // Offer to repeat execution with tab in foreground
+      enqueueSnackbar(`[${controller.name}] Request submission time out reached.`, { variant: 'error', action: restartWfForeground, persist: true })
+    }, timeout);
+  }
 
   const openTabAction = (snackbarId: SnackbarKey | undefined) => (
     <>
-      <Button 
-        color="inherit" 
-        onClick={() => { 
-          window.dispatchEvent(openTabEvent);
-          closeSnackbar(snackbarId); 
+      <Button
+        color="inherit"
+        onClick={() => {
+          window.dispatchEvent(openTabEvent());
+          setExecutionTimeout(20000);
+          closeSnackbar(snackbarId);
         }}>
         OPEN TAB
       </Button>
       <IconButton
         size="small"
-        onClick={() => { closeSnackbar(snackbarId)}}
+        onClick={() => {
+          closeSnackbar(snackbarId)
+          endExecution()
+        }}
       >
         <CloseIcon fontSize="small" />
       </IconButton>
@@ -60,19 +76,19 @@ export const Crd = ({ controller }: any) => {
 
   const restartWfForeground = (snackbarId: SnackbarKey | undefined) => (
     <>
-      <Button color="inherit" onClick={() => { 
-          window.dispatchEvent(executeWorkflowEvent);
-          window.addEventListener('message', eventHandler);
+      <Button color="inherit" onClick={() => {
+        window.dispatchEvent(executeWorkflowEvent);
+        window.addEventListener('message', eventHandler);
 
-          closeSnackbar(snackbarId); 
-          window.dispatchEvent(openTabEvent);
-          
-        }}>
+        closeSnackbar(snackbarId);
+        window.dispatchEvent(openTabEvent());
+
+      }}>
         RESTART
       </Button>
       <IconButton
         size="small"
-        onClick={() => { 
+        onClick={() => {
           closeSnackbar(snackbarId);
           endExecution();
         }}
@@ -87,10 +103,10 @@ export const Crd = ({ controller }: any) => {
     setLoading(false);
     clearTimeout(timer.current);
     window.removeEventListener('message', eventHandler);
-    window.dispatchEvent(closeTabEvent);
+    window.dispatchEvent(closeTabEvent());
   }
 
-  function eventHandler(event:any) {
+  function eventHandler(event: any) {
 
     // The execution was completed successfully
     if (event.data.workflow_state === 'completed') {
@@ -98,55 +114,50 @@ export const Crd = ({ controller }: any) => {
       setLoading(false);
       clearTimeout(timer.current);
       window.removeEventListener('message', eventHandler);
-      enqueueSnackbar(`[${controller.name}] Successfuly requested your data.`, {variant: 'success'});
+      enqueueSnackbar(`[${controller.name}] Successfuly requested your data.`, { variant: 'success' });
 
       // Todo: Inform user about how and when the data will be transmitted to them. 
       // This could be done via a controller-specific modal offering information. Possibly offer a calendar reminder ics?
-    
+
       // The workflow execution started
-    } else if ( event.data.workflow_state === 'started') {
+    } else if (event.data.workflow_state === 'started') {
       currentWorkflowTabId = event.data.workflowTabId;
-      enqueueSnackbar(`[${controller.name}] Executing the click path.`, {variant: 'info'});
-      
+      enqueueSnackbar(`[${controller.name}] Executing the click path.`, { variant: 'info' });
+
       // A previous request is still pending
-    } else if ( event.data.workflow_state === 'request-pending') {
-      enqueueSnackbar(`[${controller.name}] A previous request is still pending.`, {variant: 'info'});
+    } else if (event.data.workflow_state === 'request-pending') {
+      enqueueSnackbar(`[${controller.name}] A previous request is still pending.`, { variant: 'info' });
       setSuccess(true);
       setLoading(false);
       clearTimeout(timer.current);
       // Todo: Inform user about how and when the data will be transmitted to them. 
 
       // We require user interaction to proceed
-    } else if ( event.data.workflow_state === 'interaction-needed') {
+    } else if (event.data.workflow_state === 'interaction-needed') {
       currentWorkflowTabId = event.data.workflowTabId;
       clearTimeout(timer.current);
-      enqueueSnackbar(`[${controller.name}] Manual input is required to finish the request.`, {variant: 'warning', action: openTabAction, persist: true});
-      
+      enqueueSnackbar(`[${controller.name}] Manual input is required to finish the request.`, { variant: 'warning', action: openTabAction, persist: true });
+
       // The execution failed
-    } else if ( event.data.workflow_state === 'failed') {
+    } else if (event.data.workflow_state === 'failed') {
       endExecution();
-      
+
       // Offer to repeat execution with tab in foreground
-      enqueueSnackbar(`[${controller.name}] Could not finish request.`, {variant: 'error', action: restartWfForeground, persist: true})
+      enqueueSnackbar(`[${controller.name}] Could not finish request.`, { variant: 'error', action: restartWfForeground, persist: true })
     }
   }
-  
+
   const onClickExecuteRequest = () => {
 
     if (!checkExtensionAvailability()) {
-      enqueueSnackbar(`Could not reach extension, is it installed?`, {variant: 'error'})
+      enqueueSnackbar(`Could not reach extension, is it installed?`, { variant: 'error' })
       return;
     }
-    
+
     if (!loading) {
       setSuccess(false);
       setLoading(true);
-      timer.current = window.setTimeout(() => {
-        endExecution();
-        
-        // Offer to repeat execution with tab in foreground
-        enqueueSnackbar(`[${controller.name}] Request submission time out reached.`, {variant: 'error', action: restartWfForeground, persist: true})
-      }, 15000);
+      setExecutionTimeout(15000);
     }
     window.dispatchEvent(executeWorkflowEvent);
     window.addEventListener('message', eventHandler);
@@ -170,9 +181,9 @@ export const Crd = ({ controller }: any) => {
               avatar={
                 <Avatar
                   alt={capitalize(controller.name) + ' logo'}
-                  // src={"https://besticon.herokuapp.com/icon?size=32..200..500&url=" + controller.hostnames[0]}
+                // src={"https://besticon.herokuapp.com/icon?size=32..200..500&url=" + controller.hostnames[0]}
                 >
-                  <BusinessIcon/>
+                  <BusinessIcon />
                 </Avatar>
               }
             />
@@ -183,14 +194,14 @@ export const Crd = ({ controller }: any) => {
                 size="small"
                 variant="outlined"
                 loading={loading}
-                disabled={ success ? true : false }
+                disabled={success ? true : false}
                 style={{
                   textTransform: 'none',
                 }}
                 endIcon={
-                  success ? <CheckIcon /> 
-                  : failed ? <ErrorIcon /> 
-                  : <SendIcon />
+                  success ? <CheckIcon />
+                    : failed ? <ErrorIcon />
+                      : <SendIcon />
                 }
                 loadingPosition="end"
                 onClick={() => onClickExecuteRequest()}

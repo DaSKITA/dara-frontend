@@ -120,7 +120,7 @@ export default function CardGrid() {
             {controllers &&
               controllers.map((controller: any) => (
                 controller.name.toLowerCase().includes(filter.toLowerCase()) &&
-                <Crd controller={controller} />
+                <Crd controller={controller} key={controller.name} />
               ))
             }
           </Grid>
