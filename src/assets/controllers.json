@@ -6,7 +6,737 @@
     "automation": {
       "format": "automa",
       "version": "0.1",
-      "definition": {"extVersion":"1.18.1","name":"Facebook DSAR","icon":"riGlobalLine","table":[],"version":"1.18.1","drawflow":{"nodes":[{"computedPosition":{"x":96,"y":97,"z":0},"data":{"activeInInput":false,"contextMenuName":"","contextTypes":[],"date":"","days":[],"delay":5,"description":"","disableBlock":false,"interval":60,"isUrlRegex":false,"observeElement":{"baseElOptions":{"attributeFilter":[],"attributes":false,"characterData":false,"childList":true,"subtree":false},"baseSelector":"","matchPattern":"","selector":"","targetOptions":{"attributeFilter":[],"attributes":false,"characterData":false,"childList":true,"subtree":false}},"shortcut":"","time":"00:00","type":"manual","url":""},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"5oRquIw_AmscZUoLzCAdL-output-1","position":"right","x":196.00006236432205,"y":27.999995258758286,"width":16,"height":16}]},"id":"5oRquIw_AmscZUoLzCAdL","label":"trigger","position":{"x":96,"y":97},"selected":false,"type":"BlockBasic"},{"computedPosition":{"x":388,"y":97,"z":0},"data":{"active":false,"customUserAgent":false,"description":"facebook.com/dyi/","disableBlock":false,"inGroup":false,"onError":{"dataToInsert":[],"enable":false,"insertData":false,"retry":false,"retryInterval":2,"retryTimes":1,"toDo":"error"},"updatePrevTab":false,"url":"https://www.facebook.com/dyi/","userAgent":"","waitTabLoaded":true},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"ZDnOyReNGu2LvF0eikrVj-output-1","position":"right","x":196.00006236432205,"y":27.999995258758286,"width":16,"height":16}],"target":[{"id":"ZDnOyReNGu2LvF0eikrVj-input-1","position":"left","x":-20.000010263829353,"y":27.999995258758286,"width":16,"height":16}]},"id":"ZDnOyReNGu2LvF0eikrVj","label":"new-tab","position":{"x":388,"y":97},"selected":false,"type":"BlockBasic"},{"computedPosition":{"x":680,"y":36,"z":0},"data":{"description":"Select Format","disableBlock":false,"findBy":"cssSelector","markEl":true,"multiple":false,"onError":{"dataToInsert":[],"enable":false,"insertData":false,"retry":false,"retryInterval":2,"retryTimes":1,"toDo":"error"},"selector":"label[aria-label=\"Format\"]","settings":{"debugMode":false},"waitForSelector":true,"waitSelectorTimeout":5000},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"faAsDA3AJIVpqI990xxwM-output-1","position":"right","x":196.00006103515625,"y":27.999979654947918,"width":16,"height":16}],"target":[{"id":"faAsDA3AJIVpqI990xxwM-input-1","position":"left","x":-20,"y":27.999979654947918,"width":16,"height":16}]},"id":"faAsDA3AJIVpqI990xxwM","label":"event-click","position":{"x":680,"y":36},"selected":false,"type":"BlockBasic"},{"computedPosition":{"x":972,"y":36,"z":0},"data":{"description":" Select JSON","disableBlock":false,"findBy":"cssSelector","markEl":false,"multiple":false,"selector":"div[aria-selected=false][role=option]","waitForSelector":true,"waitSelectorTimeout":5000},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"s_42XIl3GJlgnlqeyZ73t-output-1","position":"right","x":196.00006103515625,"y":27.999979654947918,"width":16,"height":16}],"target":[{"id":"s_42XIl3GJlgnlqeyZ73t-input-1","position":"left","x":-20,"y":27.999979654947918,"width":16,"height":16}]},"id":"s_42XIl3GJlgnlqeyZ73t","label":"event-click","position":{"x":972,"y":36},"selected":false,"type":"BlockBasic"},{"computedPosition":{"x":1264,"y":36,"z":0},"data":{"description":" Select Date range","disableBlock":false,"findBy":"cssSelector","markEl":false,"multiple":false,"selector":"label[aria-label=\"Date range (required)\"]","waitForSelector":true,"waitSelectorTimeout":5000},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"cc102a07-0062-414c-8d9e-d9d32c69bf88-output-1","position":"right","x":195.99995930989584,"y":27.999979654947918,"width":16,"height":16}],"target":[{"id":"cc102a07-0062-414c-8d9e-d9d32c69bf88-input-1","position":"left","x":-20,"y":27.999979654947918,"width":16,"height":16}]},"id":"cc102a07-0062-414c-8d9e-d9d32c69bf88","label":"event-click","position":{"x":1264,"y":36},"selected":false,"type":"BlockBasic"},{"computedPosition":{"x":1848,"y":36,"z":0},"data":{"description":"Request Download","disableBlock":false,"findBy":"cssSelector","markEl":false,"multiple":false,"selector":"div[aria-label=\"Request a download\"]","waitForSelector":true,"waitSelectorTimeout":5000},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-output-1","position":"right","x":195.99995930989584,"y":27.999979654947918,"width":16,"height":16}],"target":[{"id":"fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-input-1","position":"left","x":-20,"y":27.999979654947918,"width":16,"height":16}]},"id":"fd7f1687-e768-4a5e-8ae9-9c87ad24ae39","label":"event-click","position":{"x":1848,"y":36},"selected":false,"type":"BlockBasic"},{"computedPosition":{"x":1556,"y":36,"z":0},"data":{"code":"let divs = document.getElementsByTagName('span');\nfor(let i=0;i<divs.length;i++){\n  if(divs[i].innerHTML == 'All time'){\n    divs[i].click()\n    break;\n  }\n}\n\nautomaNextBlock()","description":"Select 'All time'\n","disableBlock":false,"everyNewTab":false,"preloadScripts":[],"runBeforeLoad":false,"timeout":20000},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"5vrvd7g-output-1","position":"right","x":195.999755859375,"y":27.999979654947918,"width":16,"height":16}],"target":[{"id":"5vrvd7g-input-1","position":"left","x":-20,"y":27.999979654947918,"width":16,"height":16}]},"id":"5vrvd7g","label":"javascript-code","position":{"x":1556,"y":36},"selected":false,"type":"BlockBasic"},{"computedPosition":{"x":680,"y":158,"z":1000},"data":{"code":"const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'started' }\n  }\n});\nwindow.dispatchEvent(event);","description":"","disableBlock":false,"everyNewTab":false,"preloadScripts":[],"runBeforeLoad":false,"timeout":20000},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"m5en8tm-output-1","position":"right","x":196.00001449584963,"y":28.000014209747317,"width":16,"height":16}],"target":[{"id":"m5en8tm-input-1","position":"left","x":-19.99994945526123,"y":28.000014209747317,"width":16,"height":16}]},"id":"m5en8tm","label":"javascript-code","position":{"x":680,"y":158},"selected":true,"type":"BlockBasic"},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"bm9a669-output-1","position":"right","x":196.00001449584963,"y":28.000014209747317,"width":16,"height":16}],"target":[{"id":"bm9a669-input-1","position":"left","x":-19.99994945526123,"y":28.000014209747317,"width":16,"height":16}]},"computedPosition":{"x":2140,"y":36,"z":0},"data":{"code":"const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'completed' }\n  }\n});\nwindow.dispatchEvent(event);","description":"Send completed signal","disableBlock":false,"everyNewTab":false,"preloadScripts":[],"runBeforeLoad":false,"timeout":20000},"label":"javascript-code","id":"bm9a669","selected":false,"position":{"x":2140,"y":36}},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"hrok4jm-output-1","position":"right","x":196.00001449584963,"y":28.000014209747317,"width":16,"height":16}],"target":[{"id":"hrok4jm-input-1","position":"left","x":-19.99994945526123,"y":28.000014209747317,"width":16,"height":16}]},"computedPosition":{"x":2432,"y":36,"z":0},"data":{"activeTab":true,"allWindows":false,"closeType":"tab","description":"","disableBlock":false,"url":""},"label":"close-tab","id":"hrok4jm","selected":false,"position":{"x":2432,"y":36}}],"edges":[{"id":"vueflow__edge-5oRquIw_AmscZUoLzCAdL-output-1-ZDnOyReNGu2LvF0eikrVj-input-1","class":"source-5oRquIw_AmscZUoLzCAdL-output-1 target-ZDnOyReNGu2LvF0eikrVj-input-1","markerEnd":"","selectable":true,"source":"5oRquIw_AmscZUoLzCAdL","sourceHandle":"5oRquIw_AmscZUoLzCAdL-output-1","sourceX":0,"sourceY":0,"target":"ZDnOyReNGu2LvF0eikrVj","targetHandle":"ZDnOyReNGu2LvF0eikrVj-input-1","targetX":0,"targetY":0,"type":"default","updatable":true,"z":0},{"id":"vueflow__edge-ZDnOyReNGu2LvF0eikrVj-output-1-faAsDA3AJIVpqI990xxwM-input-1","class":"source-ZDnOyReNGu2LvF0eikrVj-output-1 target-faAsDA3AJIVpqI990xxwM-input-1","markerEnd":"","selectable":true,"source":"ZDnOyReNGu2LvF0eikrVj","sourceHandle":"ZDnOyReNGu2LvF0eikrVj-output-1","sourceX":0,"sourceY":0,"target":"faAsDA3AJIVpqI990xxwM","targetHandle":"faAsDA3AJIVpqI990xxwM-input-1","targetX":0,"targetY":0,"type":"default","updatable":true,"z":0},{"id":"vueflow__edge-faAsDA3AJIVpqI990xxwM-output-1-s_42XIl3GJlgnlqeyZ73t-input-1","class":"source-faAsDA3AJIVpqI990xxwM-output-1 target-s_42XIl3GJlgnlqeyZ73t-input-1","markerEnd":"","selectable":true,"source":"faAsDA3AJIVpqI990xxwM","sourceHandle":"faAsDA3AJIVpqI990xxwM-output-1","sourceX":0,"sourceY":0,"target":"s_42XIl3GJlgnlqeyZ73t","targetHandle":"s_42XIl3GJlgnlqeyZ73t-input-1","targetX":0,"targetY":0,"type":"default","updatable":true,"z":0},{"id":"vueflow__edge-s_42XIl3GJlgnlqeyZ73t-output-1-cc102a07-0062-414c-8d9e-d9d32c69bf88-input-1","class":"source-s_42XIl3GJlgnlqeyZ73t-output-1 target-cc102a07-0062-414c-8d9e-d9d32c69bf88-input-1","markerEnd":"","selectable":true,"source":"s_42XIl3GJlgnlqeyZ73t","sourceHandle":"s_42XIl3GJlgnlqeyZ73t-output-1","sourceX":0,"sourceY":0,"target":"cc102a07-0062-414c-8d9e-d9d32c69bf88","targetHandle":"cc102a07-0062-414c-8d9e-d9d32c69bf88-input-1","targetX":0,"targetY":0,"type":"default","updatable":true,"z":0},{"id":"vueflow__edge-cc102a07-0062-414c-8d9e-d9d32c69bf88cc102a07-0062-414c-8d9e-d9d32c69bf88-output-1-5vrvd7g5vrvd7g-input-1","class":"source-cc102a07-0062-414c-8d9e-d9d32c69bf88-output-1 target-5vrvd7g-input-1","markerEnd":"","selectable":true,"source":"cc102a07-0062-414c-8d9e-d9d32c69bf88","sourceHandle":"cc102a07-0062-414c-8d9e-d9d32c69bf88-output-1","sourceX":0,"sourceY":0,"target":"5vrvd7g","targetHandle":"5vrvd7g-input-1","targetX":0,"targetY":0,"type":"default","updatable":true,"z":0},{"id":"vueflow__edge-5vrvd7g5vrvd7g-output-1-fd7f1687-e768-4a5e-8ae9-9c87ad24ae39fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-input-1","class":"source-5vrvd7g-output-1 target-fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-input-1","markerEnd":"","selectable":true,"source":"5vrvd7g","sourceHandle":"5vrvd7g-output-1","sourceX":0,"sourceY":0,"target":"fd7f1687-e768-4a5e-8ae9-9c87ad24ae39","targetHandle":"fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-input-1","targetX":0,"targetY":0,"type":"default","updatable":true,"z":0},{"id":"vueflow__edge-ZDnOyReNGu2LvF0eikrVjZDnOyReNGu2LvF0eikrVj-output-1-m5en8tmm5en8tm-input-1","source":"ZDnOyReNGu2LvF0eikrVj","sourceHandle":"ZDnOyReNGu2LvF0eikrVj-output-1","target":"m5en8tm","targetHandle":"m5en8tm-input-1","class":"source-ZDnOyReNGu2LvF0eikrVj-output-1 target-m5en8tm-input-1","updatable":true,"selectable":true,"type":"default","markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0},{"id":"edge-x90ybvf","selected":false,"target":"hrok4jm","source":"bm9a669","targetHandle":"hrok4jm-input-1","sourceHandle":"bm9a669-output-1","updatable":true,"selectable":true,"type":"default","markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0},{"id":"vueflow__edge-fd7f1687-e768-4a5e-8ae9-9c87ad24ae39fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-output-1-bm9a669bm9a669-input-1","source":"fd7f1687-e768-4a5e-8ae9-9c87ad24ae39","sourceHandle":"fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-output-1","target":"bm9a669","targetHandle":"bm9a669-input-1","class":"source-fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-output-1 target-bm9a669-input-1","updatable":true,"selectable":true,"type":"default","markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0}],"position":[-48,390.7],"zoom":0.6},"settings":{"blockDelay":0,"debugMode":false,"defaultColumnName":"column","executedBlockOnWeb":false,"inputAutocomplete":true,"insertDefaultColumn":true,"notification":true,"onError":"stop-workflow","publicId":"","restartTimes":3,"reuseLastState":false,"saveLog":true,"tabLoadTimeout":30000},"globalData":"[{ \"key\": \"value\" }]","description":"","includedWorkflows":{}}
+      "definition": {
+        "extVersion": "1.18.1",
+        "name": "Facebook DSAR",
+        "icon": "riGlobalLine",
+        "table": [],
+        "version": "1.18.1",
+        "drawflow": {
+          "nodes": [
+            {
+              "computedPosition": {
+                "x": 96,
+                "y": 97,
+                "z": 0
+              },
+              "data": {
+                "activeInInput": false,
+                "contextMenuName": "",
+                "contextTypes": [],
+                "date": "",
+                "days": [],
+                "delay": 5,
+                "description": "",
+                "disableBlock": false,
+                "interval": 60,
+                "isUrlRegex": false,
+                "observeElement": {
+                  "baseElOptions": {
+                    "attributeFilter": [],
+                    "attributes": false,
+                    "characterData": false,
+                    "childList": true,
+                    "subtree": false
+                  },
+                  "baseSelector": "",
+                  "matchPattern": "",
+                  "selector": "",
+                  "targetOptions": {
+                    "attributeFilter": [],
+                    "attributes": false,
+                    "characterData": false,
+                    "childList": true,
+                    "subtree": false
+                  }
+                },
+                "shortcut": "",
+                "time": "00:00",
+                "type": "manual",
+                "url": ""
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "5oRquIw_AmscZUoLzCAdL-output-1",
+                    "position": "right",
+                    "x": 196.00006236432205,
+                    "y": 27.999995258758286,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "5oRquIw_AmscZUoLzCAdL",
+              "label": "trigger",
+              "position": {
+                "x": 96,
+                "y": 97
+              },
+              "selected": false,
+              "type": "BlockBasic"
+            },
+            {
+              "computedPosition": {
+                "x": 388,
+                "y": 97,
+                "z": 0
+              },
+              "data": {
+                "active": false,
+                "customUserAgent": false,
+                "description": "facebook.com/dyi/",
+                "disableBlock": false,
+                "inGroup": false,
+                "onError": {
+                  "dataToInsert": [],
+                  "enable": false,
+                  "insertData": false,
+                  "retry": false,
+                  "retryInterval": 2,
+                  "retryTimes": 1,
+                  "toDo": "error"
+                },
+                "updatePrevTab": false,
+                "url": "https://www.facebook.com/dyi/",
+                "userAgent": "",
+                "waitTabLoaded": true
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "ZDnOyReNGu2LvF0eikrVj-output-1",
+                    "position": "right",
+                    "x": 196.00006236432205,
+                    "y": 27.999995258758286,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "ZDnOyReNGu2LvF0eikrVj-input-1",
+                    "position": "left",
+                    "x": -20.000010263829353,
+                    "y": 27.999995258758286,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "ZDnOyReNGu2LvF0eikrVj",
+              "label": "new-tab",
+              "position": {
+                "x": 388,
+                "y": 97
+              },
+              "selected": false,
+              "type": "BlockBasic"
+            },
+            {
+              "computedPosition": {
+                "x": 680,
+                "y": 36,
+                "z": 0
+              },
+              "data": {
+                "description": "Select Format",
+                "disableBlock": false,
+                "findBy": "cssSelector",
+                "markEl": true,
+                "multiple": false,
+                "onError": {
+                  "dataToInsert": [],
+                  "enable": false,
+                  "insertData": false,
+                  "retry": false,
+                  "retryInterval": 2,
+                  "retryTimes": 1,
+                  "toDo": "error"
+                },
+                "selector": "label[aria-label=\"Format\"]",
+                "settings": {
+                  "debugMode": false
+                },
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "faAsDA3AJIVpqI990xxwM-output-1",
+                    "position": "right",
+                    "x": 196.00006103515625,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "faAsDA3AJIVpqI990xxwM-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "faAsDA3AJIVpqI990xxwM",
+              "label": "event-click",
+              "position": {
+                "x": 680,
+                "y": 36
+              },
+              "selected": false,
+              "type": "BlockBasic"
+            },
+            {
+              "computedPosition": {
+                "x": 972,
+                "y": 36,
+                "z": 0
+              },
+              "data": {
+                "description": " Select JSON",
+                "disableBlock": false,
+                "findBy": "cssSelector",
+                "markEl": false,
+                "multiple": false,
+                "selector": "div[aria-selected=false][role=option]",
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "s_42XIl3GJlgnlqeyZ73t-output-1",
+                    "position": "right",
+                    "x": 196.00006103515625,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "s_42XIl3GJlgnlqeyZ73t-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "s_42XIl3GJlgnlqeyZ73t",
+              "label": "event-click",
+              "position": {
+                "x": 972,
+                "y": 36
+              },
+              "selected": false,
+              "type": "BlockBasic"
+            },
+            {
+              "computedPosition": {
+                "x": 1264,
+                "y": 36,
+                "z": 0
+              },
+              "data": {
+                "description": " Select Date range",
+                "disableBlock": false,
+                "findBy": "cssSelector",
+                "markEl": false,
+                "multiple": false,
+                "selector": "label[aria-label=\"Date range (required)\"]",
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "cc102a07-0062-414c-8d9e-d9d32c69bf88-output-1",
+                    "position": "right",
+                    "x": 195.99995930989584,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "cc102a07-0062-414c-8d9e-d9d32c69bf88-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "cc102a07-0062-414c-8d9e-d9d32c69bf88",
+              "label": "event-click",
+              "position": {
+                "x": 1264,
+                "y": 36
+              },
+              "selected": false,
+              "type": "BlockBasic"
+            },
+            {
+              "computedPosition": {
+                "x": 1848,
+                "y": 36,
+                "z": 0
+              },
+              "data": {
+                "description": "Request Download",
+                "disableBlock": false,
+                "findBy": "cssSelector",
+                "markEl": false,
+                "multiple": false,
+                "selector": "div[aria-label=\"Request a download\"]",
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-output-1",
+                    "position": "right",
+                    "x": 195.99995930989584,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "fd7f1687-e768-4a5e-8ae9-9c87ad24ae39",
+              "label": "event-click",
+              "position": {
+                "x": 1848,
+                "y": 36
+              },
+              "selected": false,
+              "type": "BlockBasic"
+            },
+            {
+              "computedPosition": {
+                "x": 1556,
+                "y": 36,
+                "z": 0
+              },
+              "data": {
+                "code": "let divs = document.getElementsByTagName('span');\nfor(let i=0;i<divs.length;i++){\n  if(divs[i].innerHTML == 'All time'){\n    divs[i].click()\n    break;\n  }\n}\n\nautomaNextBlock()",
+                "description": "Select 'All time'\n",
+                "disableBlock": false,
+                "everyNewTab": false,
+                "preloadScripts": [],
+                "runBeforeLoad": false,
+                "timeout": 20000
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "5vrvd7g-output-1",
+                    "position": "right",
+                    "x": 195.999755859375,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "5vrvd7g-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "5vrvd7g",
+              "label": "javascript-code",
+              "position": {
+                "x": 1556,
+                "y": 36
+              },
+              "selected": false,
+              "type": "BlockBasic"
+            },
+            {
+              "computedPosition": {
+                "x": 680,
+                "y": 158,
+                "z": 1000
+              },
+              "data": {
+                "code": "const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'started' }\n  }\n});\nwindow.dispatchEvent(event);",
+                "description": "",
+                "disableBlock": false,
+                "everyNewTab": false,
+                "preloadScripts": [],
+                "runBeforeLoad": false,
+                "timeout": 20000
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "m5en8tm-output-1",
+                    "position": "right",
+                    "x": 196.00001449584963,
+                    "y": 28.000014209747317,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "m5en8tm-input-1",
+                    "position": "left",
+                    "x": -19.99994945526123,
+                    "y": 28.000014209747317,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "m5en8tm",
+              "label": "javascript-code",
+              "position": {
+                "x": 680,
+                "y": 158
+              },
+              "selected": true,
+              "type": "BlockBasic"
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "bm9a669-output-1",
+                    "position": "right",
+                    "x": 196.00001449584963,
+                    "y": 28.000014209747317,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "bm9a669-input-1",
+                    "position": "left",
+                    "x": -19.99994945526123,
+                    "y": 28.000014209747317,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 2140,
+                "y": 36,
+                "z": 0
+              },
+              "data": {
+                "code": "const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'completed' }\n  }\n});\nwindow.dispatchEvent(event);",
+                "description": "Send completed signal",
+                "disableBlock": false,
+                "everyNewTab": false,
+                "preloadScripts": [],
+                "runBeforeLoad": false,
+                "timeout": 20000
+              },
+              "label": "javascript-code",
+              "id": "bm9a669",
+              "selected": false,
+              "position": {
+                "x": 2140,
+                "y": 36
+              }
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "hrok4jm-output-1",
+                    "position": "right",
+                    "x": 196.00001449584963,
+                    "y": 28.000014209747317,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "hrok4jm-input-1",
+                    "position": "left",
+                    "x": -19.99994945526123,
+                    "y": 28.000014209747317,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 2432,
+                "y": 36,
+                "z": 0
+              },
+              "data": {
+                "activeTab": true,
+                "allWindows": false,
+                "closeType": "tab",
+                "description": "",
+                "disableBlock": false,
+                "url": ""
+              },
+              "label": "close-tab",
+              "id": "hrok4jm",
+              "selected": false,
+              "position": {
+                "x": 2432,
+                "y": 36
+              }
+            }
+          ],
+          "edges": [
+            {
+              "id": "vueflow__edge-5oRquIw_AmscZUoLzCAdL-output-1-ZDnOyReNGu2LvF0eikrVj-input-1",
+              "class": "source-5oRquIw_AmscZUoLzCAdL-output-1 target-ZDnOyReNGu2LvF0eikrVj-input-1",
+              "markerEnd": "",
+              "selectable": true,
+              "source": "5oRquIw_AmscZUoLzCAdL",
+              "sourceHandle": "5oRquIw_AmscZUoLzCAdL-output-1",
+              "sourceX": 0,
+              "sourceY": 0,
+              "target": "ZDnOyReNGu2LvF0eikrVj",
+              "targetHandle": "ZDnOyReNGu2LvF0eikrVj-input-1",
+              "targetX": 0,
+              "targetY": 0,
+              "type": "default",
+              "updatable": true,
+              "z": 0
+            },
+            {
+              "id": "vueflow__edge-ZDnOyReNGu2LvF0eikrVj-output-1-faAsDA3AJIVpqI990xxwM-input-1",
+              "class": "source-ZDnOyReNGu2LvF0eikrVj-output-1 target-faAsDA3AJIVpqI990xxwM-input-1",
+              "markerEnd": "",
+              "selectable": true,
+              "source": "ZDnOyReNGu2LvF0eikrVj",
+              "sourceHandle": "ZDnOyReNGu2LvF0eikrVj-output-1",
+              "sourceX": 0,
+              "sourceY": 0,
+              "target": "faAsDA3AJIVpqI990xxwM",
+              "targetHandle": "faAsDA3AJIVpqI990xxwM-input-1",
+              "targetX": 0,
+              "targetY": 0,
+              "type": "default",
+              "updatable": true,
+              "z": 0
+            },
+            {
+              "id": "vueflow__edge-faAsDA3AJIVpqI990xxwM-output-1-s_42XIl3GJlgnlqeyZ73t-input-1",
+              "class": "source-faAsDA3AJIVpqI990xxwM-output-1 target-s_42XIl3GJlgnlqeyZ73t-input-1",
+              "markerEnd": "",
+              "selectable": true,
+              "source": "faAsDA3AJIVpqI990xxwM",
+              "sourceHandle": "faAsDA3AJIVpqI990xxwM-output-1",
+              "sourceX": 0,
+              "sourceY": 0,
+              "target": "s_42XIl3GJlgnlqeyZ73t",
+              "targetHandle": "s_42XIl3GJlgnlqeyZ73t-input-1",
+              "targetX": 0,
+              "targetY": 0,
+              "type": "default",
+              "updatable": true,
+              "z": 0
+            },
+            {
+              "id": "vueflow__edge-s_42XIl3GJlgnlqeyZ73t-output-1-cc102a07-0062-414c-8d9e-d9d32c69bf88-input-1",
+              "class": "source-s_42XIl3GJlgnlqeyZ73t-output-1 target-cc102a07-0062-414c-8d9e-d9d32c69bf88-input-1",
+              "markerEnd": "",
+              "selectable": true,
+              "source": "s_42XIl3GJlgnlqeyZ73t",
+              "sourceHandle": "s_42XIl3GJlgnlqeyZ73t-output-1",
+              "sourceX": 0,
+              "sourceY": 0,
+              "target": "cc102a07-0062-414c-8d9e-d9d32c69bf88",
+              "targetHandle": "cc102a07-0062-414c-8d9e-d9d32c69bf88-input-1",
+              "targetX": 0,
+              "targetY": 0,
+              "type": "default",
+              "updatable": true,
+              "z": 0
+            },
+            {
+              "id": "vueflow__edge-cc102a07-0062-414c-8d9e-d9d32c69bf88cc102a07-0062-414c-8d9e-d9d32c69bf88-output-1-5vrvd7g5vrvd7g-input-1",
+              "class": "source-cc102a07-0062-414c-8d9e-d9d32c69bf88-output-1 target-5vrvd7g-input-1",
+              "markerEnd": "",
+              "selectable": true,
+              "source": "cc102a07-0062-414c-8d9e-d9d32c69bf88",
+              "sourceHandle": "cc102a07-0062-414c-8d9e-d9d32c69bf88-output-1",
+              "sourceX": 0,
+              "sourceY": 0,
+              "target": "5vrvd7g",
+              "targetHandle": "5vrvd7g-input-1",
+              "targetX": 0,
+              "targetY": 0,
+              "type": "default",
+              "updatable": true,
+              "z": 0
+            },
+            {
+              "id": "vueflow__edge-5vrvd7g5vrvd7g-output-1-fd7f1687-e768-4a5e-8ae9-9c87ad24ae39fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-input-1",
+              "class": "source-5vrvd7g-output-1 target-fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-input-1",
+              "markerEnd": "",
+              "selectable": true,
+              "source": "5vrvd7g",
+              "sourceHandle": "5vrvd7g-output-1",
+              "sourceX": 0,
+              "sourceY": 0,
+              "target": "fd7f1687-e768-4a5e-8ae9-9c87ad24ae39",
+              "targetHandle": "fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-input-1",
+              "targetX": 0,
+              "targetY": 0,
+              "type": "default",
+              "updatable": true,
+              "z": 0
+            },
+            {
+              "id": "vueflow__edge-ZDnOyReNGu2LvF0eikrVjZDnOyReNGu2LvF0eikrVj-output-1-m5en8tmm5en8tm-input-1",
+              "source": "ZDnOyReNGu2LvF0eikrVj",
+              "sourceHandle": "ZDnOyReNGu2LvF0eikrVj-output-1",
+              "target": "m5en8tm",
+              "targetHandle": "m5en8tm-input-1",
+              "class": "source-ZDnOyReNGu2LvF0eikrVj-output-1 target-m5en8tm-input-1",
+              "updatable": true,
+              "selectable": true,
+              "type": "default",
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0
+            },
+            {
+              "id": "edge-x90ybvf",
+              "selected": false,
+              "target": "hrok4jm",
+              "source": "bm9a669",
+              "targetHandle": "hrok4jm-input-1",
+              "sourceHandle": "bm9a669-output-1",
+              "updatable": true,
+              "selectable": true,
+              "type": "default",
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0
+            },
+            {
+              "id": "vueflow__edge-fd7f1687-e768-4a5e-8ae9-9c87ad24ae39fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-output-1-bm9a669bm9a669-input-1",
+              "source": "fd7f1687-e768-4a5e-8ae9-9c87ad24ae39",
+              "sourceHandle": "fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-output-1",
+              "target": "bm9a669",
+              "targetHandle": "bm9a669-input-1",
+              "class": "source-fd7f1687-e768-4a5e-8ae9-9c87ad24ae39-output-1 target-bm9a669-input-1",
+              "updatable": true,
+              "selectable": true,
+              "type": "default",
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0
+            }
+          ],
+          "position": [
+            -48,
+            390.7
+          ],
+          "zoom": 0.6
+        },
+        "settings": {
+          "blockDelay": 0,
+          "debugMode": false,
+          "defaultColumnName": "column",
+          "executedBlockOnWeb": false,
+          "inputAutocomplete": true,
+          "insertDefaultColumn": true,
+          "notification": true,
+          "onError": "stop-workflow",
+          "publicId": "",
+          "restartTimes": 3,
+          "reuseLastState": false,
+          "saveLog": true,
+          "tabLoadTimeout": 30000
+        },
+        "globalData": "[{ \"key\": \"value\" }]",
+        "description": "",
+        "includedWorkflows": {}
+      }
     }
   },
   {
@@ -16,7 +746,802 @@
     "automation": {
       "format": "automa",
       "version": "0.1",
-      "definition": {"extVersion":"1.18.1","name":"Google DSAR","icon":"riGlobalLine","table":[],"version":"1.18.1","drawflow":{"nodes":[{"computedPosition":{"x":96,"y":97,"z":0},"data":{"activeInInput":false,"contextMenuName":"","contextTypes":[],"date":"","days":[],"delay":5,"description":"","disableBlock":false,"interval":60,"isUrlRegex":false,"observeElement":{"baseElOptions":{"attributeFilter":[],"attributes":false,"characterData":false,"childList":true,"subtree":false},"baseSelector":"","matchPattern":"","selector":"","targetOptions":{"attributeFilter":[],"attributes":false,"characterData":false,"childList":true,"subtree":false}},"shortcut":"","time":"00:00","type":"manual","url":""},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"w8mVgv2A0WjHWMafV8sCM-output-1","position":"right","x":196.00001017252606,"y":28.000030517578125,"width":16,"height":16}]},"id":"w8mVgv2A0WjHWMafV8sCM","label":"trigger","position":{"x":96,"y":97},"type":"BlockBasic"},{"computedPosition":{"x":388,"y":97,"z":0},"data":{"active":false,"customUserAgent":false,"description":"","disableBlock":false,"inGroup":false,"onError":{"dataToInsert":[],"enable":false,"insertData":false,"retry":false,"retryInterval":2,"retryTimes":1,"toDo":"error"},"updatePrevTab":false,"url":"https://takeout.google.com/","userAgent":"","waitTabLoaded":false},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"-fKQEarOlHLrmPXLrncsX-output-1","position":"right","x":196.00006103515625,"y":28.000030517578125,"width":16,"height":16}],"target":[{"id":"-fKQEarOlHLrmPXLrncsX-input-1","position":"left","x":-20,"y":28.000030517578125,"width":16,"height":16}]},"id":"-fKQEarOlHLrmPXLrncsX","label":"new-tab","position":{"x":388,"y":97},"selected":false,"type":"BlockBasic"},{"computedPosition":{"x":680,"y":36,"z":0},"data":{"description":"Auswahl aufheben","disableBlock":false,"findBy":"xpath","markEl":false,"multiple":false,"selector":"/html/body/c-wiz/div/c-wiz/div/div[2]/div[2]/c-wiz/div/div/div/div/div[2]/c-wiz[1]/div/div[3]/div/div[1]/div[1]/div[2]/div[2]/div/button/span","waitForSelector":true,"waitSelectorTimeout":5000},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"V2Ouw0U07R2apA1P7e5ha-output-1","position":"right","x":195.99995930989584,"y":27.999979654947918,"width":16,"height":16}],"target":[{"id":"V2Ouw0U07R2apA1P7e5ha-input-1","position":"left","x":-20,"y":27.999979654947918,"width":16,"height":16}]},"id":"V2Ouw0U07R2apA1P7e5ha","label":"event-click","position":{"x":680,"y":36},"selected":false,"type":"BlockBasic"},{"computedPosition":{"x":972,"y":36,"z":0},"data":{"description":"Alle auswählen","disableBlock":false,"findBy":"xpath","markEl":false,"multiple":false,"selector":"/html/body/c-wiz/div/c-wiz/div/div[2]/div[2]/c-wiz/div/div/div/div/div[2]/c-wiz[1]/div/div[3]/div/div[1]/div[1]/div[2]/div[1]/div/button/span","waitForSelector":true,"waitSelectorTimeout":5000},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"SPLNKwfGxvNV74tCsC0Vt-output-1","position":"right","x":195.99995930989584,"y":27.999979654947918,"width":16,"height":16}],"target":[{"id":"SPLNKwfGxvNV74tCsC0Vt-input-1","position":"left","x":-20,"y":27.999979654947918,"width":16,"height":16}]},"id":"SPLNKwfGxvNV74tCsC0Vt","label":"event-click","position":{"x":972,"y":36},"selected":false,"type":"BlockBasic"},{"computedPosition":{"x":1264,"y":36,"z":0},"data":{"description":"","disableBlock":false,"findBy":"cssSelector","incX":false,"incY":false,"markEl":false,"multiple":false,"scrollIntoView":false,"scrollX":0,"scrollY":6498,"selector":"html","smooth":true,"waitForSelector":false,"waitSelectorTimeout":5000},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"k0OlbCu6dNsWF1dRZXKGN-output-1","position":"right","x":195.99995930989584,"y":27.999979654947918,"width":16,"height":16}],"target":[{"id":"k0OlbCu6dNsWF1dRZXKGN-input-1","position":"left","x":-20,"y":27.999979654947918,"width":16,"height":16}]},"id":"k0OlbCu6dNsWF1dRZXKGN","label":"element-scroll","position":{"x":1264,"y":36},"type":"BlockBasic"},{"computedPosition":{"x":1556,"y":36,"z":0},"data":{"description":"Nächster Schritt","disableBlock":false,"findBy":"xpath","markEl":false,"multiple":false,"selector":"/html/body/c-wiz/div/c-wiz/div/div[2]/div[2]/c-wiz/div/div/div/div/div[2]/c-wiz[1]/div/div[3]/div/div[2]/div/div/button/span","waitForSelector":true,"waitSelectorTimeout":5000},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"I8f5p7oW8e03e-XWqDk1x-output-1","position":"right","x":195.99995930989584,"y":27.999979654947918,"width":16,"height":16}],"target":[{"id":"I8f5p7oW8e03e-XWqDk1x-input-1","position":"left","x":-20,"y":27.999979654947918,"width":16,"height":16}]},"id":"I8f5p7oW8e03e-XWqDk1x","label":"event-click","position":{"x":1556,"y":36},"selected":false,"type":"BlockBasic"},{"computedPosition":{"x":1848,"y":36,"z":0},"data":{"description":"","disableBlock":false,"findBy":"cssSelector","incX":false,"incY":false,"markEl":false,"multiple":false,"scrollIntoView":false,"scrollX":0,"scrollY":322,"selector":"html","smooth":true,"waitForSelector":false,"waitSelectorTimeout":5000},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"E4eOzzmpYkMgCeK_QAtv6-output-1","position":"right","x":195.99995930989584,"y":27.999979654947918,"width":16,"height":16}],"target":[{"id":"E4eOzzmpYkMgCeK_QAtv6-input-1","position":"left","x":-20,"y":27.999979654947918,"width":16,"height":16}]},"id":"E4eOzzmpYkMgCeK_QAtv6","label":"element-scroll","position":{"x":1848,"y":36},"type":"BlockBasic"},{"computedPosition":{"x":2140,"y":36,"z":0},"data":{"description":"Export erstellen","disableBlock":false,"findBy":"xpath","markEl":true,"multiple":false,"selector":"/html/body/c-wiz/div/c-wiz/div/div[2]/div[2]/c-wiz/div/div/div/div/div[2]/c-wiz[2]/div/div[3]/div/div[2]/div/div/button/div[3]","waitForSelector":true,"waitSelectorTimeout":5000},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"H8QFA-V45rfPBhHncExl8-output-1","position":"right","x":195.99995930989584,"y":27.999979654947918,"width":16,"height":16}],"target":[{"id":"H8QFA-V45rfPBhHncExl8-input-1","position":"left","x":-20,"y":27.999979654947918,"width":16,"height":16}]},"id":"H8QFA-V45rfPBhHncExl8","label":"event-click","position":{"x":2140,"y":36},"selected":false,"type":"BlockBasic"},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"m9c2zjj-output-1","position":"right","x":195.99995930989584,"y":27.999979654947918,"width":16,"height":16}],"target":[{"id":"m9c2zjj-input-1","position":"left","x":-20,"y":27.999979654947918,"width":16,"height":16}]},"computedPosition":{"x":680,"y":158,"z":0},"data":{"code":"const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'started' }\n  }\n});\nwindow.dispatchEvent(event);","description":"Send start signal","disableBlock":false,"everyNewTab":false,"preloadScripts":[],"runBeforeLoad":false,"timeout":20000},"label":"javascript-code","id":"m9c2zjj","selected":false,"position":{"x":680,"y":158}},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"kl9udb1-output-1","position":"right","x":196.00016276041669,"y":27.999979654947918,"width":16,"height":16}],"target":[{"id":"kl9udb1-input-1","position":"left","x":-20,"y":27.999979654947918,"width":16,"height":16}]},"computedPosition":{"x":2432,"y":36,"z":0},"data":{"disableBlock":false,"description":"Send completed signal","timeout":20000,"code":"const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'completed' }\n  }\n});\nwindow.dispatchEvent(event);","preloadScripts":[],"everyNewTab":false,"runBeforeLoad":false},"label":"javascript-code","id":"kl9udb1","selected":false,"position":{"x":2432,"y":36}},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"am9ocwk-output-1","position":"right","x":196.00016276041669,"y":28.000030517578125,"width":16,"height":16}],"target":[{"id":"am9ocwk-input-1","position":"left","x":-20,"y":28.000030517578125,"width":16,"height":16}]},"computedPosition":{"x":2724,"y":36,"z":0},"position":{"x":2724,"y":36},"label":"close-tab","data":{"disableBlock":false,"url":"","description":"","activeTab":true,"closeType":"tab","allWindows":false},"id":"am9ocwk","selected":false}],"edges":[{"id":"vueflow__edge-w8mVgv2A0WjHWMafV8sCM-output-1--fKQEarOlHLrmPXLrncsX-input-1","class":"source-w8mVgv2A0WjHWMafV8sCM-output-1 target--fKQEarOlHLrmPXLrncsX-input-1","markerEnd":"","selectable":true,"source":"w8mVgv2A0WjHWMafV8sCM","sourceHandle":"w8mVgv2A0WjHWMafV8sCM-output-1","sourceX":0,"sourceY":0,"target":"-fKQEarOlHLrmPXLrncsX","targetHandle":"-fKQEarOlHLrmPXLrncsX-input-1","targetX":0,"targetY":0,"type":"default","updatable":true,"z":0},{"id":"vueflow__edge--fKQEarOlHLrmPXLrncsX-output-1-V2Ouw0U07R2apA1P7e5ha-input-1","class":"source--fKQEarOlHLrmPXLrncsX-output-1 target-V2Ouw0U07R2apA1P7e5ha-input-1","markerEnd":"","selectable":true,"source":"-fKQEarOlHLrmPXLrncsX","sourceHandle":"-fKQEarOlHLrmPXLrncsX-output-1","sourceX":0,"sourceY":0,"target":"V2Ouw0U07R2apA1P7e5ha","targetHandle":"V2Ouw0U07R2apA1P7e5ha-input-1","targetX":0,"targetY":0,"type":"default","updatable":true,"z":0},{"id":"vueflow__edge-V2Ouw0U07R2apA1P7e5ha-output-1-SPLNKwfGxvNV74tCsC0Vt-input-1","class":"source-V2Ouw0U07R2apA1P7e5ha-output-1 target-SPLNKwfGxvNV74tCsC0Vt-input-1","markerEnd":"","selectable":true,"source":"V2Ouw0U07R2apA1P7e5ha","sourceHandle":"V2Ouw0U07R2apA1P7e5ha-output-1","sourceX":0,"sourceY":0,"target":"SPLNKwfGxvNV74tCsC0Vt","targetHandle":"SPLNKwfGxvNV74tCsC0Vt-input-1","targetX":0,"targetY":0,"type":"default","updatable":true,"z":0},{"id":"vueflow__edge-SPLNKwfGxvNV74tCsC0Vt-output-1-k0OlbCu6dNsWF1dRZXKGN-input-1","class":"source-SPLNKwfGxvNV74tCsC0Vt-output-1 target-k0OlbCu6dNsWF1dRZXKGN-input-1","markerEnd":"","selectable":true,"source":"SPLNKwfGxvNV74tCsC0Vt","sourceHandle":"SPLNKwfGxvNV74tCsC0Vt-output-1","sourceX":0,"sourceY":0,"target":"k0OlbCu6dNsWF1dRZXKGN","targetHandle":"k0OlbCu6dNsWF1dRZXKGN-input-1","targetX":0,"targetY":0,"type":"default","updatable":true,"z":0},{"id":"vueflow__edge-k0OlbCu6dNsWF1dRZXKGN-output-1-I8f5p7oW8e03e-XWqDk1x-input-1","class":"source-k0OlbCu6dNsWF1dRZXKGN-output-1 target-I8f5p7oW8e03e-XWqDk1x-input-1","markerEnd":"","selectable":true,"source":"k0OlbCu6dNsWF1dRZXKGN","sourceHandle":"k0OlbCu6dNsWF1dRZXKGN-output-1","sourceX":0,"sourceY":0,"target":"I8f5p7oW8e03e-XWqDk1x","targetHandle":"I8f5p7oW8e03e-XWqDk1x-input-1","targetX":0,"targetY":0,"type":"default","updatable":true,"z":0},{"id":"vueflow__edge-I8f5p7oW8e03e-XWqDk1x-output-1-E4eOzzmpYkMgCeK_QAtv6-input-1","class":"source-I8f5p7oW8e03e-XWqDk1x-output-1 target-E4eOzzmpYkMgCeK_QAtv6-input-1","markerEnd":"","selectable":true,"source":"I8f5p7oW8e03e-XWqDk1x","sourceHandle":"I8f5p7oW8e03e-XWqDk1x-output-1","sourceX":0,"sourceY":0,"target":"E4eOzzmpYkMgCeK_QAtv6","targetHandle":"E4eOzzmpYkMgCeK_QAtv6-input-1","targetX":0,"targetY":0,"type":"default","updatable":true,"z":0},{"id":"vueflow__edge-E4eOzzmpYkMgCeK_QAtv6-output-1-H8QFA-V45rfPBhHncExl8-input-1","class":"source-E4eOzzmpYkMgCeK_QAtv6-output-1 target-H8QFA-V45rfPBhHncExl8-input-1","markerEnd":"","selectable":true,"source":"E4eOzzmpYkMgCeK_QAtv6","sourceHandle":"E4eOzzmpYkMgCeK_QAtv6-output-1","sourceX":0,"sourceY":0,"target":"H8QFA-V45rfPBhHncExl8","targetHandle":"H8QFA-V45rfPBhHncExl8-input-1","targetX":0,"targetY":0,"type":"default","updatable":true,"z":0},{"id":"vueflow__edge--fKQEarOlHLrmPXLrncsX-fKQEarOlHLrmPXLrncsX-output-1-m9c2zjjm9c2zjj-input-1","source":"-fKQEarOlHLrmPXLrncsX","sourceHandle":"-fKQEarOlHLrmPXLrncsX-output-1","target":"m9c2zjj","targetHandle":"m9c2zjj-input-1","class":"source--fKQEarOlHLrmPXLrncsX-output-1 target-m9c2zjj-input-1","updatable":true,"selectable":true,"type":"default","markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0},{"id":"vueflow__edge-H8QFA-V45rfPBhHncExl8H8QFA-V45rfPBhHncExl8-output-1-kl9udb1kl9udb1-input-1","source":"H8QFA-V45rfPBhHncExl8","sourceHandle":"H8QFA-V45rfPBhHncExl8-output-1","target":"kl9udb1","targetHandle":"kl9udb1-input-1","class":"source-H8QFA-V45rfPBhHncExl8-output-1 target-kl9udb1-input-1","updatable":true,"selectable":true,"type":"default","markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0},{"id":"vueflow__edge-kl9udb1kl9udb1-output-1-am9ocwkam9ocwk-input-1","source":"kl9udb1","sourceHandle":"kl9udb1-output-1","target":"am9ocwk","targetHandle":"am9ocwk-input-1","class":"source-kl9udb1-output-1 target-am9ocwk-input-1","updatable":true,"selectable":true,"type":"default","markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0}],"position":[-360.6,394.7],"zoom":0.6},"settings":{"blockDelay":0,"debugMode":false,"defaultColumnName":"column","executedBlockOnWeb":false,"inputAutocomplete":true,"insertDefaultColumn":false,"notification":true,"onError":"stop-workflow","publicId":"","restartTimes":3,"reuseLastState":false,"saveLog":true},"globalData":"[{ \"key\": \"value\" }]","description":"","includedWorkflows":{}}
+      "definition": {
+        "extVersion": "1.18.1",
+        "name": "Google DSAR",
+        "icon": "riGlobalLine",
+        "table": [],
+        "version": "1.18.1",
+        "drawflow": {
+          "nodes": [
+            {
+              "computedPosition": {
+                "x": 96,
+                "y": 97,
+                "z": 0
+              },
+              "data": {
+                "activeInInput": false,
+                "contextMenuName": "",
+                "contextTypes": [],
+                "date": "",
+                "days": [],
+                "delay": 5,
+                "description": "",
+                "disableBlock": false,
+                "interval": 60,
+                "isUrlRegex": false,
+                "observeElement": {
+                  "baseElOptions": {
+                    "attributeFilter": [],
+                    "attributes": false,
+                    "characterData": false,
+                    "childList": true,
+                    "subtree": false
+                  },
+                  "baseSelector": "",
+                  "matchPattern": "",
+                  "selector": "",
+                  "targetOptions": {
+                    "attributeFilter": [],
+                    "attributes": false,
+                    "characterData": false,
+                    "childList": true,
+                    "subtree": false
+                  }
+                },
+                "shortcut": "",
+                "time": "00:00",
+                "type": "manual",
+                "url": ""
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "w8mVgv2A0WjHWMafV8sCM-output-1",
+                    "position": "right",
+                    "x": 196.00001017252606,
+                    "y": 28.000030517578125,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "w8mVgv2A0WjHWMafV8sCM",
+              "label": "trigger",
+              "position": {
+                "x": 96,
+                "y": 97
+              },
+              "type": "BlockBasic"
+            },
+            {
+              "computedPosition": {
+                "x": 388,
+                "y": 97,
+                "z": 0
+              },
+              "data": {
+                "active": false,
+                "customUserAgent": false,
+                "description": "",
+                "disableBlock": false,
+                "inGroup": false,
+                "onError": {
+                  "dataToInsert": [],
+                  "enable": false,
+                  "insertData": false,
+                  "retry": false,
+                  "retryInterval": 2,
+                  "retryTimes": 1,
+                  "toDo": "error"
+                },
+                "updatePrevTab": false,
+                "url": "https://takeout.google.com/",
+                "userAgent": "",
+                "waitTabLoaded": false
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "-fKQEarOlHLrmPXLrncsX-output-1",
+                    "position": "right",
+                    "x": 196.00006103515625,
+                    "y": 28.000030517578125,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "-fKQEarOlHLrmPXLrncsX-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 28.000030517578125,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "-fKQEarOlHLrmPXLrncsX",
+              "label": "new-tab",
+              "position": {
+                "x": 388,
+                "y": 97
+              },
+              "selected": false,
+              "type": "BlockBasic"
+            },
+            {
+              "computedPosition": {
+                "x": 680,
+                "y": 36,
+                "z": 0
+              },
+              "data": {
+                "description": "Auswahl aufheben",
+                "disableBlock": false,
+                "findBy": "xpath",
+                "markEl": false,
+                "multiple": false,
+                "selector": "/html/body/c-wiz/div/c-wiz/div/div[2]/div[2]/c-wiz/div/div/div/div/div[2]/c-wiz[1]/div/div[3]/div/div[1]/div[1]/div[2]/div[2]/div/button/span",
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "V2Ouw0U07R2apA1P7e5ha-output-1",
+                    "position": "right",
+                    "x": 195.99995930989584,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "V2Ouw0U07R2apA1P7e5ha-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "V2Ouw0U07R2apA1P7e5ha",
+              "label": "event-click",
+              "position": {
+                "x": 680,
+                "y": 36
+              },
+              "selected": false,
+              "type": "BlockBasic"
+            },
+            {
+              "computedPosition": {
+                "x": 972,
+                "y": 36,
+                "z": 0
+              },
+              "data": {
+                "description": "Alle auswählen",
+                "disableBlock": false,
+                "findBy": "xpath",
+                "markEl": false,
+                "multiple": false,
+                "selector": "/html/body/c-wiz/div/c-wiz/div/div[2]/div[2]/c-wiz/div/div/div/div/div[2]/c-wiz[1]/div/div[3]/div/div[1]/div[1]/div[2]/div[1]/div/button/span",
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "SPLNKwfGxvNV74tCsC0Vt-output-1",
+                    "position": "right",
+                    "x": 195.99995930989584,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "SPLNKwfGxvNV74tCsC0Vt-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "SPLNKwfGxvNV74tCsC0Vt",
+              "label": "event-click",
+              "position": {
+                "x": 972,
+                "y": 36
+              },
+              "selected": false,
+              "type": "BlockBasic"
+            },
+            {
+              "computedPosition": {
+                "x": 1264,
+                "y": 36,
+                "z": 0
+              },
+              "data": {
+                "description": "",
+                "disableBlock": false,
+                "findBy": "cssSelector",
+                "incX": false,
+                "incY": false,
+                "markEl": false,
+                "multiple": false,
+                "scrollIntoView": false,
+                "scrollX": 0,
+                "scrollY": 6498,
+                "selector": "html",
+                "smooth": true,
+                "waitForSelector": false,
+                "waitSelectorTimeout": 5000
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "k0OlbCu6dNsWF1dRZXKGN-output-1",
+                    "position": "right",
+                    "x": 195.99995930989584,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "k0OlbCu6dNsWF1dRZXKGN-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "k0OlbCu6dNsWF1dRZXKGN",
+              "label": "element-scroll",
+              "position": {
+                "x": 1264,
+                "y": 36
+              },
+              "type": "BlockBasic"
+            },
+            {
+              "computedPosition": {
+                "x": 1556,
+                "y": 36,
+                "z": 0
+              },
+              "data": {
+                "description": "Nächster Schritt",
+                "disableBlock": false,
+                "findBy": "xpath",
+                "markEl": false,
+                "multiple": false,
+                "selector": "/html/body/c-wiz/div/c-wiz/div/div[2]/div[2]/c-wiz/div/div/div/div/div[2]/c-wiz[1]/div/div[3]/div/div[2]/div/div/button/span",
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "I8f5p7oW8e03e-XWqDk1x-output-1",
+                    "position": "right",
+                    "x": 195.99995930989584,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "I8f5p7oW8e03e-XWqDk1x-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "I8f5p7oW8e03e-XWqDk1x",
+              "label": "event-click",
+              "position": {
+                "x": 1556,
+                "y": 36
+              },
+              "selected": false,
+              "type": "BlockBasic"
+            },
+            {
+              "computedPosition": {
+                "x": 1848,
+                "y": 36,
+                "z": 0
+              },
+              "data": {
+                "description": "",
+                "disableBlock": false,
+                "findBy": "cssSelector",
+                "incX": false,
+                "incY": false,
+                "markEl": false,
+                "multiple": false,
+                "scrollIntoView": false,
+                "scrollX": 0,
+                "scrollY": 322,
+                "selector": "html",
+                "smooth": true,
+                "waitForSelector": false,
+                "waitSelectorTimeout": 5000
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "E4eOzzmpYkMgCeK_QAtv6-output-1",
+                    "position": "right",
+                    "x": 195.99995930989584,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "E4eOzzmpYkMgCeK_QAtv6-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "E4eOzzmpYkMgCeK_QAtv6",
+              "label": "element-scroll",
+              "position": {
+                "x": 1848,
+                "y": 36
+              },
+              "type": "BlockBasic"
+            },
+            {
+              "computedPosition": {
+                "x": 2140,
+                "y": 36,
+                "z": 0
+              },
+              "data": {
+                "description": "Export erstellen",
+                "disableBlock": false,
+                "findBy": "xpath",
+                "markEl": true,
+                "multiple": false,
+                "selector": "/html/body/c-wiz/div/c-wiz/div/div[2]/div[2]/c-wiz/div/div/div/div/div[2]/c-wiz[2]/div/div[3]/div/div[2]/div/div/button/div[3]",
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "H8QFA-V45rfPBhHncExl8-output-1",
+                    "position": "right",
+                    "x": 195.99995930989584,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "H8QFA-V45rfPBhHncExl8-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "H8QFA-V45rfPBhHncExl8",
+              "label": "event-click",
+              "position": {
+                "x": 2140,
+                "y": 36
+              },
+              "selected": false,
+              "type": "BlockBasic"
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "m9c2zjj-output-1",
+                    "position": "right",
+                    "x": 195.99995930989584,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "m9c2zjj-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 680,
+                "y": 158,
+                "z": 0
+              },
+              "data": {
+                "code": "const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'started' }\n  }\n});\nwindow.dispatchEvent(event);",
+                "description": "Send start signal",
+                "disableBlock": false,
+                "everyNewTab": false,
+                "preloadScripts": [],
+                "runBeforeLoad": false,
+                "timeout": 20000
+              },
+              "label": "javascript-code",
+              "id": "m9c2zjj",
+              "selected": false,
+              "position": {
+                "x": 680,
+                "y": 158
+              }
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "kl9udb1-output-1",
+                    "position": "right",
+                    "x": 196.00016276041669,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "kl9udb1-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 27.999979654947918,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 2432,
+                "y": 36,
+                "z": 0
+              },
+              "data": {
+                "disableBlock": false,
+                "description": "Send completed signal",
+                "timeout": 20000,
+                "code": "const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'completed' }\n  }\n});\nwindow.dispatchEvent(event);",
+                "preloadScripts": [],
+                "everyNewTab": false,
+                "runBeforeLoad": false
+              },
+              "label": "javascript-code",
+              "id": "kl9udb1",
+              "selected": false,
+              "position": {
+                "x": 2432,
+                "y": 36
+              }
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "am9ocwk-output-1",
+                    "position": "right",
+                    "x": 196.00016276041669,
+                    "y": 28.000030517578125,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "am9ocwk-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 28.000030517578125,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 2724,
+                "y": 36,
+                "z": 0
+              },
+              "position": {
+                "x": 2724,
+                "y": 36
+              },
+              "label": "close-tab",
+              "data": {
+                "disableBlock": false,
+                "url": "",
+                "description": "",
+                "activeTab": true,
+                "closeType": "tab",
+                "allWindows": false
+              },
+              "id": "am9ocwk",
+              "selected": false
+            }
+          ],
+          "edges": [
+            {
+              "id": "vueflow__edge-w8mVgv2A0WjHWMafV8sCM-output-1--fKQEarOlHLrmPXLrncsX-input-1",
+              "class": "source-w8mVgv2A0WjHWMafV8sCM-output-1 target--fKQEarOlHLrmPXLrncsX-input-1",
+              "markerEnd": "",
+              "selectable": true,
+              "source": "w8mVgv2A0WjHWMafV8sCM",
+              "sourceHandle": "w8mVgv2A0WjHWMafV8sCM-output-1",
+              "sourceX": 0,
+              "sourceY": 0,
+              "target": "-fKQEarOlHLrmPXLrncsX",
+              "targetHandle": "-fKQEarOlHLrmPXLrncsX-input-1",
+              "targetX": 0,
+              "targetY": 0,
+              "type": "default",
+              "updatable": true,
+              "z": 0
+            },
+            {
+              "id": "vueflow__edge--fKQEarOlHLrmPXLrncsX-output-1-V2Ouw0U07R2apA1P7e5ha-input-1",
+              "class": "source--fKQEarOlHLrmPXLrncsX-output-1 target-V2Ouw0U07R2apA1P7e5ha-input-1",
+              "markerEnd": "",
+              "selectable": true,
+              "source": "-fKQEarOlHLrmPXLrncsX",
+              "sourceHandle": "-fKQEarOlHLrmPXLrncsX-output-1",
+              "sourceX": 0,
+              "sourceY": 0,
+              "target": "V2Ouw0U07R2apA1P7e5ha",
+              "targetHandle": "V2Ouw0U07R2apA1P7e5ha-input-1",
+              "targetX": 0,
+              "targetY": 0,
+              "type": "default",
+              "updatable": true,
+              "z": 0
+            },
+            {
+              "id": "vueflow__edge-V2Ouw0U07R2apA1P7e5ha-output-1-SPLNKwfGxvNV74tCsC0Vt-input-1",
+              "class": "source-V2Ouw0U07R2apA1P7e5ha-output-1 target-SPLNKwfGxvNV74tCsC0Vt-input-1",
+              "markerEnd": "",
+              "selectable": true,
+              "source": "V2Ouw0U07R2apA1P7e5ha",
+              "sourceHandle": "V2Ouw0U07R2apA1P7e5ha-output-1",
+              "sourceX": 0,
+              "sourceY": 0,
+              "target": "SPLNKwfGxvNV74tCsC0Vt",
+              "targetHandle": "SPLNKwfGxvNV74tCsC0Vt-input-1",
+              "targetX": 0,
+              "targetY": 0,
+              "type": "default",
+              "updatable": true,
+              "z": 0
+            },
+            {
+              "id": "vueflow__edge-SPLNKwfGxvNV74tCsC0Vt-output-1-k0OlbCu6dNsWF1dRZXKGN-input-1",
+              "class": "source-SPLNKwfGxvNV74tCsC0Vt-output-1 target-k0OlbCu6dNsWF1dRZXKGN-input-1",
+              "markerEnd": "",
+              "selectable": true,
+              "source": "SPLNKwfGxvNV74tCsC0Vt",
+              "sourceHandle": "SPLNKwfGxvNV74tCsC0Vt-output-1",
+              "sourceX": 0,
+              "sourceY": 0,
+              "target": "k0OlbCu6dNsWF1dRZXKGN",
+              "targetHandle": "k0OlbCu6dNsWF1dRZXKGN-input-1",
+              "targetX": 0,
+              "targetY": 0,
+              "type": "default",
+              "updatable": true,
+              "z": 0
+            },
+            {
+              "id": "vueflow__edge-k0OlbCu6dNsWF1dRZXKGN-output-1-I8f5p7oW8e03e-XWqDk1x-input-1",
+              "class": "source-k0OlbCu6dNsWF1dRZXKGN-output-1 target-I8f5p7oW8e03e-XWqDk1x-input-1",
+              "markerEnd": "",
+              "selectable": true,
+              "source": "k0OlbCu6dNsWF1dRZXKGN",
+              "sourceHandle": "k0OlbCu6dNsWF1dRZXKGN-output-1",
+              "sourceX": 0,
+              "sourceY": 0,
+              "target": "I8f5p7oW8e03e-XWqDk1x",
+              "targetHandle": "I8f5p7oW8e03e-XWqDk1x-input-1",
+              "targetX": 0,
+              "targetY": 0,
+              "type": "default",
+              "updatable": true,
+              "z": 0
+            },
+            {
+              "id": "vueflow__edge-I8f5p7oW8e03e-XWqDk1x-output-1-E4eOzzmpYkMgCeK_QAtv6-input-1",
+              "class": "source-I8f5p7oW8e03e-XWqDk1x-output-1 target-E4eOzzmpYkMgCeK_QAtv6-input-1",
+              "markerEnd": "",
+              "selectable": true,
+              "source": "I8f5p7oW8e03e-XWqDk1x",
+              "sourceHandle": "I8f5p7oW8e03e-XWqDk1x-output-1",
+              "sourceX": 0,
+              "sourceY": 0,
+              "target": "E4eOzzmpYkMgCeK_QAtv6",
+              "targetHandle": "E4eOzzmpYkMgCeK_QAtv6-input-1",
+              "targetX": 0,
+              "targetY": 0,
+              "type": "default",
+              "updatable": true,
+              "z": 0
+            },
+            {
+              "id": "vueflow__edge-E4eOzzmpYkMgCeK_QAtv6-output-1-H8QFA-V45rfPBhHncExl8-input-1",
+              "class": "source-E4eOzzmpYkMgCeK_QAtv6-output-1 target-H8QFA-V45rfPBhHncExl8-input-1",
+              "markerEnd": "",
+              "selectable": true,
+              "source": "E4eOzzmpYkMgCeK_QAtv6",
+              "sourceHandle": "E4eOzzmpYkMgCeK_QAtv6-output-1",
+              "sourceX": 0,
+              "sourceY": 0,
+              "target": "H8QFA-V45rfPBhHncExl8",
+              "targetHandle": "H8QFA-V45rfPBhHncExl8-input-1",
+              "targetX": 0,
+              "targetY": 0,
+              "type": "default",
+              "updatable": true,
+              "z": 0
+            },
+            {
+              "id": "vueflow__edge--fKQEarOlHLrmPXLrncsX-fKQEarOlHLrmPXLrncsX-output-1-m9c2zjjm9c2zjj-input-1",
+              "source": "-fKQEarOlHLrmPXLrncsX",
+              "sourceHandle": "-fKQEarOlHLrmPXLrncsX-output-1",
+              "target": "m9c2zjj",
+              "targetHandle": "m9c2zjj-input-1",
+              "class": "source--fKQEarOlHLrmPXLrncsX-output-1 target-m9c2zjj-input-1",
+              "updatable": true,
+              "selectable": true,
+              "type": "default",
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0
+            },
+            {
+              "id": "vueflow__edge-H8QFA-V45rfPBhHncExl8H8QFA-V45rfPBhHncExl8-output-1-kl9udb1kl9udb1-input-1",
+              "source": "H8QFA-V45rfPBhHncExl8",
+              "sourceHandle": "H8QFA-V45rfPBhHncExl8-output-1",
+              "target": "kl9udb1",
+              "targetHandle": "kl9udb1-input-1",
+              "class": "source-H8QFA-V45rfPBhHncExl8-output-1 target-kl9udb1-input-1",
+              "updatable": true,
+              "selectable": true,
+              "type": "default",
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0
+            },
+            {
+              "id": "vueflow__edge-kl9udb1kl9udb1-output-1-am9ocwkam9ocwk-input-1",
+              "source": "kl9udb1",
+              "sourceHandle": "kl9udb1-output-1",
+              "target": "am9ocwk",
+              "targetHandle": "am9ocwk-input-1",
+              "class": "source-kl9udb1-output-1 target-am9ocwk-input-1",
+              "updatable": true,
+              "selectable": true,
+              "type": "default",
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0
+            }
+          ],
+          "position": [
+            -360.6,
+            394.7
+          ],
+          "zoom": 0.6
+        },
+        "settings": {
+          "blockDelay": 0,
+          "debugMode": false,
+          "defaultColumnName": "column",
+          "executedBlockOnWeb": false,
+          "inputAutocomplete": true,
+          "insertDefaultColumn": false,
+          "notification": true,
+          "onError": "stop-workflow",
+          "publicId": "",
+          "restartTimes": 3,
+          "reuseLastState": false,
+          "saveLog": true
+        },
+        "globalData": "[{ \"key\": \"value\" }]",
+        "description": "",
+        "includedWorkflows": {}
+      }
     }
   },
   {
@@ -26,7 +1551,954 @@
     "automation": {
       "format": "automa",
       "version": "0.1",
-      "definition": {"extVersion":"1.21.1","name":"Apple DSAR","icon":"riGlobalLine","table":[],"version":"1.21.1","drawflow":{"nodes":[{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"ooNFfXPTY-Sd73p41h4sq-output-1","position":"right","x":196.00001017252606,"y":27.99999237060547,"width":16,"height":16}]},"computedPosition":{"x":96,"y":115.25,"z":0},"id":"ooNFfXPTY-Sd73p41h4sq","label":"trigger","position":{"x":96,"y":115.25},"data":{"activeInInput":false,"contextMenuName":"","contextTypes":[],"date":"","days":[],"delay":5,"description":"","disableBlock":false,"interval":60,"isUrlRegex":false,"observeElement":{"baseElOptions":{"attributeFilter":[],"attributes":false,"characterData":false,"childList":true,"subtree":false},"baseSelector":"","matchPattern":"","selector":"","targetOptions":{"attributeFilter":[],"attributes":false,"characterData":false,"childList":true,"subtree":false}},"shortcut":"","time":"00:00","type":"manual","url":""}},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"lMU2C_gLkXDhQtUu2rfND-output-1","position":"right","x":196.00006103515625,"y":27.99999237060547,"width":16,"height":16}],"target":[{"id":"lMU2C_gLkXDhQtUu2rfND-input-1","position":"left","x":-20,"y":27.99999237060547,"width":16,"height":16}]},"computedPosition":{"x":388,"y":115.25,"z":0},"id":"lMU2C_gLkXDhQtUu2rfND","label":"new-tab","position":{"x":388,"y":115.25},"data":{"active":true,"customUserAgent":false,"description":"Open privacy.apple.com","disableBlock":false,"inGroup":false,"updatePrevTab":false,"url":"https://privacy.apple.com/account","userAgent":"","waitTabLoaded":false},"selected":false},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"f58027ea-730a-4f9e-8597-7f7a72d64161-output-1","position":"right","x":195.99995022839047,"y":28.00000043801764,"width":16,"height":16}],"target":[{"id":"f58027ea-730a-4f9e-8597-7f7a72d64161-input-1","position":"left","x":-19.99999779678722,"y":28.00000043801764,"width":16,"height":16}]},"computedPosition":{"x":1562,"y":194.5,"z":0},"id":"f58027ea-730a-4f9e-8597-7f7a72d64161","label":"event-click","position":{"x":1562,"y":194.5},"data":{"description":"Data request","disableBlock":false,"findBy":"cssSelector","markEl":false,"multiple":false,"selector":"#webAppContent > privacy-app > app-container > div > main > div > privacy-home > idms-flow > div > sections-step > div > div.column.large-8.small-12.vertical-divider-padding.icon-section.icon-std-section.gdpr-section-list > div:nth-child(1) > div.icon-section-content > idms-button > div > button > span","waitForSelector":true,"waitSelectorTimeout":5000},"selected":false},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"f7d8755c-dfcb-4e60-af79-f66e7bdae070-output-1","position":"right","x":195.99995022839047,"y":28.00000043801764,"width":16,"height":16}],"target":[{"id":"f7d8755c-dfcb-4e60-af79-f66e7bdae070-input-1","position":"left","x":-19.99999779678722,"y":28.00000043801764,"width":16,"height":16}]},"computedPosition":{"x":1854,"y":194.5,"z":0},"id":"f7d8755c-dfcb-4e60-af79-f66e7bdae070","label":"event-click","position":{"x":1854,"y":194.5},"data":{"description":"Select all","disableBlock":false,"findBy":"cssSelector","markEl":false,"multiple":false,"selector":"#webAppContent > privacy-app > app-container > div > main > div > privacy-home > idms-flow > div > archive-flow > idms-flow > div > archive-app-list-step > div > div > div.row.button-bar.middle > div.column.large-4.medium-5.small-12 > div > button","waitForSelector":true,"waitSelectorTimeout":5000}},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"05dd2548-d2ed-4955-a871-40e0d99b14d6-output-1","position":"right","x":196.00009112901182,"y":28.00000043801764,"width":16,"height":16}],"target":[{"id":"05dd2548-d2ed-4955-a871-40e0d99b14d6-input-1","position":"left","x":-19.99999779678722,"y":28.00000043801764,"width":16,"height":16}]},"computedPosition":{"x":2146,"y":194.5,"z":0},"id":"05dd2548-d2ed-4955-a871-40e0d99b14d6","label":"event-click","position":{"x":2146,"y":194.5},"data":{"description":"Select all","disableBlock":false,"findBy":"cssSelector","markEl":false,"multiple":false,"selector":"#webAppContent > privacy-app > app-container > div > main > div > privacy-home > idms-flow > div > archive-flow > idms-flow > div > archive-app-list-step > div > div > div.row.button-bar.top > div:nth-child(2) > div > button","waitForSelector":true,"waitSelectorTimeout":5000}},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"-XoFzKsVo7ae3GEfjnq1q-output-1","position":"right","x":195.99995022839047,"y":28.00000043801764,"width":16,"height":16}],"target":[{"id":"-XoFzKsVo7ae3GEfjnq1q-input-1","position":"left","x":-19.99999779678722,"y":28.00000043801764,"width":16,"height":16}]},"computedPosition":{"x":2438,"y":194.5,"z":0},"id":"-XoFzKsVo7ae3GEfjnq1q","label":"event-click","position":{"x":2438,"y":194.5},"data":{"description":"Continue","disableBlock":false,"findBy":"cssSelector","markEl":false,"multiple":false,"selector":"#webAppContent > privacy-app > app-container > div > main > div > privacy-home > idms-flow > div > archive-flow > idms-flow > div > archive-app-list-step > div > div > div.row.button-bar.bottom > button:nth-child(2)","waitForSelector":true,"waitSelectorTimeout":5000}},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"5c5b7edb-1687-40cd-8002-67147089ee65-output-1","position":"right","x":196.00009112901182,"y":28.00000043801764,"width":16,"height":16}],"target":[{"id":"5c5b7edb-1687-40cd-8002-67147089ee65-input-1","position":"left","x":-19.99999779678722,"y":28.00000043801764,"width":16,"height":16}]},"computedPosition":{"x":2730,"y":194.5,"z":0},"id":"5c5b7edb-1687-40cd-8002-67147089ee65","label":"event-click","position":{"x":2730,"y":194.5},"data":{"description":"Complete request","disableBlock":false,"findBy":"xpath","markEl":false,"multiple":false,"selector":"/html/body/div[1]/privacy-app/app-container/div/main/div/privacy-home/idms-flow/div/archive-flow/idms-flow/div/archive-filesize-step/div/div/idms-step/div/div/div/div[3]/idms-toolbar/div/div/div/button[1]/div","waitForSelector":true,"waitSelectorTimeout":5000}},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"86xf0yz-output-1","position":"right","x":195.99995930989584,"y":28.000001907348633,"width":16,"height":16}],"target":[{"id":"86xf0yz-input-1","position":"left","x":-20,"y":28.000001907348633,"width":16,"height":16}]},"computedPosition":{"x":681.5,"y":36,"z":0},"data":{"disableBlock":false,"description":"Send start signal","timeout":20000,"code":"const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'started' }\n  }\n});\nwindow.dispatchEvent(event);","preloadScripts":[],"everyNewTab":false,"runBeforeLoad":false},"label":"javascript-code","id":"86xf0yz","selected":false,"position":{"x":681.5,"y":36}},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"rqdctb9-output-1","position":"right","x":196.00009112901182,"y":28.00000043801764,"width":16,"height":16}],"target":[{"id":"rqdctb9-input-1","position":"left","x":-19.99999779678722,"y":28.00000043801764,"width":16,"height":16}]},"computedPosition":{"x":3022,"y":194.5,"z":0},"data":{"disableBlock":false,"description":"Send completed signal","timeout":20000,"code":"const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'completed' }\n  }\n});\nwindow.dispatchEvent(event);","preloadScripts":[],"everyNewTab":false,"runBeforeLoad":false},"label":"javascript-code","id":"rqdctb9","selected":false,"position":{"x":3022,"y":194.5}},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"9pgww0x-output-1","position":"right","x":196.00009112901182,"y":28.00000043801764,"width":16,"height":16}],"target":[{"id":"9pgww0x-input-1","position":"left","x":-19.99999779678722,"y":28.00000043801764,"width":16,"height":16}]},"computedPosition":{"x":3314,"y":194.5,"z":0},"data":{"activeTab":true,"allWindows":false,"closeType":"tab","description":"","disableBlock":false,"url":""},"label":"close-tab","id":"9pgww0x","selected":false,"position":{"x":3314,"y":194.5}},{"type":"BlockElementExists","dimensions":{"width":195,"height":145},"handleBounds":{"source":[{"id":"aolgilr-output-1","position":"right","x":198.9999358078464,"y":64.59374112305345,"width":16,"height":16},{"id":"aolgilr-output-2","position":"right","x":198.9999358078464,"y":109.1874844493197,"width":16,"height":16}],"target":[{"id":"aolgilr-input-1","position":"left","x":-19.99999779678722,"y":64.59374112305345,"width":16,"height":16}]},"computedPosition":{"x":681.5,"y":194.5,"z":0},"position":{"x":681.5,"y":194.5},"label":"element-exists","data":{"disableBlock":false,"description":"","findBy":"cssSelector","selector":"#webAppContent > privacy-app > app-container > div > main > div > privacy-home > idms-flow > div > sections-step > div > div.column.large-8.small-12.vertical-divider-padding.icon-section.icon-std-section.gdpr-section-list > div:nth-child(1) > div.icon-section-content > idms-button > div > button > span","tryCount":1,"timeout":500,"markEl":false,"throwError":false},"id":"aolgilr","selected":false},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"btvsthg-output-1","position":"right","x":195.99995022839047,"y":27.99998282543997,"width":16,"height":16}],"target":[{"id":"btvsthg-input-1","position":"left","x":-19.99999779678722,"y":27.99998282543997,"width":16,"height":16}]},"computedPosition":{"x":975,"y":248.25,"z":0},"data":{"disableBlock":false,"description":"Send interaction required signal","timeout":20000,"code":"const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'interaction-needed' }\n  }\n});\nwindow.dispatchEvent(event);","preloadScripts":[],"everyNewTab":false,"runBeforeLoad":false},"label":"javascript-code","id":"btvsthg","selected":false,"position":{"x":975,"y":248.25}},{"type":"BlockElementExists","dimensions":{"width":195,"height":145},"handleBounds":{"source":[{"id":"yztm67o-output-1","position":"right","x":198.99993896484375,"y":64.59381103515625,"width":16,"height":16},{"id":"yztm67o-output-2","position":"right","x":198.99993896484375,"y":109.18752034505209,"width":16,"height":16}],"target":[{"id":"yztm67o-input-1","position":"left","x":-20,"y":64.59381103515625,"width":16,"height":16}]},"computedPosition":{"x":1125.1666666666667,"y":428.25000000000006,"z":1000},"data":{"disableBlock":false,"description":"","findBy":"cssSelector","selector":"#webAppContent > privacy-app > app-container > div > main > div > privacy-home > idms-flow > div > sections-step > div > div.column.large-8.small-12.vertical-divider-padding.icon-section.icon-std-section.gdpr-section-list > div:nth-child(1) > div.icon-section-content > idms-button > div > button > span","tryCount":10,"timeout":1000,"markEl":false,"throwError":false},"label":"element-exists","id":"yztm67o","selected":true,"position":{"x":1125.1666666666667,"y":428.25000000000006}}],"edges":[{"id":"vueflow__edge-ooNFfXPTY-Sd73p41h4sq-output-1-lMU2C_gLkXDhQtUu2rfND-input-1","sourceHandle":"ooNFfXPTY-Sd73p41h4sq-output-1","targetHandle":"lMU2C_gLkXDhQtUu2rfND-input-1","source":"ooNFfXPTY-Sd73p41h4sq","target":"lMU2C_gLkXDhQtUu2rfND","updatable":true,"selectable":true,"type":"custom","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0,"markerEnd":""},{"id":"vueflow__edge-f58027ea-730a-4f9e-8597-7f7a72d64161-output-1-f7d8755c-dfcb-4e60-af79-f66e7bdae070-input-1","sourceHandle":"f58027ea-730a-4f9e-8597-7f7a72d64161-output-1","targetHandle":"f7d8755c-dfcb-4e60-af79-f66e7bdae070-input-1","source":"f58027ea-730a-4f9e-8597-7f7a72d64161","target":"f7d8755c-dfcb-4e60-af79-f66e7bdae070","updatable":true,"selectable":true,"type":"custom","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0,"markerEnd":""},{"id":"vueflow__edge-f7d8755c-dfcb-4e60-af79-f66e7bdae070-output-1-05dd2548-d2ed-4955-a871-40e0d99b14d6-input-1","sourceHandle":"f7d8755c-dfcb-4e60-af79-f66e7bdae070-output-1","targetHandle":"05dd2548-d2ed-4955-a871-40e0d99b14d6-input-1","source":"f7d8755c-dfcb-4e60-af79-f66e7bdae070","target":"05dd2548-d2ed-4955-a871-40e0d99b14d6","updatable":true,"selectable":true,"class":"source-f7d8755c-dfcb-4e60-af79-f66e7bdae070-output-1 target-05dd2548-d2ed-4955-a871-40e0d99b14d6-input-1","type":"custom","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0,"markerEnd":""},{"id":"vueflow__edge-05dd2548-d2ed-4955-a871-40e0d99b14d6-output-1--XoFzKsVo7ae3GEfjnq1q-input-1","sourceHandle":"05dd2548-d2ed-4955-a871-40e0d99b14d6-output-1","targetHandle":"-XoFzKsVo7ae3GEfjnq1q-input-1","source":"05dd2548-d2ed-4955-a871-40e0d99b14d6","target":"-XoFzKsVo7ae3GEfjnq1q","updatable":true,"selectable":true,"class":"source-05dd2548-d2ed-4955-a871-40e0d99b14d6-output-1 target--XoFzKsVo7ae3GEfjnq1q-input-1","type":"custom","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0,"markerEnd":""},{"id":"vueflow__edge--XoFzKsVo7ae3GEfjnq1q-output-1-5c5b7edb-1687-40cd-8002-67147089ee65-input-1","sourceHandle":"-XoFzKsVo7ae3GEfjnq1q-output-1","targetHandle":"5c5b7edb-1687-40cd-8002-67147089ee65-input-1","source":"-XoFzKsVo7ae3GEfjnq1q","target":"5c5b7edb-1687-40cd-8002-67147089ee65","updatable":true,"selectable":true,"class":"source--XoFzKsVo7ae3GEfjnq1q-output-1 target-5c5b7edb-1687-40cd-8002-67147089ee65-input-1","type":"custom","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0,"markerEnd":""},{"id":"vueflow__edge-lMU2C_gLkXDhQtUu2rfNDlMU2C_gLkXDhQtUu2rfND-output-1-86xf0yz86xf0yz-input-1","source":"lMU2C_gLkXDhQtUu2rfND","sourceHandle":"lMU2C_gLkXDhQtUu2rfND-output-1","target":"86xf0yz","targetHandle":"86xf0yz-input-1","updatable":true,"type":"custom","selectable":true,"markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0},{"id":"edge-bwqjv94","selected":false,"target":"9pgww0x","source":"rqdctb9","targetHandle":"9pgww0x-input-1","sourceHandle":"rqdctb9-output-1","type":"custom","updatable":true,"selectable":true,"markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0},{"id":"vueflow__edge-5c5b7edb-1687-40cd-8002-67147089ee655c5b7edb-1687-40cd-8002-67147089ee65-output-1-rqdctb9rqdctb9-input-1","source":"5c5b7edb-1687-40cd-8002-67147089ee65","sourceHandle":"5c5b7edb-1687-40cd-8002-67147089ee65-output-1","target":"rqdctb9","targetHandle":"rqdctb9-input-1","class":"source-5c5b7edb-1687-40cd-8002-67147089ee65-output-1 target-rqdctb9-input-1","updatable":true,"type":"custom","selectable":true,"markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0},{"id":"vueflow__edge-lMU2C_gLkXDhQtUu2rfNDlMU2C_gLkXDhQtUu2rfND-output-1-aolgilraolgilr-input-1","source":"lMU2C_gLkXDhQtUu2rfND","sourceHandle":"lMU2C_gLkXDhQtUu2rfND-output-1","target":"aolgilr","targetHandle":"aolgilr-input-1","updatable":true,"type":"custom","selectable":true,"markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0},{"id":"vueflow__edge-aolgilraolgilr-output-1-f58027ea-730a-4f9e-8597-7f7a72d64161f58027ea-730a-4f9e-8597-7f7a72d64161-input-1","source":"aolgilr","sourceHandle":"aolgilr-output-1","target":"f58027ea-730a-4f9e-8597-7f7a72d64161","targetHandle":"f58027ea-730a-4f9e-8597-7f7a72d64161-input-1","updatable":true,"type":"custom","selectable":true,"markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0},{"id":"vueflow__edge-aolgilraolgilr-output-2-btvsthgbtvsthg-input-1","source":"aolgilr","sourceHandle":"aolgilr-output-2","target":"btvsthg","targetHandle":"btvsthg-input-1","updatable":true,"type":"custom","selectable":true,"markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0},{"id":"vueflow__edge-btvsthgbtvsthg-output-1-yztm67oyztm67o-input-1","source":"btvsthg","sourceHandle":"btvsthg-output-1","target":"yztm67o","targetHandle":"yztm67o-input-1","class":"connected-edges","updatable":true,"type":"custom","selectable":true,"markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0},{"id":"vueflow__edge-yztm67oyztm67o-output-1-f58027ea-730a-4f9e-8597-7f7a72d64161f58027ea-730a-4f9e-8597-7f7a72d64161-input-1","source":"yztm67o","sourceHandle":"yztm67o-output-1","target":"f58027ea-730a-4f9e-8597-7f7a72d64161","targetHandle":"f58027ea-730a-4f9e-8597-7f7a72d64161-input-1","class":"connected-edges","updatable":true,"type":"custom","selectable":true,"markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0},{"id":"vueflow__edge-yztm67oyztm67o-output-2-btvsthgbtvsthg-input-1","source":"yztm67o","sourceHandle":"yztm67o-output-2","target":"btvsthg","targetHandle":"btvsthg-input-1","class":"connected-edges","updatable":true,"type":"custom","selectable":true,"markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0}],"position":[-312.5999999999999,357.725],"zoom":0.6},"settings":{"blockDelay":0,"debugMode":false,"executedBlockOnWeb":false,"inputAutocomplete":true,"onError":"stop-workflow","restartTimes":3,"reuseLastState":false,"saveLog":true},"globalData":"[{ \"key\": \"value\" }]","description":"","includedWorkflows":{}}
+      "definition": {
+        "extVersion": "1.21.1",
+        "name": "Apple DSAR",
+        "icon": "riGlobalLine",
+        "table": [],
+        "version": "1.21.1",
+        "drawflow": {
+          "nodes": [
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "ooNFfXPTY-Sd73p41h4sq-output-1",
+                    "position": "right",
+                    "x": 196.00001017252606,
+                    "y": 27.99999237060547,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 96,
+                "y": 115.25,
+                "z": 0
+              },
+              "id": "ooNFfXPTY-Sd73p41h4sq",
+              "label": "trigger",
+              "position": {
+                "x": 96,
+                "y": 115.25
+              },
+              "data": {
+                "activeInInput": false,
+                "contextMenuName": "",
+                "contextTypes": [],
+                "date": "",
+                "days": [],
+                "delay": 5,
+                "description": "",
+                "disableBlock": false,
+                "interval": 60,
+                "isUrlRegex": false,
+                "observeElement": {
+                  "baseElOptions": {
+                    "attributeFilter": [],
+                    "attributes": false,
+                    "characterData": false,
+                    "childList": true,
+                    "subtree": false
+                  },
+                  "baseSelector": "",
+                  "matchPattern": "",
+                  "selector": "",
+                  "targetOptions": {
+                    "attributeFilter": [],
+                    "attributes": false,
+                    "characterData": false,
+                    "childList": true,
+                    "subtree": false
+                  }
+                },
+                "shortcut": "",
+                "time": "00:00",
+                "type": "manual",
+                "url": ""
+              }
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "lMU2C_gLkXDhQtUu2rfND-output-1",
+                    "position": "right",
+                    "x": 196.00006103515625,
+                    "y": 27.99999237060547,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "lMU2C_gLkXDhQtUu2rfND-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 27.99999237060547,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 388,
+                "y": 115.25,
+                "z": 0
+              },
+              "id": "lMU2C_gLkXDhQtUu2rfND",
+              "label": "new-tab",
+              "position": {
+                "x": 388,
+                "y": 115.25
+              },
+              "data": {
+                "active": true,
+                "customUserAgent": false,
+                "description": "Open privacy.apple.com",
+                "disableBlock": false,
+                "inGroup": false,
+                "updatePrevTab": false,
+                "url": "https://privacy.apple.com/account",
+                "userAgent": "",
+                "waitTabLoaded": false
+              },
+              "selected": false
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "f58027ea-730a-4f9e-8597-7f7a72d64161-output-1",
+                    "position": "right",
+                    "x": 195.99995022839047,
+                    "y": 28.00000043801764,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "f58027ea-730a-4f9e-8597-7f7a72d64161-input-1",
+                    "position": "left",
+                    "x": -19.99999779678722,
+                    "y": 28.00000043801764,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 1562,
+                "y": 194.5,
+                "z": 0
+              },
+              "id": "f58027ea-730a-4f9e-8597-7f7a72d64161",
+              "label": "event-click",
+              "position": {
+                "x": 1562,
+                "y": 194.5
+              },
+              "data": {
+                "description": "Data request",
+                "disableBlock": false,
+                "findBy": "cssSelector",
+                "markEl": false,
+                "multiple": false,
+                "selector": "#webAppContent > privacy-app > app-container > div > main > div > privacy-home > idms-flow > div > sections-step > div > div.column.large-8.small-12.vertical-divider-padding.icon-section.icon-std-section.gdpr-section-list > div:nth-child(1) > div.icon-section-content > idms-button > div > button > span",
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              },
+              "selected": false
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "f7d8755c-dfcb-4e60-af79-f66e7bdae070-output-1",
+                    "position": "right",
+                    "x": 195.99995022839047,
+                    "y": 28.00000043801764,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "f7d8755c-dfcb-4e60-af79-f66e7bdae070-input-1",
+                    "position": "left",
+                    "x": -19.99999779678722,
+                    "y": 28.00000043801764,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 1854,
+                "y": 194.5,
+                "z": 0
+              },
+              "id": "f7d8755c-dfcb-4e60-af79-f66e7bdae070",
+              "label": "event-click",
+              "position": {
+                "x": 1854,
+                "y": 194.5
+              },
+              "data": {
+                "description": "Select all",
+                "disableBlock": false,
+                "findBy": "cssSelector",
+                "markEl": false,
+                "multiple": false,
+                "selector": "#webAppContent > privacy-app > app-container > div > main > div > privacy-home > idms-flow > div > archive-flow > idms-flow > div > archive-app-list-step > div > div > div.row.button-bar.middle > div.column.large-4.medium-5.small-12 > div > button",
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              }
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "05dd2548-d2ed-4955-a871-40e0d99b14d6-output-1",
+                    "position": "right",
+                    "x": 196.00009112901182,
+                    "y": 28.00000043801764,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "05dd2548-d2ed-4955-a871-40e0d99b14d6-input-1",
+                    "position": "left",
+                    "x": -19.99999779678722,
+                    "y": 28.00000043801764,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 2146,
+                "y": 194.5,
+                "z": 0
+              },
+              "id": "05dd2548-d2ed-4955-a871-40e0d99b14d6",
+              "label": "event-click",
+              "position": {
+                "x": 2146,
+                "y": 194.5
+              },
+              "data": {
+                "description": "Select all",
+                "disableBlock": false,
+                "findBy": "cssSelector",
+                "markEl": false,
+                "multiple": false,
+                "selector": "#webAppContent > privacy-app > app-container > div > main > div > privacy-home > idms-flow > div > archive-flow > idms-flow > div > archive-app-list-step > div > div > div.row.button-bar.top > div:nth-child(2) > div > button",
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              }
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "-XoFzKsVo7ae3GEfjnq1q-output-1",
+                    "position": "right",
+                    "x": 195.99995022839047,
+                    "y": 28.00000043801764,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "-XoFzKsVo7ae3GEfjnq1q-input-1",
+                    "position": "left",
+                    "x": -19.99999779678722,
+                    "y": 28.00000043801764,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 2438,
+                "y": 194.5,
+                "z": 0
+              },
+              "id": "-XoFzKsVo7ae3GEfjnq1q",
+              "label": "event-click",
+              "position": {
+                "x": 2438,
+                "y": 194.5
+              },
+              "data": {
+                "description": "Continue",
+                "disableBlock": false,
+                "findBy": "cssSelector",
+                "markEl": false,
+                "multiple": false,
+                "selector": "#webAppContent > privacy-app > app-container > div > main > div > privacy-home > idms-flow > div > archive-flow > idms-flow > div > archive-app-list-step > div > div > div.row.button-bar.bottom > button:nth-child(2)",
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              }
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "5c5b7edb-1687-40cd-8002-67147089ee65-output-1",
+                    "position": "right",
+                    "x": 196.00009112901182,
+                    "y": 28.00000043801764,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "5c5b7edb-1687-40cd-8002-67147089ee65-input-1",
+                    "position": "left",
+                    "x": -19.99999779678722,
+                    "y": 28.00000043801764,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 2730,
+                "y": 194.5,
+                "z": 0
+              },
+              "id": "5c5b7edb-1687-40cd-8002-67147089ee65",
+              "label": "event-click",
+              "position": {
+                "x": 2730,
+                "y": 194.5
+              },
+              "data": {
+                "description": "Complete request",
+                "disableBlock": false,
+                "findBy": "xpath",
+                "markEl": false,
+                "multiple": false,
+                "selector": "/html/body/div[1]/privacy-app/app-container/div/main/div/privacy-home/idms-flow/div/archive-flow/idms-flow/div/archive-filesize-step/div/div/idms-step/div/div/div/div[3]/idms-toolbar/div/div/div/button[1]/div",
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              }
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "86xf0yz-output-1",
+                    "position": "right",
+                    "x": 195.99995930989584,
+                    "y": 28.000001907348633,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "86xf0yz-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 28.000001907348633,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 681.5,
+                "y": 36,
+                "z": 0
+              },
+              "data": {
+                "disableBlock": false,
+                "description": "Send start signal",
+                "timeout": 20000,
+                "code": "const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'started' }\n  }\n});\nwindow.dispatchEvent(event);",
+                "preloadScripts": [],
+                "everyNewTab": false,
+                "runBeforeLoad": false
+              },
+              "label": "javascript-code",
+              "id": "86xf0yz",
+              "selected": false,
+              "position": {
+                "x": 681.5,
+                "y": 36
+              }
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "rqdctb9-output-1",
+                    "position": "right",
+                    "x": 196.00009112901182,
+                    "y": 28.00000043801764,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "rqdctb9-input-1",
+                    "position": "left",
+                    "x": -19.99999779678722,
+                    "y": 28.00000043801764,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 3022,
+                "y": 194.5,
+                "z": 0
+              },
+              "data": {
+                "disableBlock": false,
+                "description": "Send completed signal",
+                "timeout": 20000,
+                "code": "const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'completed' }\n  }\n});\nwindow.dispatchEvent(event);",
+                "preloadScripts": [],
+                "everyNewTab": false,
+                "runBeforeLoad": false
+              },
+              "label": "javascript-code",
+              "id": "rqdctb9",
+              "selected": false,
+              "position": {
+                "x": 3022,
+                "y": 194.5
+              }
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "9pgww0x-output-1",
+                    "position": "right",
+                    "x": 196.00009112901182,
+                    "y": 28.00000043801764,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "9pgww0x-input-1",
+                    "position": "left",
+                    "x": -19.99999779678722,
+                    "y": 28.00000043801764,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 3314,
+                "y": 194.5,
+                "z": 0
+              },
+              "data": {
+                "activeTab": true,
+                "allWindows": false,
+                "closeType": "tab",
+                "description": "",
+                "disableBlock": false,
+                "url": ""
+              },
+              "label": "close-tab",
+              "id": "9pgww0x",
+              "selected": false,
+              "position": {
+                "x": 3314,
+                "y": 194.5
+              }
+            },
+            {
+              "type": "BlockElementExists",
+              "dimensions": {
+                "width": 195,
+                "height": 145
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "aolgilr-output-1",
+                    "position": "right",
+                    "x": 198.9999358078464,
+                    "y": 64.59374112305345,
+                    "width": 16,
+                    "height": 16
+                  },
+                  {
+                    "id": "aolgilr-output-2",
+                    "position": "right",
+                    "x": 198.9999358078464,
+                    "y": 109.1874844493197,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "aolgilr-input-1",
+                    "position": "left",
+                    "x": -19.99999779678722,
+                    "y": 64.59374112305345,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 681.5,
+                "y": 194.5,
+                "z": 0
+              },
+              "position": {
+                "x": 681.5,
+                "y": 194.5
+              },
+              "label": "element-exists",
+              "data": {
+                "disableBlock": false,
+                "description": "",
+                "findBy": "cssSelector",
+                "selector": "#webAppContent > privacy-app > app-container > div > main > div > privacy-home > idms-flow > div > sections-step > div > div.column.large-8.small-12.vertical-divider-padding.icon-section.icon-std-section.gdpr-section-list > div:nth-child(1) > div.icon-section-content > idms-button > div > button > span",
+                "tryCount": 1,
+                "timeout": 500,
+                "markEl": false,
+                "throwError": false
+              },
+              "id": "aolgilr",
+              "selected": false
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "btvsthg-output-1",
+                    "position": "right",
+                    "x": 195.99995022839047,
+                    "y": 27.99998282543997,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "btvsthg-input-1",
+                    "position": "left",
+                    "x": -19.99999779678722,
+                    "y": 27.99998282543997,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 975,
+                "y": 248.25,
+                "z": 0
+              },
+              "data": {
+                "disableBlock": false,
+                "description": "Send interaction required signal",
+                "timeout": 20000,
+                "code": "const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'interaction-needed' }\n  }\n});\nwindow.dispatchEvent(event);",
+                "preloadScripts": [],
+                "everyNewTab": false,
+                "runBeforeLoad": false
+              },
+              "label": "javascript-code",
+              "id": "btvsthg",
+              "selected": false,
+              "position": {
+                "x": 975,
+                "y": 248.25
+              }
+            },
+            {
+              "type": "BlockElementExists",
+              "dimensions": {
+                "width": 195,
+                "height": 145
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "yztm67o-output-1",
+                    "position": "right",
+                    "x": 198.99993896484375,
+                    "y": 64.59381103515625,
+                    "width": 16,
+                    "height": 16
+                  },
+                  {
+                    "id": "yztm67o-output-2",
+                    "position": "right",
+                    "x": 198.99993896484375,
+                    "y": 109.18752034505209,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "yztm67o-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 64.59381103515625,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 1125.1666666666667,
+                "y": 428.25000000000006,
+                "z": 1000
+              },
+              "data": {
+                "disableBlock": false,
+                "description": "",
+                "findBy": "cssSelector",
+                "selector": "#webAppContent > privacy-app > app-container > div > main > div > privacy-home > idms-flow > div > sections-step > div > div.column.large-8.small-12.vertical-divider-padding.icon-section.icon-std-section.gdpr-section-list > div:nth-child(1) > div.icon-section-content > idms-button > div > button > span",
+                "tryCount": 10,
+                "timeout": 1000,
+                "markEl": false,
+                "throwError": false
+              },
+              "label": "element-exists",
+              "id": "yztm67o",
+              "selected": true,
+              "position": {
+                "x": 1125.1666666666667,
+                "y": 428.25000000000006
+              }
+            }
+          ],
+          "edges": [
+            {
+              "id": "vueflow__edge-ooNFfXPTY-Sd73p41h4sq-output-1-lMU2C_gLkXDhQtUu2rfND-input-1",
+              "sourceHandle": "ooNFfXPTY-Sd73p41h4sq-output-1",
+              "targetHandle": "lMU2C_gLkXDhQtUu2rfND-input-1",
+              "source": "ooNFfXPTY-Sd73p41h4sq",
+              "target": "lMU2C_gLkXDhQtUu2rfND",
+              "updatable": true,
+              "selectable": true,
+              "type": "custom",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "markerEnd": ""
+            },
+            {
+              "id": "vueflow__edge-f58027ea-730a-4f9e-8597-7f7a72d64161-output-1-f7d8755c-dfcb-4e60-af79-f66e7bdae070-input-1",
+              "sourceHandle": "f58027ea-730a-4f9e-8597-7f7a72d64161-output-1",
+              "targetHandle": "f7d8755c-dfcb-4e60-af79-f66e7bdae070-input-1",
+              "source": "f58027ea-730a-4f9e-8597-7f7a72d64161",
+              "target": "f7d8755c-dfcb-4e60-af79-f66e7bdae070",
+              "updatable": true,
+              "selectable": true,
+              "type": "custom",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "markerEnd": ""
+            },
+            {
+              "id": "vueflow__edge-f7d8755c-dfcb-4e60-af79-f66e7bdae070-output-1-05dd2548-d2ed-4955-a871-40e0d99b14d6-input-1",
+              "sourceHandle": "f7d8755c-dfcb-4e60-af79-f66e7bdae070-output-1",
+              "targetHandle": "05dd2548-d2ed-4955-a871-40e0d99b14d6-input-1",
+              "source": "f7d8755c-dfcb-4e60-af79-f66e7bdae070",
+              "target": "05dd2548-d2ed-4955-a871-40e0d99b14d6",
+              "updatable": true,
+              "selectable": true,
+              "class": "source-f7d8755c-dfcb-4e60-af79-f66e7bdae070-output-1 target-05dd2548-d2ed-4955-a871-40e0d99b14d6-input-1",
+              "type": "custom",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "markerEnd": ""
+            },
+            {
+              "id": "vueflow__edge-05dd2548-d2ed-4955-a871-40e0d99b14d6-output-1--XoFzKsVo7ae3GEfjnq1q-input-1",
+              "sourceHandle": "05dd2548-d2ed-4955-a871-40e0d99b14d6-output-1",
+              "targetHandle": "-XoFzKsVo7ae3GEfjnq1q-input-1",
+              "source": "05dd2548-d2ed-4955-a871-40e0d99b14d6",
+              "target": "-XoFzKsVo7ae3GEfjnq1q",
+              "updatable": true,
+              "selectable": true,
+              "class": "source-05dd2548-d2ed-4955-a871-40e0d99b14d6-output-1 target--XoFzKsVo7ae3GEfjnq1q-input-1",
+              "type": "custom",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "markerEnd": ""
+            },
+            {
+              "id": "vueflow__edge--XoFzKsVo7ae3GEfjnq1q-output-1-5c5b7edb-1687-40cd-8002-67147089ee65-input-1",
+              "sourceHandle": "-XoFzKsVo7ae3GEfjnq1q-output-1",
+              "targetHandle": "5c5b7edb-1687-40cd-8002-67147089ee65-input-1",
+              "source": "-XoFzKsVo7ae3GEfjnq1q",
+              "target": "5c5b7edb-1687-40cd-8002-67147089ee65",
+              "updatable": true,
+              "selectable": true,
+              "class": "source--XoFzKsVo7ae3GEfjnq1q-output-1 target-5c5b7edb-1687-40cd-8002-67147089ee65-input-1",
+              "type": "custom",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "markerEnd": ""
+            },
+            {
+              "id": "vueflow__edge-lMU2C_gLkXDhQtUu2rfNDlMU2C_gLkXDhQtUu2rfND-output-1-86xf0yz86xf0yz-input-1",
+              "source": "lMU2C_gLkXDhQtUu2rfND",
+              "sourceHandle": "lMU2C_gLkXDhQtUu2rfND-output-1",
+              "target": "86xf0yz",
+              "targetHandle": "86xf0yz-input-1",
+              "updatable": true,
+              "type": "custom",
+              "selectable": true,
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0
+            },
+            {
+              "id": "edge-bwqjv94",
+              "selected": false,
+              "target": "9pgww0x",
+              "source": "rqdctb9",
+              "targetHandle": "9pgww0x-input-1",
+              "sourceHandle": "rqdctb9-output-1",
+              "type": "custom",
+              "updatable": true,
+              "selectable": true,
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0
+            },
+            {
+              "id": "vueflow__edge-5c5b7edb-1687-40cd-8002-67147089ee655c5b7edb-1687-40cd-8002-67147089ee65-output-1-rqdctb9rqdctb9-input-1",
+              "source": "5c5b7edb-1687-40cd-8002-67147089ee65",
+              "sourceHandle": "5c5b7edb-1687-40cd-8002-67147089ee65-output-1",
+              "target": "rqdctb9",
+              "targetHandle": "rqdctb9-input-1",
+              "class": "source-5c5b7edb-1687-40cd-8002-67147089ee65-output-1 target-rqdctb9-input-1",
+              "updatable": true,
+              "type": "custom",
+              "selectable": true,
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0
+            },
+            {
+              "id": "vueflow__edge-lMU2C_gLkXDhQtUu2rfNDlMU2C_gLkXDhQtUu2rfND-output-1-aolgilraolgilr-input-1",
+              "source": "lMU2C_gLkXDhQtUu2rfND",
+              "sourceHandle": "lMU2C_gLkXDhQtUu2rfND-output-1",
+              "target": "aolgilr",
+              "targetHandle": "aolgilr-input-1",
+              "updatable": true,
+              "type": "custom",
+              "selectable": true,
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0
+            },
+            {
+              "id": "vueflow__edge-aolgilraolgilr-output-1-f58027ea-730a-4f9e-8597-7f7a72d64161f58027ea-730a-4f9e-8597-7f7a72d64161-input-1",
+              "source": "aolgilr",
+              "sourceHandle": "aolgilr-output-1",
+              "target": "f58027ea-730a-4f9e-8597-7f7a72d64161",
+              "targetHandle": "f58027ea-730a-4f9e-8597-7f7a72d64161-input-1",
+              "updatable": true,
+              "type": "custom",
+              "selectable": true,
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0
+            },
+            {
+              "id": "vueflow__edge-aolgilraolgilr-output-2-btvsthgbtvsthg-input-1",
+              "source": "aolgilr",
+              "sourceHandle": "aolgilr-output-2",
+              "target": "btvsthg",
+              "targetHandle": "btvsthg-input-1",
+              "updatable": true,
+              "type": "custom",
+              "selectable": true,
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0
+            },
+            {
+              "id": "vueflow__edge-btvsthgbtvsthg-output-1-yztm67oyztm67o-input-1",
+              "source": "btvsthg",
+              "sourceHandle": "btvsthg-output-1",
+              "target": "yztm67o",
+              "targetHandle": "yztm67o-input-1",
+              "class": "connected-edges",
+              "updatable": true,
+              "type": "custom",
+              "selectable": true,
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0
+            },
+            {
+              "id": "vueflow__edge-yztm67oyztm67o-output-1-f58027ea-730a-4f9e-8597-7f7a72d64161f58027ea-730a-4f9e-8597-7f7a72d64161-input-1",
+              "source": "yztm67o",
+              "sourceHandle": "yztm67o-output-1",
+              "target": "f58027ea-730a-4f9e-8597-7f7a72d64161",
+              "targetHandle": "f58027ea-730a-4f9e-8597-7f7a72d64161-input-1",
+              "class": "connected-edges",
+              "updatable": true,
+              "type": "custom",
+              "selectable": true,
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0
+            },
+            {
+              "id": "vueflow__edge-yztm67oyztm67o-output-2-btvsthgbtvsthg-input-1",
+              "source": "yztm67o",
+              "sourceHandle": "yztm67o-output-2",
+              "target": "btvsthg",
+              "targetHandle": "btvsthg-input-1",
+              "class": "connected-edges",
+              "updatable": true,
+              "type": "custom",
+              "selectable": true,
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0
+            }
+          ],
+          "position": [
+            -312.5999999999999,
+            357.725
+          ],
+          "zoom": 0.6
+        },
+        "settings": {
+          "blockDelay": 0,
+          "debugMode": false,
+          "executedBlockOnWeb": false,
+          "inputAutocomplete": true,
+          "onError": "stop-workflow",
+          "restartTimes": 3,
+          "reuseLastState": false,
+          "saveLog": true
+        },
+        "globalData": "[{ \"key\": \"value\" }]",
+        "description": "",
+        "includedWorkflows": {}
+      }
     }
   },
   {
@@ -36,7 +2508,758 @@
     "automation": {
       "format": "automa",
       "version": "0.1",
-      "definition": {"extVersion":"1.19.0","name":"Amazon DSAR","icon":"riGlobalLine","table":[],"version":"1.19.0","drawflow":{"nodes":[{"computedPosition":{"x":96,"y":97,"z":0},"data":{"activeInInput":false,"contextMenuName":"","contextTypes":[],"date":"","days":[],"delay":5,"description":"","disableBlock":false,"interval":60,"isUrlRegex":false,"observeElement":{"baseElOptions":{"attributeFilter":[],"attributes":false,"characterData":false,"childList":true,"subtree":false},"baseSelector":"","matchPattern":"","selector":"","targetOptions":{"attributeFilter":[],"attributes":false,"characterData":false,"childList":true,"subtree":false}},"shortcut":"","time":"00:00","type":"manual","url":""},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"IOVhWGxGnJb7Q1rQv4Cjv-output-1","position":"right","x":196.00000986258192,"y":28.00001176198324,"width":16,"height":16}]},"id":"IOVhWGxGnJb7Q1rQv4Cjv","label":"trigger","position":{"x":96,"y":97},"selected":false,"type":"BlockBasic"},{"computedPosition":{"x":388,"y":97,"z":0},"data":{"disableBlock":false,"description":"Go to request page","url":"https://www.amazon.de/gp/privacycentral/dsar/create.html?data-category=all-data-categories","userAgent":"","active":false,"inGroup":false,"waitTabLoaded":false,"updatePrevTab":false,"customUserAgent":false},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"drOrv1sbmNv0EHk6BUzvc-output-1","position":"right","x":196.00000986258192,"y":28.00001176198324,"width":16,"height":16}],"target":[{"id":"drOrv1sbmNv0EHk6BUzvc-input-1","position":"left","x":-19.999977342287703,"y":28.00001176198324,"width":16,"height":16}]},"id":"drOrv1sbmNv0EHk6BUzvc","label":"new-tab","position":{"x":388,"y":97},"selected":false,"type":"BlockBasic"},{"computedPosition":{"x":681.5,"y":97,"z":0},"data":{"disableBlock":false,"description":"","findBy":"cssSelector","selector":"div#dsar-center","tryCount":1,"timeout":500,"markEl":false,"throwError":false},"dimensions":{"width":195,"height":145},"handleBounds":{"source":[{"id":"vjrv305-output-1","position":"right","x":199.00003182888034,"y":64.59374283949535,"width":16,"height":16},{"id":"vjrv305-output-2","position":"right","x":199.00003182888034,"y":109.187508336703,"width":16,"height":16}],"target":[{"id":"vjrv305-input-1","position":"left","x":-19.999977342287703,"y":64.59374283949535,"width":16,"height":16}]},"id":"vjrv305","label":"element-exists","position":{"x":681.5,"y":97},"selected":false,"type":"BlockElementExists"},{"computedPosition":{"x":976.6077473958335,"y":202.19791666666666,"z":0},"data":{"code":"const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'interaction-needed' }\n  }\n});\nwindow.dispatchEvent(event);","description":"Send interaction required signal","disableBlock":false,"everyNewTab":false,"preloadScripts":[],"runBeforeLoad":false,"timeout":20000},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"08sultw-output-1","position":"right","x":195.99985307455063,"y":28.000014056762062,"width":16,"height":16}],"target":[{"id":"08sultw-input-1","position":"left","x":-20.00008714199066,"y":28.000014056762062,"width":16,"height":16}]},"id":"08sultw","label":"javascript-code","position":{"x":976.6077473958335,"y":202.19791666666666},"selected":false,"type":"BlockBasic"},{"computedPosition":{"x":1876.29296875,"y":312.5325520833333,"z":0},"data":{"code":"const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'completed' }\n  }\n});\nwindow.dispatchEvent(event);","description":"Send completed signal","disableBlock":false,"everyNewTab":false,"preloadScripts":[],"runBeforeLoad":false,"timeout":20000},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"zy1vaif-output-1","position":"right","x":195.99995930989584,"y":28.000030517578125,"width":16,"height":16}],"target":[{"id":"zy1vaif-input-1","position":"left","x":-20,"y":28.000030517578125,"width":16,"height":16}]},"id":"zy1vaif","label":"javascript-code","position":{"x":1876.29296875,"y":312.5325520833333},"selected":false,"type":"BlockBasic"},{"computedPosition":{"x":2168.29296875,"y":312.5325520833333,"z":0},"data":{"activeTab":true,"allWindows":false,"closeType":"tab","description":"","disableBlock":false,"url":""},"dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"7ktpjsp-output-1","position":"right","x":195.99995930989584,"y":28.000030517578125,"width":16,"height":16}],"target":[{"id":"7ktpjsp-input-1","position":"left","x":-20,"y":28.000030517578125,"width":16,"height":16}]},"id":"7ktpjsp","label":"close-tab","position":{"x":2168.29296875,"y":312.5325520833333},"selected":false,"type":"BlockBasic"},{"type":"BlockElementExists","dimensions":{"width":195,"height":145},"handleBounds":{"source":[{"id":"5odz5u6-output-1","position":"right","x":198.99995935757957,"y":64.59374283949535,"width":16,"height":16},{"id":"5odz5u6-output-2","position":"right","x":198.99995935757957,"y":109.18747210105262,"width":16,"height":16}],"target":[{"id":"5odz5u6-input-1","position":"left","x":-19.999904870986942,"y":64.59374283949535,"width":16,"height":16}]},"computedPosition":{"x":1563.5,"y":97,"z":0},"position":{"x":1563.5,"y":97},"label":"element-exists","data":{"disableBlock":false,"description":"","findBy":"cssSelector","selector":"#create-pending-confirmation-alert","tryCount":1,"timeout":500,"markEl":false,"throwError":false},"id":"5odz5u6","selected":false},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"slu8sz4-output-1","position":"right","x":195.99995930989584,"y":28.000030517578125,"width":16,"height":16}],"target":[{"id":"slu8sz4-input-1","position":"left","x":-20,"y":28.000030517578125,"width":16,"height":16}]},"computedPosition":{"x":1857,"y":158,"z":0},"data":{"disableBlock":false,"description":"Send request pending signal","timeout":20000,"code":"const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'request-pending' }\n  }\n});\nwindow.dispatchEvent(event);","preloadScripts":[],"everyNewTab":false,"runBeforeLoad":false},"label":"javascript-code","id":"slu8sz4","selected":false,"position":{"x":1857,"y":158}},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"32nfb0f-output-1","position":"right","x":196.00016276041669,"y":28.000030517578125,"width":16,"height":16}],"target":[{"id":"32nfb0f-input-1","position":"left","x":-20,"y":28.000030517578125,"width":16,"height":16}]},"computedPosition":{"x":2149,"y":158,"z":0},"data":{"activeTab":true,"allWindows":false,"closeType":"tab","description":"","disableBlock":false,"url":""},"label":"close-tab","id":"32nfb0f","selected":false,"position":{"x":2149,"y":158}},{"type":"BlockElementExists","dimensions":{"width":195,"height":145},"handleBounds":{"source":[{"id":"vtyc9io-output-1","position":"right","x":199.00015072027844,"y":64.59378335873286,"width":16,"height":16},{"id":"vtyc9io-output-2","position":"right","x":199.00015072027844,"y":109.18757770458858,"width":16,"height":16}],"target":[{"id":"vtyc9io-input-1","position":"left","x":-19.999890883763634,"y":64.59378335873286,"width":16,"height":16}]},"computedPosition":{"x":1270.1077473958333,"y":237.56835937499994,"z":0},"data":{"disableBlock":false,"description":"","findBy":"cssSelector","selector":"div#dsar-center","tryCount":10,"timeout":1000,"markEl":false,"throwError":false},"label":"element-exists","id":"vtyc9io","selected":false,"position":{"x":1270.1077473958333,"y":237.56835937499994}}],"edges":[{"id":"SRSRXPrrKhOlaXIhCffAX","class":"source-IOVhWGxGnJb7Q1rQv4Cjv-output-1 targte-drOrv1sbmNv0EHk6BUzvc-input-1","markerEnd":"","selectable":true,"source":"IOVhWGxGnJb7Q1rQv4Cjv","sourceHandle":"IOVhWGxGnJb7Q1rQv4Cjv-output-1","sourceX":0,"sourceY":0,"target":"drOrv1sbmNv0EHk6BUzvc","targetHandle":"drOrv1sbmNv0EHk6BUzvc-input-1","targetX":0,"targetY":0,"type":"default","updatable":true,"z":0},{"id":"vueflow__edge-drOrv1sbmNv0EHk6BUzvcdrOrv1sbmNv0EHk6BUzvc-output-1-vjrv305vjrv305-input-1","class":"source-drOrv1sbmNv0EHk6BUzvc-output-1 target-vjrv305-input-1","markerEnd":"","selectable":true,"source":"drOrv1sbmNv0EHk6BUzvc","sourceHandle":"drOrv1sbmNv0EHk6BUzvc-output-1","sourceX":0,"sourceY":0,"target":"vjrv305","targetHandle":"vjrv305-input-1","targetX":0,"targetY":0,"type":"default","updatable":true,"z":0},{"id":"vueflow__edge-vjrv305vjrv305-output-2-08sultw08sultw-input-1","class":"source-vjrv305-output-2 target-08sultw-input-1","markerEnd":"","selectable":true,"source":"vjrv305","sourceHandle":"vjrv305-output-2","sourceX":0,"sourceY":0,"target":"08sultw","targetHandle":"08sultw-input-1","targetX":0,"targetY":0,"type":"default","updatable":true,"z":0},{"id":"vueflow__edge-zy1vaifzy1vaif-output-1-7ktpjsp7ktpjsp-input-1","source":"zy1vaif","sourceHandle":"zy1vaif-output-1","target":"7ktpjsp","targetHandle":"7ktpjsp-input-1","class":"source-zy1vaif-output-1 target-7ktpjsp-input-1","updatable":true,"selectable":true,"type":"default","markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0,"selected":false},{"id":"vueflow__edge-vjrv305vjrv305-output-1-5odz5u65odz5u6-input-1","source":"vjrv305","sourceHandle":"vjrv305-output-1","target":"5odz5u6","targetHandle":"5odz5u6-input-1","class":"source-vjrv305-output-1 target-5odz5u6-input-1","updatable":true,"selectable":true,"type":"default","markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0},{"id":"vueflow__edge-5odz5u65odz5u6-output-2-zy1vaifzy1vaif-input-1","source":"5odz5u6","sourceHandle":"5odz5u6-output-2","target":"zy1vaif","targetHandle":"zy1vaif-input-1","class":"source-5odz5u6-output-2 target-zy1vaif-input-1","updatable":true,"selectable":true,"type":"default","markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0,"selected":false},{"id":"vueflow__edge-slu8sz4slu8sz4-output-1-32nfb0f32nfb0f-input-1","source":"slu8sz4","sourceHandle":"slu8sz4-output-1","target":"32nfb0f","targetHandle":"32nfb0f-input-1","class":"source-slu8sz4-output-1 target-32nfb0f-input-1","updatable":true,"selectable":true,"type":"default","markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0,"selected":false},{"id":"vueflow__edge-5odz5u65odz5u6-output-1-slu8sz4slu8sz4-input-1","source":"5odz5u6","sourceHandle":"5odz5u6-output-1","target":"slu8sz4","targetHandle":"slu8sz4-input-1","class":"source-5odz5u6-output-1 target-slu8sz4-input-1","updatable":true,"selectable":true,"type":"default","markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0,"selected":false},{"id":"vueflow__edge-08sultw08sultw-output-1-vtyc9iovtyc9io-input-1","source":"08sultw","sourceHandle":"08sultw-output-1","target":"vtyc9io","targetHandle":"vtyc9io-input-1","class":"source-08sultw-output-1 target-vtyc9io-input-1","updatable":true,"selectable":true,"type":"default","markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0},{"id":"vueflow__edge-vtyc9iovtyc9io-output-1-5odz5u65odz5u6-input-1","source":"vtyc9io","sourceHandle":"vtyc9io-output-1","target":"5odz5u6","targetHandle":"5odz5u6-input-1","class":"source-vtyc9io-output-1 target-5odz5u6-input-1","updatable":true,"selectable":true,"type":"default","markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0}],"position":[-156.12968749999982,297.10927734374997],"zoom":0.6},"settings":{"blockDelay":0,"debugMode":false,"defaultColumnName":"column","executedBlockOnWeb":false,"inputAutocomplete":true,"insertDefaultColumn":false,"notification":true,"onError":"stop-workflow","publicId":"","restartTimes":3,"reuseLastState":false,"saveLog":true},"globalData":"{\n\t\"key\": \"value\"\n}","description":"","includedWorkflows":{}}
+      "definition": {
+        "extVersion": "1.19.0",
+        "name": "Amazon DSAR",
+        "icon": "riGlobalLine",
+        "table": [],
+        "version": "1.19.0",
+        "drawflow": {
+          "nodes": [
+            {
+              "computedPosition": {
+                "x": 96,
+                "y": 97,
+                "z": 0
+              },
+              "data": {
+                "activeInInput": false,
+                "contextMenuName": "",
+                "contextTypes": [],
+                "date": "",
+                "days": [],
+                "delay": 5,
+                "description": "",
+                "disableBlock": false,
+                "interval": 60,
+                "isUrlRegex": false,
+                "observeElement": {
+                  "baseElOptions": {
+                    "attributeFilter": [],
+                    "attributes": false,
+                    "characterData": false,
+                    "childList": true,
+                    "subtree": false
+                  },
+                  "baseSelector": "",
+                  "matchPattern": "",
+                  "selector": "",
+                  "targetOptions": {
+                    "attributeFilter": [],
+                    "attributes": false,
+                    "characterData": false,
+                    "childList": true,
+                    "subtree": false
+                  }
+                },
+                "shortcut": "",
+                "time": "00:00",
+                "type": "manual",
+                "url": ""
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "IOVhWGxGnJb7Q1rQv4Cjv-output-1",
+                    "position": "right",
+                    "x": 196.00000986258192,
+                    "y": 28.00001176198324,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "IOVhWGxGnJb7Q1rQv4Cjv",
+              "label": "trigger",
+              "position": {
+                "x": 96,
+                "y": 97
+              },
+              "selected": false,
+              "type": "BlockBasic"
+            },
+            {
+              "computedPosition": {
+                "x": 388,
+                "y": 97,
+                "z": 0
+              },
+              "data": {
+                "disableBlock": false,
+                "description": "Go to request page",
+                "url": "https://www.amazon.de/gp/privacycentral/dsar/create.html?data-category=all-data-categories",
+                "userAgent": "",
+                "active": false,
+                "inGroup": false,
+                "waitTabLoaded": false,
+                "updatePrevTab": false,
+                "customUserAgent": false
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "drOrv1sbmNv0EHk6BUzvc-output-1",
+                    "position": "right",
+                    "x": 196.00000986258192,
+                    "y": 28.00001176198324,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "drOrv1sbmNv0EHk6BUzvc-input-1",
+                    "position": "left",
+                    "x": -19.999977342287703,
+                    "y": 28.00001176198324,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "drOrv1sbmNv0EHk6BUzvc",
+              "label": "new-tab",
+              "position": {
+                "x": 388,
+                "y": 97
+              },
+              "selected": false,
+              "type": "BlockBasic"
+            },
+            {
+              "computedPosition": {
+                "x": 681.5,
+                "y": 97,
+                "z": 0
+              },
+              "data": {
+                "disableBlock": false,
+                "description": "",
+                "findBy": "cssSelector",
+                "selector": "div#dsar-center",
+                "tryCount": 1,
+                "timeout": 500,
+                "markEl": false,
+                "throwError": false
+              },
+              "dimensions": {
+                "width": 195,
+                "height": 145
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "vjrv305-output-1",
+                    "position": "right",
+                    "x": 199.00003182888034,
+                    "y": 64.59374283949535,
+                    "width": 16,
+                    "height": 16
+                  },
+                  {
+                    "id": "vjrv305-output-2",
+                    "position": "right",
+                    "x": 199.00003182888034,
+                    "y": 109.187508336703,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "vjrv305-input-1",
+                    "position": "left",
+                    "x": -19.999977342287703,
+                    "y": 64.59374283949535,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "vjrv305",
+              "label": "element-exists",
+              "position": {
+                "x": 681.5,
+                "y": 97
+              },
+              "selected": false,
+              "type": "BlockElementExists"
+            },
+            {
+              "computedPosition": {
+                "x": 976.6077473958335,
+                "y": 202.19791666666666,
+                "z": 0
+              },
+              "data": {
+                "code": "const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'interaction-needed' }\n  }\n});\nwindow.dispatchEvent(event);",
+                "description": "Send interaction required signal",
+                "disableBlock": false,
+                "everyNewTab": false,
+                "preloadScripts": [],
+                "runBeforeLoad": false,
+                "timeout": 20000
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "08sultw-output-1",
+                    "position": "right",
+                    "x": 195.99985307455063,
+                    "y": 28.000014056762062,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "08sultw-input-1",
+                    "position": "left",
+                    "x": -20.00008714199066,
+                    "y": 28.000014056762062,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "08sultw",
+              "label": "javascript-code",
+              "position": {
+                "x": 976.6077473958335,
+                "y": 202.19791666666666
+              },
+              "selected": false,
+              "type": "BlockBasic"
+            },
+            {
+              "computedPosition": {
+                "x": 1876.29296875,
+                "y": 312.5325520833333,
+                "z": 0
+              },
+              "data": {
+                "code": "const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'completed' }\n  }\n});\nwindow.dispatchEvent(event);",
+                "description": "Send completed signal",
+                "disableBlock": false,
+                "everyNewTab": false,
+                "preloadScripts": [],
+                "runBeforeLoad": false,
+                "timeout": 20000
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "zy1vaif-output-1",
+                    "position": "right",
+                    "x": 195.99995930989584,
+                    "y": 28.000030517578125,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "zy1vaif-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 28.000030517578125,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "zy1vaif",
+              "label": "javascript-code",
+              "position": {
+                "x": 1876.29296875,
+                "y": 312.5325520833333
+              },
+              "selected": false,
+              "type": "BlockBasic"
+            },
+            {
+              "computedPosition": {
+                "x": 2168.29296875,
+                "y": 312.5325520833333,
+                "z": 0
+              },
+              "data": {
+                "activeTab": true,
+                "allWindows": false,
+                "closeType": "tab",
+                "description": "",
+                "disableBlock": false,
+                "url": ""
+              },
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "7ktpjsp-output-1",
+                    "position": "right",
+                    "x": 195.99995930989584,
+                    "y": 28.000030517578125,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "7ktpjsp-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 28.000030517578125,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "id": "7ktpjsp",
+              "label": "close-tab",
+              "position": {
+                "x": 2168.29296875,
+                "y": 312.5325520833333
+              },
+              "selected": false,
+              "type": "BlockBasic"
+            },
+            {
+              "type": "BlockElementExists",
+              "dimensions": {
+                "width": 195,
+                "height": 145
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "5odz5u6-output-1",
+                    "position": "right",
+                    "x": 198.99995935757957,
+                    "y": 64.59374283949535,
+                    "width": 16,
+                    "height": 16
+                  },
+                  {
+                    "id": "5odz5u6-output-2",
+                    "position": "right",
+                    "x": 198.99995935757957,
+                    "y": 109.18747210105262,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "5odz5u6-input-1",
+                    "position": "left",
+                    "x": -19.999904870986942,
+                    "y": 64.59374283949535,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 1563.5,
+                "y": 97,
+                "z": 0
+              },
+              "position": {
+                "x": 1563.5,
+                "y": 97
+              },
+              "label": "element-exists",
+              "data": {
+                "disableBlock": false,
+                "description": "",
+                "findBy": "cssSelector",
+                "selector": "#create-pending-confirmation-alert",
+                "tryCount": 1,
+                "timeout": 500,
+                "markEl": false,
+                "throwError": false
+              },
+              "id": "5odz5u6",
+              "selected": false
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "slu8sz4-output-1",
+                    "position": "right",
+                    "x": 195.99995930989584,
+                    "y": 28.000030517578125,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "slu8sz4-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 28.000030517578125,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 1857,
+                "y": 158,
+                "z": 0
+              },
+              "data": {
+                "disableBlock": false,
+                "description": "Send request pending signal",
+                "timeout": 20000,
+                "code": "const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'request-pending' }\n  }\n});\nwindow.dispatchEvent(event);",
+                "preloadScripts": [],
+                "everyNewTab": false,
+                "runBeforeLoad": false
+              },
+              "label": "javascript-code",
+              "id": "slu8sz4",
+              "selected": false,
+              "position": {
+                "x": 1857,
+                "y": 158
+              }
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "32nfb0f-output-1",
+                    "position": "right",
+                    "x": 196.00016276041669,
+                    "y": 28.000030517578125,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "32nfb0f-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 28.000030517578125,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 2149,
+                "y": 158,
+                "z": 0
+              },
+              "data": {
+                "activeTab": true,
+                "allWindows": false,
+                "closeType": "tab",
+                "description": "",
+                "disableBlock": false,
+                "url": ""
+              },
+              "label": "close-tab",
+              "id": "32nfb0f",
+              "selected": false,
+              "position": {
+                "x": 2149,
+                "y": 158
+              }
+            },
+            {
+              "type": "BlockElementExists",
+              "dimensions": {
+                "width": 195,
+                "height": 145
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "vtyc9io-output-1",
+                    "position": "right",
+                    "x": 199.00015072027844,
+                    "y": 64.59378335873286,
+                    "width": 16,
+                    "height": 16
+                  },
+                  {
+                    "id": "vtyc9io-output-2",
+                    "position": "right",
+                    "x": 199.00015072027844,
+                    "y": 109.18757770458858,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "vtyc9io-input-1",
+                    "position": "left",
+                    "x": -19.999890883763634,
+                    "y": 64.59378335873286,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 1270.1077473958333,
+                "y": 237.56835937499994,
+                "z": 0
+              },
+              "data": {
+                "disableBlock": false,
+                "description": "",
+                "findBy": "cssSelector",
+                "selector": "div#dsar-center",
+                "tryCount": 10,
+                "timeout": 1000,
+                "markEl": false,
+                "throwError": false
+              },
+              "label": "element-exists",
+              "id": "vtyc9io",
+              "selected": false,
+              "position": {
+                "x": 1270.1077473958333,
+                "y": 237.56835937499994
+              }
+            }
+          ],
+          "edges": [
+            {
+              "id": "SRSRXPrrKhOlaXIhCffAX",
+              "class": "source-IOVhWGxGnJb7Q1rQv4Cjv-output-1 targte-drOrv1sbmNv0EHk6BUzvc-input-1",
+              "markerEnd": "",
+              "selectable": true,
+              "source": "IOVhWGxGnJb7Q1rQv4Cjv",
+              "sourceHandle": "IOVhWGxGnJb7Q1rQv4Cjv-output-1",
+              "sourceX": 0,
+              "sourceY": 0,
+              "target": "drOrv1sbmNv0EHk6BUzvc",
+              "targetHandle": "drOrv1sbmNv0EHk6BUzvc-input-1",
+              "targetX": 0,
+              "targetY": 0,
+              "type": "default",
+              "updatable": true,
+              "z": 0
+            },
+            {
+              "id": "vueflow__edge-drOrv1sbmNv0EHk6BUzvcdrOrv1sbmNv0EHk6BUzvc-output-1-vjrv305vjrv305-input-1",
+              "class": "source-drOrv1sbmNv0EHk6BUzvc-output-1 target-vjrv305-input-1",
+              "markerEnd": "",
+              "selectable": true,
+              "source": "drOrv1sbmNv0EHk6BUzvc",
+              "sourceHandle": "drOrv1sbmNv0EHk6BUzvc-output-1",
+              "sourceX": 0,
+              "sourceY": 0,
+              "target": "vjrv305",
+              "targetHandle": "vjrv305-input-1",
+              "targetX": 0,
+              "targetY": 0,
+              "type": "default",
+              "updatable": true,
+              "z": 0
+            },
+            {
+              "id": "vueflow__edge-vjrv305vjrv305-output-2-08sultw08sultw-input-1",
+              "class": "source-vjrv305-output-2 target-08sultw-input-1",
+              "markerEnd": "",
+              "selectable": true,
+              "source": "vjrv305",
+              "sourceHandle": "vjrv305-output-2",
+              "sourceX": 0,
+              "sourceY": 0,
+              "target": "08sultw",
+              "targetHandle": "08sultw-input-1",
+              "targetX": 0,
+              "targetY": 0,
+              "type": "default",
+              "updatable": true,
+              "z": 0
+            },
+            {
+              "id": "vueflow__edge-zy1vaifzy1vaif-output-1-7ktpjsp7ktpjsp-input-1",
+              "source": "zy1vaif",
+              "sourceHandle": "zy1vaif-output-1",
+              "target": "7ktpjsp",
+              "targetHandle": "7ktpjsp-input-1",
+              "class": "source-zy1vaif-output-1 target-7ktpjsp-input-1",
+              "updatable": true,
+              "selectable": true,
+              "type": "default",
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "selected": false
+            },
+            {
+              "id": "vueflow__edge-vjrv305vjrv305-output-1-5odz5u65odz5u6-input-1",
+              "source": "vjrv305",
+              "sourceHandle": "vjrv305-output-1",
+              "target": "5odz5u6",
+              "targetHandle": "5odz5u6-input-1",
+              "class": "source-vjrv305-output-1 target-5odz5u6-input-1",
+              "updatable": true,
+              "selectable": true,
+              "type": "default",
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0
+            },
+            {
+              "id": "vueflow__edge-5odz5u65odz5u6-output-2-zy1vaifzy1vaif-input-1",
+              "source": "5odz5u6",
+              "sourceHandle": "5odz5u6-output-2",
+              "target": "zy1vaif",
+              "targetHandle": "zy1vaif-input-1",
+              "class": "source-5odz5u6-output-2 target-zy1vaif-input-1",
+              "updatable": true,
+              "selectable": true,
+              "type": "default",
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "selected": false
+            },
+            {
+              "id": "vueflow__edge-slu8sz4slu8sz4-output-1-32nfb0f32nfb0f-input-1",
+              "source": "slu8sz4",
+              "sourceHandle": "slu8sz4-output-1",
+              "target": "32nfb0f",
+              "targetHandle": "32nfb0f-input-1",
+              "class": "source-slu8sz4-output-1 target-32nfb0f-input-1",
+              "updatable": true,
+              "selectable": true,
+              "type": "default",
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "selected": false
+            },
+            {
+              "id": "vueflow__edge-5odz5u65odz5u6-output-1-slu8sz4slu8sz4-input-1",
+              "source": "5odz5u6",
+              "sourceHandle": "5odz5u6-output-1",
+              "target": "slu8sz4",
+              "targetHandle": "slu8sz4-input-1",
+              "class": "source-5odz5u6-output-1 target-slu8sz4-input-1",
+              "updatable": true,
+              "selectable": true,
+              "type": "default",
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "selected": false
+            },
+            {
+              "id": "vueflow__edge-08sultw08sultw-output-1-vtyc9iovtyc9io-input-1",
+              "source": "08sultw",
+              "sourceHandle": "08sultw-output-1",
+              "target": "vtyc9io",
+              "targetHandle": "vtyc9io-input-1",
+              "class": "source-08sultw-output-1 target-vtyc9io-input-1",
+              "updatable": true,
+              "selectable": true,
+              "type": "default",
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0
+            },
+            {
+              "id": "vueflow__edge-vtyc9iovtyc9io-output-1-5odz5u65odz5u6-input-1",
+              "source": "vtyc9io",
+              "sourceHandle": "vtyc9io-output-1",
+              "target": "5odz5u6",
+              "targetHandle": "5odz5u6-input-1",
+              "class": "source-vtyc9io-output-1 target-5odz5u6-input-1",
+              "updatable": true,
+              "selectable": true,
+              "type": "default",
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0
+            }
+          ],
+          "position": [
+            -156.12968749999982,
+            297.10927734374997
+          ],
+          "zoom": 0.6
+        },
+        "settings": {
+          "blockDelay": 0,
+          "debugMode": false,
+          "defaultColumnName": "column",
+          "executedBlockOnWeb": false,
+          "inputAutocomplete": true,
+          "insertDefaultColumn": false,
+          "notification": true,
+          "onError": "stop-workflow",
+          "publicId": "",
+          "restartTimes": 3,
+          "reuseLastState": false,
+          "saveLog": true
+        },
+        "globalData": "{\n\t\"key\": \"value\"\n}",
+        "description": "",
+        "includedWorkflows": {}
+      }
     }
   },
   {
@@ -46,7 +3269,446 @@
     "automation": {
       "format": "automa",
       "version": "0.1",
-      "definition": {"extVersion":"1.18.1","name":"Instagram DSAR","icon":"riGlobalLine","table":[],"version":"1.18.1","drawflow":{"nodes":[{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"dq66daH64NH-km-QCSBVd-output-1","position":"right","x":195.99999060997595,"y":27.99999530498798,"width":16,"height":16}]},"computedPosition":{"x":50,"y":300,"z":0},"data":{"activeInInput":false,"contextMenuName":"","contextTypes":[],"date":"","days":[],"delay":5,"description":"","disableBlock":false,"interval":60,"isUrlRegex":false,"observeElement":{"baseElOptions":{"attributeFilter":[],"attributes":false,"characterData":false,"childList":true,"subtree":false},"baseSelector":"","matchPattern":"","selector":"","targetOptions":{"attributeFilter":[],"attributes":false,"characterData":false,"childList":true,"subtree":false}},"parameters":[],"shortcut":"","time":"00:00","type":"manual","url":""},"id":"dq66daH64NH-km-QCSBVd","label":"trigger","position":{"x":50,"y":300}},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"iVUXJH1HVrjZaMUx8lm6H-output-1","position":"right","x":196.00003756009616,"y":27.99999530498798,"width":16,"height":16}],"target":[{"id":"iVUXJH1HVrjZaMUx8lm6H-input-1","position":"left","x":-20,"y":27.99999530498798,"width":16,"height":16}]},"computedPosition":{"x":320,"y":300,"z":0},"data":{"disableBlock":false,"description":"","url":"https://www.instagram.com/download/request/","userAgent":"","active":false,"inGroup":false,"waitTabLoaded":true,"updatePrevTab":false,"customUserAgent":false},"id":"iVUXJH1HVrjZaMUx8lm6H","label":"new-tab","position":{"x":320,"y":300},"selected":false},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"H2xkJgFM5gW69cV5R0o_u-output-1","position":"right","x":196.00003756009616,"y":27.99999530498798,"width":16,"height":16}],"target":[{"id":"H2xkJgFM5gW69cV5R0o_u-input-1","position":"left","x":-20,"y":27.99999530498798,"width":16,"height":16}]},"computedPosition":{"x":600,"y":300,"z":0},"data":{"description":"","disableBlock":false,"findBy":"cssSelector","markEl":false,"multiple":false,"selector":"input#igCoreRadioButtonoutputFormatJSON","waitForSelector":true,"waitSelectorTimeout":5000},"id":"H2xkJgFM5gW69cV5R0o_u","label":"event-click","position":{"x":600,"y":300},"selected":false},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"gdixDIoyiEJ0X8sZM2S3e-output-1","position":"right","x":196.00003756009616,"y":27.99999530498798,"width":16,"height":16}],"target":[{"id":"gdixDIoyiEJ0X8sZM2S3e-input-1","position":"left","x":-20,"y":27.99999530498798,"width":16,"height":16}]},"computedPosition":{"x":880,"y":300,"z":0},"data":{"disableBlock":false,"description":"Weiter","findBy":"xpath","waitForSelector":true,"waitSelectorTimeout":5000,"selector":"//*[@id=\"react-root\"]/div/div/section/main/div/article/form/div/button","markEl":false,"multiple":false},"id":"gdixDIoyiEJ0X8sZM2S3e","label":"event-click","position":{"x":880,"y":300},"selected":false},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"lx2pnwk-output-1","position":"right","x":196.00003756009616,"y":27.99999530498798,"width":16,"height":16}],"target":[{"id":"lx2pnwk-input-1","position":"left","x":-20,"y":27.99999530498798,"width":16,"height":16}]},"computedPosition":{"x":1171.5384615384614,"y":300,"z":0},"position":{"x":1171.5384615384614,"y":300},"label":"javascript-code","data":{"disableBlock":false,"description":"","timeout":20000,"code":"const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'interaction-needed' }\n  }\n});\nwindow.dispatchEvent(event);","preloadScripts":[],"everyNewTab":false,"runBeforeLoad":false},"id":"lx2pnwk","selected":false},{"type":"BlockBasic","dimensions":{"width":192,"height":72},"handleBounds":{"source":[{"id":"6d757b4-output-1","position":"right","x":196.00003756009616,"y":27.99999530498798,"width":16,"height":16}],"target":[{"id":"6d757b4-input-1","position":"left","x":-20,"y":27.99999530498798,"width":16,"height":16}]},"computedPosition":{"x":337.61833861794423,"y":185.22402013069848,"z":0},"data":{"code":"const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'started' }\n  }\n});\nwindow.dispatchEvent(event);","description":"","disableBlock":false,"everyNewTab":false,"preloadScripts":[],"runBeforeLoad":false,"timeout":20000},"label":"javascript-code","id":"6d757b4","selected":false,"position":{"x":337.61833861794423,"y":185.22402013069848}}],"edges":[{"id":"J0iVtLmaee25XtSu5w0xK","class":"source-dq66daH64NH-km-QCSBVd-output-1 targte-iVUXJH1HVrjZaMUx8lm6H-input-1","source":"dq66daH64NH-km-QCSBVd","sourceHandle":"dq66daH64NH-km-QCSBVd-output-1","target":"iVUXJH1HVrjZaMUx8lm6H","targetHandle":"iVUXJH1HVrjZaMUx8lm6H-input-1","type":"default","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0,"updatable":true,"selectable":true,"markerEnd":""},{"id":"6JyLkJYCdvNxhuXk43iqs","class":"source-iVUXJH1HVrjZaMUx8lm6H-output-1 targte-H2xkJgFM5gW69cV5R0o_u-input-1","source":"iVUXJH1HVrjZaMUx8lm6H","sourceHandle":"iVUXJH1HVrjZaMUx8lm6H-output-1","target":"H2xkJgFM5gW69cV5R0o_u","targetHandle":"H2xkJgFM5gW69cV5R0o_u-input-1","type":"default","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0,"updatable":true,"selectable":true,"markerEnd":""},{"id":"j3WWqnZpJ_J5mU62dxaU0","class":"source-H2xkJgFM5gW69cV5R0o_u-output-1 targte-gdixDIoyiEJ0X8sZM2S3e-input-1","source":"H2xkJgFM5gW69cV5R0o_u","sourceHandle":"H2xkJgFM5gW69cV5R0o_u-output-1","target":"gdixDIoyiEJ0X8sZM2S3e","targetHandle":"gdixDIoyiEJ0X8sZM2S3e-input-1","type":"default","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0,"updatable":true,"selectable":true,"markerEnd":""},{"id":"vueflow__edge-gdixDIoyiEJ0X8sZM2S3egdixDIoyiEJ0X8sZM2S3e-output-1-lx2pnwklx2pnwk-input-1","source":"gdixDIoyiEJ0X8sZM2S3e","sourceHandle":"gdixDIoyiEJ0X8sZM2S3e-output-1","target":"lx2pnwk","targetHandle":"lx2pnwk-input-1","class":"source-gdixDIoyiEJ0X8sZM2S3e-output-1 target-lx2pnwk-input-1","updatable":true,"selectable":true,"type":"default","markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0},{"id":"vueflow__edge-dq66daH64NH-km-QCSBVddq66daH64NH-km-QCSBVd-output-1-6d757b46d757b4-input-1","source":"dq66daH64NH-km-QCSBVd","sourceHandle":"dq66daH64NH-km-QCSBVd-output-1","target":"6d757b4","targetHandle":"6d757b4-input-1","class":"source-dq66daH64NH-km-QCSBVd-output-1 target-6d757b4-input-1","updatable":true,"selectable":true,"type":"default","markerEnd":"","z":0,"sourceX":0,"sourceY":0,"targetX":0,"targetY":0}],"position":[-90.00000000000023,19],"zoom":1.3},"settings":{"blockDelay":0,"debugMode":false,"defaultColumnName":"column","executedBlockOnWeb":false,"inputAutocomplete":true,"insertDefaultColumn":false,"notification":true,"onError":"stop-workflow","publicId":"","restartTimes":3,"reuseLastState":false,"saveLog":true},"globalData":"{\n\t\"key\": \"value\"\n}","description":"","includedWorkflows":{}}
+      "definition": {
+        "extVersion": "1.18.1",
+        "name": "Instagram DSAR",
+        "icon": "riGlobalLine",
+        "table": [],
+        "version": "1.18.1",
+        "drawflow": {
+          "nodes": [
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "dq66daH64NH-km-QCSBVd-output-1",
+                    "position": "right",
+                    "x": 195.99999060997595,
+                    "y": 27.99999530498798,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 50,
+                "y": 300,
+                "z": 0
+              },
+              "data": {
+                "activeInInput": false,
+                "contextMenuName": "",
+                "contextTypes": [],
+                "date": "",
+                "days": [],
+                "delay": 5,
+                "description": "",
+                "disableBlock": false,
+                "interval": 60,
+                "isUrlRegex": false,
+                "observeElement": {
+                  "baseElOptions": {
+                    "attributeFilter": [],
+                    "attributes": false,
+                    "characterData": false,
+                    "childList": true,
+                    "subtree": false
+                  },
+                  "baseSelector": "",
+                  "matchPattern": "",
+                  "selector": "",
+                  "targetOptions": {
+                    "attributeFilter": [],
+                    "attributes": false,
+                    "characterData": false,
+                    "childList": true,
+                    "subtree": false
+                  }
+                },
+                "parameters": [],
+                "shortcut": "",
+                "time": "00:00",
+                "type": "manual",
+                "url": ""
+              },
+              "id": "dq66daH64NH-km-QCSBVd",
+              "label": "trigger",
+              "position": {
+                "x": 50,
+                "y": 300
+              }
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "iVUXJH1HVrjZaMUx8lm6H-output-1",
+                    "position": "right",
+                    "x": 196.00003756009616,
+                    "y": 27.99999530498798,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "iVUXJH1HVrjZaMUx8lm6H-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 27.99999530498798,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 320,
+                "y": 300,
+                "z": 0
+              },
+              "data": {
+                "disableBlock": false,
+                "description": "",
+                "url": "https://www.instagram.com/download/request/",
+                "userAgent": "",
+                "active": false,
+                "inGroup": false,
+                "waitTabLoaded": true,
+                "updatePrevTab": false,
+                "customUserAgent": false
+              },
+              "id": "iVUXJH1HVrjZaMUx8lm6H",
+              "label": "new-tab",
+              "position": {
+                "x": 320,
+                "y": 300
+              },
+              "selected": false
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "H2xkJgFM5gW69cV5R0o_u-output-1",
+                    "position": "right",
+                    "x": 196.00003756009616,
+                    "y": 27.99999530498798,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "H2xkJgFM5gW69cV5R0o_u-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 27.99999530498798,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 600,
+                "y": 300,
+                "z": 0
+              },
+              "data": {
+                "description": "",
+                "disableBlock": false,
+                "findBy": "cssSelector",
+                "markEl": false,
+                "multiple": false,
+                "selector": "input#igCoreRadioButtonoutputFormatJSON",
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000
+              },
+              "id": "H2xkJgFM5gW69cV5R0o_u",
+              "label": "event-click",
+              "position": {
+                "x": 600,
+                "y": 300
+              },
+              "selected": false
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "gdixDIoyiEJ0X8sZM2S3e-output-1",
+                    "position": "right",
+                    "x": 196.00003756009616,
+                    "y": 27.99999530498798,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "gdixDIoyiEJ0X8sZM2S3e-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 27.99999530498798,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 880,
+                "y": 300,
+                "z": 0
+              },
+              "data": {
+                "disableBlock": false,
+                "description": "Weiter",
+                "findBy": "xpath",
+                "waitForSelector": true,
+                "waitSelectorTimeout": 5000,
+                "selector": "//*[@id=\"react-root\"]/div/div/section/main/div/article/form/div/button",
+                "markEl": false,
+                "multiple": false
+              },
+              "id": "gdixDIoyiEJ0X8sZM2S3e",
+              "label": "event-click",
+              "position": {
+                "x": 880,
+                "y": 300
+              },
+              "selected": false
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "lx2pnwk-output-1",
+                    "position": "right",
+                    "x": 196.00003756009616,
+                    "y": 27.99999530498798,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "lx2pnwk-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 27.99999530498798,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 1171.5384615384614,
+                "y": 300,
+                "z": 0
+              },
+              "position": {
+                "x": 1171.5384615384614,
+                "y": 300
+              },
+              "label": "javascript-code",
+              "data": {
+                "disableBlock": false,
+                "description": "",
+                "timeout": 20000,
+                "code": "const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'interaction-needed' }\n  }\n});\nwindow.dispatchEvent(event);",
+                "preloadScripts": [],
+                "everyNewTab": false,
+                "runBeforeLoad": false
+              },
+              "id": "lx2pnwk",
+              "selected": false
+            },
+            {
+              "type": "BlockBasic",
+              "dimensions": {
+                "width": 192,
+                "height": 72
+              },
+              "handleBounds": {
+                "source": [
+                  {
+                    "id": "6d757b4-output-1",
+                    "position": "right",
+                    "x": 196.00003756009616,
+                    "y": 27.99999530498798,
+                    "width": 16,
+                    "height": 16
+                  }
+                ],
+                "target": [
+                  {
+                    "id": "6d757b4-input-1",
+                    "position": "left",
+                    "x": -20,
+                    "y": 27.99999530498798,
+                    "width": 16,
+                    "height": 16
+                  }
+                ]
+              },
+              "computedPosition": {
+                "x": 337.61833861794423,
+                "y": 185.22402013069848,
+                "z": 0
+              },
+              "data": {
+                "code": "const event = new CustomEvent( '__js-event__', {\n  'detail': {\n    'type': 'to_active',\n    'data': { 'workflow_state': 'started' }\n  }\n});\nwindow.dispatchEvent(event);",
+                "description": "",
+                "disableBlock": false,
+                "everyNewTab": false,
+                "preloadScripts": [],
+                "runBeforeLoad": false,
+                "timeout": 20000
+              },
+              "label": "javascript-code",
+              "id": "6d757b4",
+              "selected": false,
+              "position": {
+                "x": 337.61833861794423,
+                "y": 185.22402013069848
+              }
+            }
+          ],
+          "edges": [
+            {
+              "id": "J0iVtLmaee25XtSu5w0xK",
+              "class": "source-dq66daH64NH-km-QCSBVd-output-1 targte-iVUXJH1HVrjZaMUx8lm6H-input-1",
+              "source": "dq66daH64NH-km-QCSBVd",
+              "sourceHandle": "dq66daH64NH-km-QCSBVd-output-1",
+              "target": "iVUXJH1HVrjZaMUx8lm6H",
+              "targetHandle": "iVUXJH1HVrjZaMUx8lm6H-input-1",
+              "type": "default",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "updatable": true,
+              "selectable": true,
+              "markerEnd": ""
+            },
+            {
+              "id": "6JyLkJYCdvNxhuXk43iqs",
+              "class": "source-iVUXJH1HVrjZaMUx8lm6H-output-1 targte-H2xkJgFM5gW69cV5R0o_u-input-1",
+              "source": "iVUXJH1HVrjZaMUx8lm6H",
+              "sourceHandle": "iVUXJH1HVrjZaMUx8lm6H-output-1",
+              "target": "H2xkJgFM5gW69cV5R0o_u",
+              "targetHandle": "H2xkJgFM5gW69cV5R0o_u-input-1",
+              "type": "default",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "updatable": true,
+              "selectable": true,
+              "markerEnd": ""
+            },
+            {
+              "id": "j3WWqnZpJ_J5mU62dxaU0",
+              "class": "source-H2xkJgFM5gW69cV5R0o_u-output-1 targte-gdixDIoyiEJ0X8sZM2S3e-input-1",
+              "source": "H2xkJgFM5gW69cV5R0o_u",
+              "sourceHandle": "H2xkJgFM5gW69cV5R0o_u-output-1",
+              "target": "gdixDIoyiEJ0X8sZM2S3e",
+              "targetHandle": "gdixDIoyiEJ0X8sZM2S3e-input-1",
+              "type": "default",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0,
+              "updatable": true,
+              "selectable": true,
+              "markerEnd": ""
+            },
+            {
+              "id": "vueflow__edge-gdixDIoyiEJ0X8sZM2S3egdixDIoyiEJ0X8sZM2S3e-output-1-lx2pnwklx2pnwk-input-1",
+              "source": "gdixDIoyiEJ0X8sZM2S3e",
+              "sourceHandle": "gdixDIoyiEJ0X8sZM2S3e-output-1",
+              "target": "lx2pnwk",
+              "targetHandle": "lx2pnwk-input-1",
+              "class": "source-gdixDIoyiEJ0X8sZM2S3e-output-1 target-lx2pnwk-input-1",
+              "updatable": true,
+              "selectable": true,
+              "type": "default",
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0
+            },
+            {
+              "id": "vueflow__edge-dq66daH64NH-km-QCSBVddq66daH64NH-km-QCSBVd-output-1-6d757b46d757b4-input-1",
+              "source": "dq66daH64NH-km-QCSBVd",
+              "sourceHandle": "dq66daH64NH-km-QCSBVd-output-1",
+              "target": "6d757b4",
+              "targetHandle": "6d757b4-input-1",
+              "class": "source-dq66daH64NH-km-QCSBVd-output-1 target-6d757b4-input-1",
+              "updatable": true,
+              "selectable": true,
+              "type": "default",
+              "markerEnd": "",
+              "z": 0,
+              "sourceX": 0,
+              "sourceY": 0,
+              "targetX": 0,
+              "targetY": 0
+            }
+          ],
+          "position": [
+            -90.00000000000023,
+            19
+          ],
+          "zoom": 1.3
+        },
+        "settings": {
+          "blockDelay": 0,
+          "debugMode": false,
+          "defaultColumnName": "column",
+          "executedBlockOnWeb": false,
+          "inputAutocomplete": true,
+          "insertDefaultColumn": false,
+          "notification": true,
+          "onError": "stop-workflow",
+          "publicId": "",
+          "restartTimes": 3,
+          "reuseLastState": false,
+          "saveLog": true
+        },
+        "globalData": "{\n\t\"key\": \"value\"\n}",
+        "description": "",
+        "includedWorkflows": {}
+      }
     }
   }
 ]

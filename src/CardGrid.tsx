@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { Crd } from "./components/Crd"
 import controllers from "./assets/controllers.json";
-import { InputBase } from "@mui/material";
+import { Box, Button, InputBase } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
 import { useState } from "react";
@@ -82,6 +82,13 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
   },
 }));
 
+const automaEvent = '__automa-ext__';
+const recordWorkflowExent = new CustomEvent(automaEvent, {
+  'detail': {
+    'type': 'record-workflow'
+  }
+});
+
 export default function CardGrid() {
   const [filter, setFilter] = useState("");
 
@@ -91,11 +98,19 @@ export default function CardGrid() {
 
   return (
     <>
-      <AppBar position="sticky">
-        <Toolbar>
-          <StyledTypography variant="h6" color="inherit" noWrap>
+      <AppBar position="static">
+        <Toolbar variant="dense">
+          <StyledTypography variant="h6" color="inherit">
             DARA Overview
           </StyledTypography>
+          <Button
+            onClick={() => {
+              window.dispatchEvent(recordWorkflowExent);
+            }}
+            sx={{ my: 2, color: 'white', display: 'block' }}
+          >
+            Record flow
+          </Button>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
