@@ -28,7 +28,7 @@ export default function ExtensionAvailabilityCheck() {
 
     React.useEffect(() => {
         if (checkExtensionAvailability()) {
-            enqueueSnackbar(`Connected to browser extension, ready to go!`)
+            enqueueSnackbar(`Verbunden zur Browsererweiterung, es kann los gehen!`)
         } else {
             setOpen(true);
         }
@@ -43,7 +43,7 @@ export default function ExtensionAvailabilityCheck() {
                 aria-describedby="alert-dialog-description"
             >
                 <DialogTitle id="alert-dialog-title">
-                    {"You need the DARA browser-extension to use this service."}
+                    {"Sie benötigen die DARA-Browsererweiterung um diesen Dienst nutzen zu können."}
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
