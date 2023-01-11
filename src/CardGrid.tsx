@@ -4,18 +4,14 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { Crd } from "./components/Crd"
-import controllers from "./assets/controllers.json";
 import daraIcon from "./assets/icon-128.png";
-import { Box, Button, IconButton, InputBase, Modal, TextField } from "@mui/material";
+import { Box, Button, InputBase, Modal, TextField } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import PlusIcon from '@mui/icons-material/Add';
 import { styled, alpha } from '@mui/material/styles';
 import { useEffect, useRef, useState } from "react";
 import React from 'react';
-import { writeFileSync } from 'fs';
-import { Description, GifBox } from '@mui/icons-material';
-
 
 /*
 function Copyright() {
