@@ -1,8 +1,10 @@
-import { Grid, Card, CardActionArea, CardHeader, capitalize, CardActions, Button, Avatar, IconButton } from '@mui/material';
+import { Grid, Card, CardActionArea, CardHeader, capitalize, CardActions, Button, Avatar, IconButton, Menu, MenuItem, ListItemIcon, ListItemText } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import CheckIcon from '@mui/icons-material/Check';
 import ErrorIcon from '@mui/icons-material/Error';
-import BusinessIcon from '@mui/icons-material/Business';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import EditIcon from '@mui/icons-material/Edit';
 import LoadingButton from '@mui/lab/LoadingButton';
 import CloseIcon from '@mui/icons-material/Close';
 import React from 'react';
@@ -13,6 +15,14 @@ export const Crd = ({ controller }: any) => {
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
   const [failed, setFailed] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: any) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
@@ -23,7 +33,21 @@ export const Crd = ({ controller }: any) => {
   const executeWorkflowEvent = new CustomEvent(automaEvent, {
     'detail': {
       'type': 'execute-workflow',
-      'data': { "workflow": controller.automation.definition }
+      'data': { "workflow": controller }
+    }
+  });
+
+  const deleteWorkflowEvent = new CustomEvent(automaEvent, {
+    'detail': {
+      'type': 'workflow-delete',
+      'data': { "workflowId": controller.id }
+    }
+  });
+
+  const editWorkflowEvent = new CustomEvent(automaEvent, {
+    'detail': {
+      'type': 'open-workflow',
+      'data': { "workflowId": controller.id }
     }
   });
 
@@ -45,9 +69,9 @@ export const Crd = ({ controller }: any) => {
 
   const setExecutionTimeout = (timeout: number) => {
     timer.current = window.setTimeout(() => {
-      endExecution();
+      // endExecution();
       // Offer to repeat execution with tab in foreground
-      enqueueSnackbar(`[${controller.name}] Request submission time out reached.`, { variant: 'error', action: restartWfForeground, persist: true })
+      enqueueSnackbar(`[${controller.name}] Die Anfrage braucht länger als erwartet.`, { variant: 'warning', action: restartWfForeground, persist: true })
     }, timeout);
   }
 
@@ -60,7 +84,7 @@ export const Crd = ({ controller }: any) => {
           setExecutionTimeout(20000);
           closeSnackbar(snackbarId);
         }}>
-        OPEN TAB
+        TAB ÖFFNEN
       </Button>
       <IconButton
         size="small"
@@ -86,11 +110,16 @@ export const Crd = ({ controller }: any) => {
       }}>
         RESTART
       </Button>
+      <Button color="inherit" onClick={() => {
+        endExecution();
+        closeSnackbar(snackbarId);
+      }}>
+        STOP
+      </Button>
       <IconButton
         size="small"
         onClick={() => {
           closeSnackbar(snackbarId);
-          endExecution();
         }}
       >
         <CloseIcon fontSize="small" />
@@ -114,7 +143,8 @@ export const Crd = ({ controller }: any) => {
       setLoading(false);
       clearTimeout(timer.current);
       window.removeEventListener('message', eventHandler);
-      enqueueSnackbar(`[${controller.name}] Successfuly requested your data.`, { variant: 'success' });
+      closeSnackbar();
+      enqueueSnackbar(`[${controller.name}] Daten erfolgreich angefragt.`, { variant: 'success' });
 
       // Todo: Inform user about how and when the data will be transmitted to them. 
       // This could be done via a controller-specific modal offering information. Possibly offer a calendar reminder ics?
@@ -122,11 +152,11 @@ export const Crd = ({ controller }: any) => {
       // The workflow execution started
     } else if (event.data.workflow_state === 'started') {
       currentWorkflowTabId = event.data.workflowTabId;
-      enqueueSnackbar(`[${controller.name}] Executing the click path.`, { variant: 'info' });
+      enqueueSnackbar(`[${controller.name}] Der Klickpfad wird ausgeführt.`, { variant: 'info' });
 
       // A previous request is still pending
     } else if (event.data.workflow_state === 'request-pending') {
-      enqueueSnackbar(`[${controller.name}] A previous request is still pending.`, { variant: 'info' });
+      enqueueSnackbar(`[${controller.name}] Ein vorherige Anfrage wird noch bearbeitet.`, { variant: 'info' });
       setSuccess(true);
       setLoading(false);
       clearTimeout(timer.current);
@@ -136,21 +166,27 @@ export const Crd = ({ controller }: any) => {
     } else if (event.data.workflow_state === 'interaction-needed') {
       currentWorkflowTabId = event.data.workflowTabId;
       clearTimeout(timer.current);
-      enqueueSnackbar(`[${controller.name}] Manual input is required to finish the request.`, { variant: 'warning', action: openTabAction, persist: true });
-
+      enqueueSnackbar(`[${controller.name}] Eine Eingabe wird benötigt um die Anfrage abzuschließen.`, { variant: 'warning', action: openTabAction, persist: true });
+    
+      // Could not start the request
+    } else if (event.data.workflow_state === 'start-failed') {
+      currentWorkflowTabId = event.data.workflowTabId;
+      clearTimeout(timer.current);
+      enqueueSnackbar(`[${controller.name}] Konnte die Anfrage nicht starten, sind sie auf der Seite des Anbieters eingeloggt?`, { variant: 'warning', action: openTabAction, persist: true });
+    
       // The execution failed
     } else if (event.data.workflow_state === 'failed') {
       endExecution();
 
       // Offer to repeat execution with tab in foreground
-      enqueueSnackbar(`[${controller.name}] Could not finish request.`, { variant: 'error', action: restartWfForeground, persist: true })
+      enqueueSnackbar(`[${controller.name}] Konnte die Anfrage leider nicht abschließen.`, { variant: 'error', action: restartWfForeground, persist: true })
     }
   }
 
   const onClickExecuteRequest = () => {
 
     if (!checkExtensionAvailability()) {
-      enqueueSnackbar(`Could not reach extension, is it installed?`, { variant: 'error' })
+      enqueueSnackbar(`Konnte die DARA-Browsererweiterung nicht erreichen, ist sie installiert?`, { variant: 'error' })
       return;
     }
 
@@ -167,29 +203,73 @@ export const Crd = ({ controller }: any) => {
     <>
       <Grid item key={controller.name} xs={12} sm={6} md={4}>
         <Card>
+          {/*
           <CardActionArea
             target="_blank"
             href={controller.dsar_url}
           >
-            <CardHeader
-              title={capitalize(controller.name)}
-              titleTypographyProps={{
-                variant: "h6",
-                component: "h2"
-              }}
-              subheader="Data Request Page"
-              avatar={
-                <Avatar
-                  alt={capitalize(controller.name) + ' logo'}
-                // src={"https://besticon.herokuapp.com/icon?size=32..200..500&url=" + controller.hostnames[0]}
-                >
-                  <BusinessIcon />
-                </Avatar>
-              }
-            />
-          </CardActionArea>
+          */}
+          <CardHeader
+            title={capitalize(controller.name)}
+            titleTypographyProps={{
+              variant: "h6",
+              component: "h2"
+            }}
+            action={
+              <>
+                <IconButton
+                  onClick={handleClick}
+                  aria-label="more"
+                  id="menu"
+                  aria-controls={open ? 'menu' : undefined}
+                  aria-expanded={open ? 'true' : undefined}
+                  aria-haspopup="true">
+                  <MoreVertIcon />
+
+                </IconButton>
+                <Menu
+                  id="menu"
+                  open={open}
+                  onClose={handleClose}
+                  anchorEl={anchorEl}>
+                  <MenuItem onClick={() => {window.dispatchEvent(editWorkflowEvent)}}>
+                    <ListItemIcon>
+                      <EditIcon />
+                    </ListItemIcon>
+                    <ListItemText>Bearbeiten</ListItemText>
+                  </MenuItem>
+                  <MenuItem onClick={() => {window.dispatchEvent(deleteWorkflowEvent)}}>
+                    <ListItemIcon>
+                      <CloseIcon />
+                    </ListItemIcon>
+                    <ListItemText>Löschen</ListItemText>
+                  </MenuItem>
+                  {/*
+                  <MenuItem onClick={() => {window.dispatchEvent(TODO)}}>
+                    <ListItemIcon>
+                      <CloudUploadIcon />
+                    </ListItemIcon>
+                    <ListItemText>Upload</ListItemText>
+                  </MenuItem>
+                  */}
+                </Menu>
+              </>
+            }
+            subheader={ controller.verified ? "✓ DARA Orginal Klickpfad" : "Lokaler Klickpfad"}
+            /*
+            avatar={
+              <Avatar
+                alt={capitalize(controller.name) + ' logo'}
+              // src={"https://besticon.herokuapp.com/icon?size=32..200..500&url=" + controller.hostnames[0]}
+              >
+                <BusinessIcon />
+              </Avatar>
+            }
+            */
+          />
+          {/*</CardActionArea>*/}
           <CardActions>
-            {controller.automation &&
+            {controller &&
               <LoadingButton
                 size="small"
                 variant="outlined"
@@ -206,7 +286,7 @@ export const Crd = ({ controller }: any) => {
                 loadingPosition="end"
                 onClick={() => onClickExecuteRequest()}
               >
-                {success ? "Requested Data" : "Request Data"}
+                {success ? "Daten angefragt" : "Sende Datenanfrage"}
               </LoadingButton>
             }
           </CardActions>

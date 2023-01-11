@@ -47,11 +47,11 @@ export default function ExtensionAvailabilityCheck() {
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
-                        For DARA to be able to atomatically send a data access request on your behalf, our extension must be installed in your browser.
+                        Damit DARA automatisch eine Datenanfrage für sie stellen kann, muss unsere Erweiterung in Ihrem Browser installiert sein.
                     </DialogContentText>
                     <br></br>
                     <DialogContentText id="alert-dialog-description" sx={{ 'text-align': 'center' }} >
-                        You can download it for Chrome-based browsers or Firefox:
+                        Sie können die Erweiterung für Chrome-basierte Browser oder Firefox installieren:
                     </DialogContentText>
                     <br></br>
                     <Container sx={{ 'align': 'center' }}>
