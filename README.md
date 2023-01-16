@@ -2,6 +2,7 @@
 
 This is the prototype frontend for the DataAccessRequestAssistant DARA. 
 
+## Usage
 It is ment to be used together with DARA browser extension, which is based on the automa extension.  
 You can download the extension here:
 
@@ -21,3 +22,14 @@ You can download the extension here:
     </td>
   </tr>
 </table>
+
+## Development
+This frontend was build using React.
+
+### Requirments
+- JavaScript 
+- Node >= 14 
+- React Scripts, install e.g. with ``npm i react-scripts``
+
+### Getting started
+Just run ``npm start``, afterwards, ``http://localhost:3000/dara-frontend`` will open automatically.
