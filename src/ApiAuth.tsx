@@ -40,7 +40,7 @@ export function checkLoginStatus() {
 interface LoginDialogProps {
     setOpen: Function,
     open: boolean
-  }
+}
 
 export function LoginDialog(props: LoginDialogProps) {
     const { enqueueSnackbar } = useSnackbar();
@@ -61,11 +61,16 @@ export function LoginDialog(props: LoginDialogProps) {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'accept': 'application/json',
                 },
-                body: JSON.stringify({
-                    username: username,
-                    password: password
+                body: new URLSearchParams({
+                    "username": username,
+                    "password": password,
+                    "grant_type": "",
+                    "scope": "",
+                    "client_id": "",
+                    "client_secret": "",
                 }),
             })
                 .then(response => response.json())
@@ -88,33 +93,31 @@ export function LoginDialog(props: LoginDialogProps) {
                 open={props.open}
                 onClose={handleClose}
                 aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"   
+                aria-describedby="alert-dialog-description"
             >
-                <DialogTitle id="alert-dialog-title" sx={{maxWidth: '350px'}}>
+                <DialogTitle id="alert-dialog-title" sx={{ maxWidth: '350px' }}>
                     {"Um den Klickpfad hochzuladen, müssen Sie sich einloggen."}
                 </DialogTitle>
-                <DialogActions sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', maxWidth: '350px'}}>
+                <DialogActions sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', maxWidth: '350px' }}>
                     <TextField
                         required
-                        id="outlined-required"
                         label="Username"
                         autoFocus={true}
                         defaultValue=""
                         inputRef={usernameRef}
                         sx={{ m: 1 }}
                     />
-                    
+
                     <TextField
                         required
                         type="password"
-                        id="outlined-required"
                         label="Passwort"
                         autoFocus={true}
                         defaultValue=""
                         inputRef={passwordRef}
                         sx={{ m: 1 }}
                     />
-                    
+
                     <Button onClick={() => {
                         fetchAccessToken();
                     }}
