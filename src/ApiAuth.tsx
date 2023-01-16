@@ -71,10 +71,7 @@ export function LoginDialog(props: LoginDialogProps) {
                     "client_secret": "",
                 }),
             })
-                .then(response => {
-                    console.log(response);
-                    response.json();
-                })
+                .then(response => response.json())
                 .then((data: any) => {
                     console.log('Success:', data);
                     // Set access_token in localStorage
