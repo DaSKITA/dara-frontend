@@ -10,8 +10,9 @@ import SearchIcon from '@mui/icons-material/Search';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import PlusIcon from '@mui/icons-material/Add';
 import { styled, alpha } from '@mui/material/styles';
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import React from 'react';
+import { LoginDialog } from "./ApiAuth";
 
 /*
 function Copyright() {
@@ -102,13 +103,17 @@ const fetchWorkflowsEvent = (revalidate = false) => new CustomEvent(automaEvent,
 });
 
 export default function CardGrid() {
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = React.useState("");
   const [workflows, setWorkflows] = React.useState<any[]>([]);
   const [open, setOpen] = React.useState(false);
+  const [loginDialogState, setloginDialogState] = React.useState<boolean>(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const formularUrlRef = useRef<HTMLInputElement>();
 
+  const handleLoginDialogOpen = () => {
+    setloginDialogState(true);
+  };
 
   const workflowDataEventHandler = (event: any) => {
     if (event.origin === window.location.origin) {
@@ -145,7 +150,7 @@ export default function CardGrid() {
           <img src={daraIcon} alt="DARA Logo" width="30" height="30" />
 
 
-          <StyledTypography variant="h6" color="inherit" sx={{ml: 2}}>
+          <StyledTypography variant="h6" color="inherit" sx={{ ml: 2 }}>
             DARA - Ihr Assistent für Datenanfragen
           </StyledTypography>
           <Button
@@ -159,7 +164,7 @@ export default function CardGrid() {
             onClick={() => {
               window.dispatchEvent(fetchWorkflowsEvent(true));
             }}
-            sx={{ my: 2, mx:0.5, color: 'white' }}
+            sx={{ my: 2, mx: 0.5, color: 'white' }}
             startIcon={<RefreshIcon />}
           >
             Klickpfade aktualisieren
@@ -185,17 +190,13 @@ export default function CardGrid() {
             spacing={4}
             direction="row"
           >
-            {/*controllers &&
-              controllers.map((controller: any) => (
-                controller.name.toLowerCase().includes(filter.toLowerCase()) &&
-                <Crd controller={controller} key={controller.name} />
-              ))
-              */}
             {workflows &&
               workflows.map((workflow: any) => (
-                <Crd controller={workflow} key={workflow.id} />
+                workflow.name.toLowerCase().includes(filter.toLowerCase()) &&
+                <Crd controller={workflow} key={workflow.id} openLoginDialog={handleLoginDialogOpen} />
               ))
             }
+
           </Grid>
           {/* End Card grid */}
           <Modal
@@ -238,22 +239,24 @@ export default function CardGrid() {
                 sx={{ mb: 2 }}
               />
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                Nach dem Klick auf den "Aufzeichnung starten" Button  wird ein neuer Tab mit der angegebenen URL geöffnet. Hier können sie wie gewohnt ihre Daten beantragen. 
-                Nur ihre Klicks werden aufgezeichnet, keine eigegebenen Daten oder sonstige Informationen. 
-                Nach dem Absenden der Datenanfrage beenden sie die Aufzeichnung über den roten Button. Der Klickpfand wird lokal gespeichert und erscheint in der Übersicht. 
+                Nach dem Klick auf den "Aufzeichnung starten" Button  wird ein neuer Tab mit der angegebenen URL geöffnet. Hier können sie wie gewohnt ihre Daten beantragen.
+                Nur ihre Klicks werden aufgezeichnet, keine eigegebenen Daten oder sonstige Informationen.
+                Nach dem Absenden der Datenanfrage beenden sie die Aufzeichnung über den roten Button. Der Klickpfand wird lokal gespeichert und erscheint in der Übersicht.
               </Typography>
               <Button onClick={() => {
                 handleStartRecording();
                 handleClose();
               }}
                 sx={{ mt: 2 }}
-                >
+              >
                 Aufzeichnung starten
               </Button>
             </Box>
           </Modal>
         </StyledCardGridContainer>
+
       </main>
+      <LoginDialog open={loginDialogState} setOpen={setloginDialogState} />
 
       {/* Footer */}
       < StyledFooter >
