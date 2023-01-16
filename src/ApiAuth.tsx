@@ -13,7 +13,6 @@ export function uploadClickpath(controller: any, enqueueSnackbar: any) {
 
     fetch('https://v2202301191442214869.powersrv.de/controllers/', {
         method: 'POST',
-        mode: 'cors',
         headers: headers,
         body: JSON.stringify(controller),
     })
@@ -59,7 +58,6 @@ export function LoginDialog(props: LoginDialogProps) {
             // Get access_token from backend
             fetch('https://v2202301191442214869.powersrv.de/token/', {
                 method: 'POST',
-                mode: 'no-cors',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                     'accept': 'application/json',
@@ -73,11 +71,14 @@ export function LoginDialog(props: LoginDialogProps) {
                     "client_secret": "",
                 }),
             })
-                .then(response => response.json())
-                .then(data => {
+                .then(response => {
+                    console.log(response);
+                    response.json();
+                })
+                .then((data: any) => {
                     console.log('Success:', data);
                     // Set access_token in localStorage
-                    localStorage.setItem('access_token', data.access_token);
+                    localStorage.setItem('access_token', data['access_token']);
                     enqueueSnackbar(`Erfolgreich eingeloggt!`)
                 })
                 .catch((error) => {
