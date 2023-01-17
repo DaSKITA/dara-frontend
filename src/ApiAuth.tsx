@@ -20,7 +20,7 @@ export function uploadClickpath(controller: any, enqueueSnackbar: any) {
         .then(data => {
             if (data.detail === "Could not validate credentials") {
                 enqueueSnackbar(`Login abgelaufen, bitte neu anmelden.`)
-                return;
+                sessionStorage.setItem('access_token', '');
             } else {
                 console.log('Success:', data);
                 enqueueSnackbar(`Klickpfad erfolgreich hochgeladen!`)
@@ -80,8 +80,12 @@ export function LoginDialog(props: LoginDialogProps) {
                 .then((data: any) => {
                     console.log('Success:', data);
                     // Set access_token in sessionStorage
-                    sessionStorage.setItem('access_token', data['access_token']);
-                    enqueueSnackbar(`Erfolgreich eingeloggt!`)
+                    if (data['access_token']) {
+                        sessionStorage.setItem('access_token', data['access_token']);
+                        enqueueSnackbar(`Erfolgreich eingeloggt!`)
+                    } else {
+                        enqueueSnackbar(`Fehler beim Login!`)
+                    }
                 })
                 .catch((error) => {
                     console.error('Error:', error);
