@@ -6,7 +6,7 @@ import { Button, DialogActions, TextField } from '@mui/material';
 
 
 export function uploadClickpath(controller: any, enqueueSnackbar: any) {
-    const access_token = localStorage.getItem('access_token');
+    const access_token = sessionStorage.getItem('access_token');
     const headers = new Headers();
     headers.append('Authorization', `Bearer ${access_token}`);
     headers.append('Content-Type', 'application/json');
@@ -51,7 +51,7 @@ export function LoginDialog(props: LoginDialogProps) {
     const usernameRef = React.useRef<HTMLInputElement>();
     const passwordRef = React.useRef<HTMLInputElement>();
 
-    const handleClose = (event: any, reason: any) => {
+    const handleClose = () => {
         props.setOpen(false);
     }
 
@@ -83,6 +83,7 @@ export function LoginDialog(props: LoginDialogProps) {
                     if (data['access_token']) {
                         sessionStorage.setItem('access_token', data['access_token']);
                         enqueueSnackbar(`Erfolgreich eingeloggt!`)
+                        handleClose();
                     } else {
                         enqueueSnackbar(`Fehler beim Login!`)
                     }
