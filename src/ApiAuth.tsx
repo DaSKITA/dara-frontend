@@ -74,8 +74,8 @@ export function LoginDialog(props: LoginDialogProps) {
                 .then(response => response.json())
                 .then((data: any) => {
                     console.log('Success:', data);
-                    // Set access_token in localStorage
-                    localStorage.setItem('access_token', data['access_token']);
+                    // Set access_token in sessionStorage
+                    sessionStorage.setItem('access_token', data['access_token']);
                     enqueueSnackbar(`Erfolgreich eingeloggt!`)
                 })
                 .catch((error) => {
