@@ -18,8 +18,13 @@ export function uploadClickpath(controller: any, enqueueSnackbar: any) {
     })
         .then(response => response.json())
         .then(data => {
-            console.log('Success:', data);
-            enqueueSnackbar(`Klickpfad erfolgreich hochgeladen!`)
+            if (data.detail === "Could not validate credentials") {
+                enqueueSnackbar(`Login abgelaufen, bitte neu anmelden.`)
+                return;
+            } else {
+                console.log('Success:', data);
+                enqueueSnackbar(`Klickpfad erfolgreich hochgeladen!`)
+            }
         })
         .catch((error) => {
             console.error('Error:', error);
@@ -28,7 +33,7 @@ export function uploadClickpath(controller: any, enqueueSnackbar: any) {
 }
 
 export function checkLoginStatus() {
-    const access_token = localStorage.getItem('access_token');
+    const access_token = sessionStorage.getItem('access_token');
     if (access_token) {
         return true;
     } else {
