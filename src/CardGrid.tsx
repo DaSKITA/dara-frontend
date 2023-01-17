@@ -4,8 +4,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { Crd } from "./components/Crd"
+import Accordion from "./components/Accordion"
 import daraIcon from "./assets/icon-128.png";
-import { Box, Button, InputBase, Modal, TextField } from "@mui/material";
+import { Box, Button, Divider, Icon, InputBase, Modal, TextField } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import PlusIcon from '@mui/icons-material/Add';
@@ -14,7 +15,7 @@ import { useEffect, useRef } from "react";
 import React from 'react';
 import { LoginDialog } from "./ApiAuth";
 
-/*
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -22,7 +23,7 @@ function Copyright() {
     </Typography>
   );
 }
-*/
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -102,6 +103,13 @@ const fetchWorkflowsEvent = (revalidate = false) => new CustomEvent(automaEvent,
   }
 });
 
+const socialNetworks = ['twitter', 'linkedin', 'facebook', 'instagram'];
+  const shopping = ['amazon', 'ebay', 'ebay_kleinanzeigen', 'otto', 'vinted'];
+  const software = ['apple', 'google', 'samsung', 'huawei', 'xiaomi'];
+  const streaming = ['netflix', 'spotify', 'deezer', 'instagram'];
+  const mobility = ['jelbi', 'uber', 'nextbike'];
+  //other - no own array required
+
 export default function CardGrid() {
   const [filter, setFilter] = React.useState("");
   const [workflows, setWorkflows] = React.useState<any[]>([]);
@@ -141,6 +149,31 @@ export default function CardGrid() {
     }
   }
 
+  let originalWorkflows = []; 
+  let snwWorkflows = [];
+  let shoppingWorkflows = [];
+  let softwareWorkflows = [];
+  let streamingWorkflows = [];
+  let localWorkflows = [];
+  for(let i=0; i<workflows.length; i++){
+    let workflow = workflows[i];
+      if(workflow.verified){
+        let name = workflow.name.toLowerCase();
+         if(socialNetworks.includes(name)){
+          snwWorkflows.push(workflow);
+         }else if(shopping.includes(name)){
+          shoppingWorkflows.push(workflow);
+         }else if(software.includes(name)){
+          softwareWorkflows.push(workflow);
+         }else if(streaming.includes(name)){
+          streamingWorkflows.push(workflow);
+         }else{
+        originalWorkflows.push(workflow);
+         }
+      }else{
+        localWorkflows.push(workflow);
+      }
+  }
 
   return (
     <>
@@ -183,22 +216,116 @@ export default function CardGrid() {
       </AppBar>
 
       <main>
+        {/* Explanation? */}
+        <Container maxWidth="lg">
+        <Box sx={{ my: 4 }}>
+        <Typography variant="h2" gutterBottom align='center'>
+          DARA - Automatisierte Datenauskunft 
+        </Typography>
+        </Box>
+        </Container>
+        <Container maxWidth="md">
+        <Typography variant='body1'>
+          DARA steht für "Data Access Request Assistant" und ist ein Tool, das Ihnen bei der Ausübung Ihres Rechts auf Datenauskunft assistiert. Es besteht aus dieser Webseite und einer Browserextension, die für Sie eine Datenauskunftsanfrage an verschiedene Dienstanbieter senden kann.
+          Dabei hat DARA zu keiner Zeit Zugriff auf Ihre personenbezogenen Daten, diese Daten werden nur bei den Diensten und anschließend auf Ihrem Computer gespeichert.
+          Probieren Sie es einfach aus oder erfahren Sie im Abschnitt <a href='#faq'>FAQ</a> weitere Informationen.
+        </Typography>
+        </Container>
+        
+        {/* End Explanation */}
+        
         {/* Card grid */}
         <StyledCardGridContainer maxWidth="md">
+        <Box sx={{ my: 4 }}>
+        <Typography variant="h4">
+          DARA originale Klickpfade 
+        </Typography>
+        <Typography variant="body1">
+          Hier können Sie für ausgewählte vordefinierte Dienste eine Datenauskunft anfragen. 
+          Bitte loggen Sie sich bei dem entsprechenden Dienst ein, bevor Sie über diese Webseite die Daten beantragen!
+        </Typography>
+        </Box>
+
+        <Typography variant='h6' gutterBottom sx={{borderTop: 1, borderColor: 'primary.main', paddingTop: 2}}>Soziale Netzwerke</Typography>
           <Grid
             container
             spacing={4}
             direction="row"
           >
-            {workflows &&
-              workflows.map((workflow: any) => (
+            {snwWorkflows &&
+              snwWorkflows.map((workflow: any) => (
                 workflow.name.toLowerCase().includes(filter.toLowerCase()) &&
                 <Crd controller={workflow} key={workflow.id} openLoginDialog={handleLoginDialogOpen} />
               ))
             }
 
           </Grid>
-          {/* End Card grid */}
+
+          <Typography variant='h6' gutterBottom sx={{borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4}}>Online Shopping</Typography>
+          <Grid
+            container
+            spacing={4}
+            direction="row"
+          >
+            {shoppingWorkflows &&
+              shoppingWorkflows.map((workflow: any) => (
+                workflow.name.toLowerCase().includes(filter.toLowerCase()) &&
+                <Crd controller={workflow} key={workflow.id} openLoginDialog={handleLoginDialogOpen} />
+              ))
+            }
+
+          </Grid>
+    
+          <Typography variant='h6' gutterBottom sx={{borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4}}>Streaminganbieter</Typography>
+          <Grid
+            container
+            spacing={4}
+            direction="row"
+          >
+            {streamingWorkflows &&
+              streamingWorkflows.map((workflow: any) => (
+                workflow.name.toLowerCase().includes(filter.toLowerCase()) &&
+                <Crd controller={workflow} key={workflow.id} openLoginDialog={handleLoginDialogOpen} />
+              ))
+            }
+          </Grid>
+
+          <Typography variant='h6' gutterBottom sx={{borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4}}>Sonstige</Typography>
+          <Grid
+            container
+            spacing={4}
+            direction="row"
+          >
+            {originalWorkflows &&
+              originalWorkflows.map((workflow: any) => (
+                workflow.name.toLowerCase().includes(filter.toLowerCase()) &&
+                <Crd controller={workflow} key={workflow.id} openLoginDialog={handleLoginDialogOpen} />
+              ))
+            }
+          </Grid>
+
+        <Box sx={{ my: 4 }}>
+        <Typography variant="h4" sx={{ marginTop: 8}}>
+          DARA lokale Klickpfade 
+        </Typography>
+        <Typography variant="body1">
+          Hier können Sie Klickpfade sehen, die Sie selbst erstsellt haben.
+        </Typography>
+        </Box>
+        <Grid
+            container
+            spacing={4}
+            direction="row"
+          >
+            {localWorkflows &&
+              localWorkflows.map((workflow: any) => (
+                workflow.name.toLowerCase().includes(filter.toLowerCase()) &&
+                <Crd controller={workflow} key={workflow.id} openLoginDialog={handleLoginDialogOpen} />
+              ))
+            }
+
+          </Grid>  
+        {/* End Card grid */}
           <Modal
             open={open}
             onClose={handleClose}
@@ -254,7 +381,9 @@ export default function CardGrid() {
             </Box>
           </Modal>
         </StyledCardGridContainer>
-
+        <Container maxWidth='md'> 
+          <Accordion />       
+        </Container>
       </main>
       <LoginDialog open={loginDialogState} setOpen={setloginDialogState} />
 
@@ -263,7 +392,10 @@ export default function CardGrid() {
         <StyledTypography variant="h6" align="center" gutterBottom>
           DARA - Data Access Request Assistant
         </StyledTypography>
-        {/* <Copyright /> */}
+        <Typography align='center'>
+        Dieses Tool wurde vom Fachgebiet <a href='https://www.tu.berlin/ise'>Information Systems Engineering</a> der Technischen Universität Berlin <br></br> im Rahmen des Projekts "Datensouveränität durch KI-basierte Transparenz und Auskunft" (<a href='https://daskita.github.io/'>DaSKITA</a>) entwickelt.
+        </Typography>
+        { /*<Copyright /> */}
       </StyledFooter >
       {/* End footer */}
     </>
