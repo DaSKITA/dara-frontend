@@ -4,6 +4,10 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Container from '@mui/material/Container';
+import chormelogo from '../assets/webstore.png';
+import firefoxlogo from '../assets/ffaddons.png';
+import { bgcolor } from '@mui/system';
 
 export default function SimpleAccordion() {
   return (
@@ -21,10 +25,17 @@ export default function SimpleAccordion() {
         </AccordionSummary>
         <AccordionDetails>
         <Typography variant="body1" align='left'>
-          Sie haben das Recht von einem Anbieter zu erfahren, ob und wenn ja welche Daten über Sie zu welchem Zweck gespeichert werden. Nach Art. 15 (3) DSGVO haben Sie zudem das Recht eine Kopie dieser Daten zu erhalten. Mehr Informationen zum Auskunftsrecht finden Sie beispielsweise auf den Seite des<a href='https://www.bfdi.bund.de/DE/Buerger/Inhalte/Allgemein/Betroffenenrechte/Betroffenenrechte_Auskunftsrecht.html'>Bundesbeauftragten für Datenschutz und die Informationsfreiheit</a> oder der <a href='https://www.verbraucherzentrale.nrw/wissen/digitale-welt/datenschutz/datenauskunft-so-erfahren-sie-was-unternehmen-ueber-sie-wissen-44238'>Verbraucherzentrale NRW</a>.<br></br>
-         
-          Für Verbaucher:innen besteht die erste Hürde bei der Ausübung ihrer Rechte bereits in der Beantragung der Daten.  Dieser Prozess ist nicht standartisiert. Jeder Anbieter hat eine eigene Lösung, die beliebig komplex ist. Manche Anbieter beantworten nur schriftliche Anfragen, andere erlauben die Beantragung über ein Webformular, das jedoch häufig in den Profileinstellungen versteckt ist.
-          DARA,  erlaubt Ihnen im zweiten Fall, bei Anbietern die ein Webformular bereitstellen, die Ausübung Ihres Auskunftsrechts mit nur einem Klick.
+          Die Datenschutzgrundverordnung (DSGVO) beinhaltet verschiedene Transparenz- und Auskunftsrechte, die Ihnen bei der Entscheidung, welche Daten Sie an einen Dienstanbieter übermitteln, helfen sollen.
+          Unter anderem haben das Recht von einem Anbieter zu erfahren, ob und wenn ja welche Daten über Sie zu welchem Zweck gespeichert werden (Das Recht auf Datenauskunft). 
+          Nach Art. 15 (3) DSGVO haben Sie zudem das Recht eine Kopie dieser Daten zu erhalten. Mehr Informationen zum Auskunftsrecht finden Sie beispielsweise auf den Seite des<a href='https://www.bfdi.bund.de/DE/Buerger/Inhalte/Allgemein/Betroffenenrechte/Betroffenenrechte_Auskunftsrecht.html'>Bundesbeauftragten für Datenschutz und die Informationsfreiheit</a> oder der <a href='https://www.verbraucherzentrale.nrw/wissen/digitale-welt/datenschutz/datenauskunft-so-erfahren-sie-was-unternehmen-ueber-sie-wissen-44238'>Verbraucherzentrale NRW</a>.<br></br>
+         <br />
+          In der Praxis wird dieses Recht jedoch selten genutzt. Das hat verschiedene Gründe, einerseits sind sich viele Verbraucher:innen ihrer Rechte nicht bewusst, andererseits beinhaltet die Ausübung des Rechts auch einige Hürden und das Ergebnis ist je nach Anbieter unterschiedlich aussagekräftig.
+          Die meisten Verbraucher:innen besteht die erste Hürde bei der Ausübung ihrer Rechte bereits in der Beantragung der Daten. Dieser Prozess ist nicht standardisiert. Jeder Anbieter hat eine eigene Lösung, die beliebig komplex ist. Manche Anbieter beantworten nur schriftliche Anfragen, andere erlauben die Beantragung über ein Webformular, das jedoch häufig in den Profileinstellungen versteckt ist.
+          DARA erlaubt Ihnen im zweiten Fall, bei Anbietern die ein Webformular bereitstellen, die Ausübung Ihres Auskunftsrechts mit nur einem Klick.
+          <br />
+          Nach der erfolgreichen Antragsstellung mit Hilfe von DARA kann die entsprechende Datenauskunft kann je nach Anbieter innerhalb weniger Minuten bis eines Monats abgerufen werden. Häufig wird eine Nachricht an die mit dem jeweiligen Dienst verknüpfte gesendet, sobald die Datenauskunft erstellt wurde.
+            Bitte beachten Sie, dass DARA zu keinem Zeitpunkt Zugriff auf die Datenauskunft hat. Die Sie betreffenden Daten werden - häufig erst nach einem durch Sie veranlassten manuellen Download - lokal auf Ihrem Computer gespeichert, zumeist im Ordner Downloads.
+            Die Datenauskünfte haben verschiedene Formate und Inhalte, so dass eine automatisierte Auswertung/Visualisierung (noch) nicht möglich ist. Die Interpretation der Datenauskunft bleibt somit in Ihren Händen.
         </Typography>
         </AccordionDetails>
     </Accordion>
@@ -39,7 +50,17 @@ export default function SimpleAccordion() {
         <AccordionDetails>
         <Typography>
             Ein Klickpfad ist eine Aneinanderreihung von Mausklicks und anderer Interaktionen mit einer Webseite (z.B. scrollen).
-            DARA nutzt diese Klickpfade, um 
+            DARA nutzt diese Klickpfade, um die Interaktion eines Menschen mit den Anfrageformularen der Dienstanbieter zu simulieren. <br />
+            Bei dem Dienstanbieter OTTO wird beispielsweise ein einfacher Klick auf Button wird durch die DARA-Browser-Extension simuliert, bei vielen anderen Anbietern ist der Prozess jedoch komplizierter. Deswegen sprechen wir von einem <i>Klickpfad</i>, d.h. eine Abfolge von Mausklicks wird simuliert.
+            Teilweise werden auf mehreren Seiten Optionen ausgewählt (über welche Zeitspanne sollen die Daten ausgewählt werden, in welchem Format sollen sie geliefert werden etc.). Dabei wählt DARA immer die Option, die Ihnen am meisten Daten ausgibt.
+            <br />
+            <br />
+            Dabei unterteilt DARA zwei Arten von Klickpfaden: 1. verifizierte Klickpfade für ausgewählte Anbieter und 2. lokale Klickpfade für andere Anbieter.
+            Ein Klickpfad wird als verifiziert angesehen, wenn er vom Forschungsteam erstellt und getestet wurde oder wenn mehrere Nutzer den gleichen lokalen Klickpfad aufgezeichnet und geteilt haben. Diese verifizierten Klickpfade werden beim Laden dieser Webseite vom DARA-Server angefragt.
+            Ein lokaler Klickpfad entsteht, wenn Sie den Prozess einer Datenanfrage aufzeichnen. Dieser Klickpfad wird zunächst <b>nur in Ihrem Browser</b> gespeichert. Sollten Sie diesen Klickpfad teilen wollen, um anderen Nutzer:innen die Datenanfrage mit einem Klick zu ermäglichen, werden zunächst alle Tastatureingaben entfernt und anschließend wird der Klickpfad an den DARA Server übermittelt. <br />
+
+<br />
+            Zur Aufzeichnung der Klickpfade benutzen wir die DARA Browserextension, die auf der Open-Source Lösung <a href=''>Automa</a> basiert. Die Klickpfade werden in einem spezifischen Automa-Format gespeichert und können so auch dargestellt und nachvollzogen werden.
         </Typography>
         </AccordionDetails>
     </Accordion>
@@ -53,12 +74,42 @@ export default function SimpleAccordion() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Um eine automatisierte Auskunft zu erhalten sind folgende Schritte notwendig
-            1. Installation 
-            Browserextension, passend zum aktuellen Browser 
-            2. Anmeldung
-            Einloggen beim Dienst
-            3. Starten der Auskunft über diese Webseite
+            Um eine automatisierte Auskunft zu erhalten sind folgende Schritte notwendig: 
+            <ol>
+                <li>
+                    <b>Installation</b><br />
+                    Sie benötigen die zu Ihrem aktuell genutzen Browser passende Browserextension, die Sie unter den folgenden Links installieren können:
+                    <Container sx={{ 'align': 'center'}}>
+                        <table>
+                            <tr>
+                                <td>
+                                    <Container>
+                                        <a href="https://chrome.google.com/webstore/detail/automa/heolgaalbnnelipfhbccbkdohecmaimo">
+                                            <img height={'60px'} src={chormelogo} alt="Chrome webstore" />
+                                        </a>
+                                    </Container>
+                                </td>
+                                <td>
+                                    <Container>
+                                        <a href="https://addons.mozilla.org/en-US/firefox/addon/dara/">
+                                            <img height={'60px'} src={firefoxlogo} alt="Firefox add-ons" />
+                                        </a>
+                                    </Container>
+                                </td>
+                            </tr>
+                        </table>
+                    </Container>
+                </li>
+                <li>
+                    <b>Vorbereitung</b><br />
+                    Damit die Beantragung Ihrer Datenauskunft möglichst reibungslos funktioniert sollten Sie sich vor dem Starten einer Datenanfrage bei dem entsprechenden Dienst einloggen.
+                    Dies sollte im selben Browser geschehen, mit dem Sie auch diese Webseite geöffnet haben, indem Sie einen neuen Tab öffnen und die Seite des jeweiligen Dienstanbieters aufrufen.
+                </li>
+                <li>
+                <b>Starten</b><br />
+                Anschließend können Sie die Datenanfrage starten.
+                </li>
+            </ol>
           </Typography>
         </AccordionDetails>
     </Accordion>
@@ -68,29 +119,20 @@ export default function SimpleAccordion() {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Wie kann ich DARA nutzen?</Typography>
+          <Typography>Wie führt DARA eine Datenanfrage durch?</Typography>
         </AccordionSummary>
         <AccordionDetails>
         <Typography>
+          DARA nutzt sogenannte Klickpfade, um lästige manuelle Arbeit bei der Beantragung einer Datenauskunft zu automatisieren. 
             <ol>
                 <li>
                     <b>Sichtbarer Prozess </b>
-                    Klick auf ...
-                    Es öffnet sich ein neuer Tab
-                    Statusmeldungen erfolgen in der unteren linken Ecke - falls eine Fehlermeldung kommt siehe auch 
-                </li>
+                    Mit dem Klick auf den Button "Sende Datenanfrage" wird die Beantragung angestoßen. Dafür wird die DARA Browserextension genutzt, die im Hintergrund einen neuen Tab öffnet und die notwendigen Schritte automatisiert ausführt.
+                    Im Vordergrund sehen Sie in der unteren linken Ecke dieser Webseite Statusmeldungen. Im Idealfall warten Sie wenige Minuten, bis eine grüne Meldung "Daten erfolgreich angefragt" erscheint. Falls stattdessen eine gelbe Statusmeldung oder gar eine rote Fehlermeldung erscheint ist Ihre manuelle Interaktion notwendig. Mehr Informationen hierzu gibt es auch im Abschnitt "Fehlermeldung".                </li>
                 <li>
                     <b>Unsichtbarer Prozess</b>
-                    Klickpfad - Beispiel OTTO: einfacher Klick auf Button wird durch die DARA-Browser-Extension simuliert, bei vielen anderen Anbietern ist der Prozess jedoch komplizierter. Deswegen sprechen wir von einem <i>Klickpfad</i>, d.h. eine Abfolge von Mausklicks wird simuliert.
-                    Teilweise werden auf mehreren Seiten Optionen ausgewählt (über welche Zeitspanne sollen die Daten ausgewählt werden, in welchem Format sollen sie geliefert werden etc.). Dabei wählt DARA immer die Option, die Ihnen am meisten Daten ausgibt.
-                    basier
-                    DARA hat zu keinem Zeitpunkt Zugriff auf die Datenauskunft. Die Sie betreffenden Daten werden lokal auf Ihrem Computer gespeichert. 
-                </li>
-                <li>
-                <b>Ergebnis</b>
-            Die Datenauskunft kann je nach Anbieter innerhalb weniger Minuten bis eines Monats abgerufen werden. Häufig wird eine Nachricht an die mit dem jeweiligen Dienst verknüpfte gesendet, sobald die Datenauskunft erstellt wurde.
-            Bitte beachten Sie, dass DARA zu keinem Zeitpunkt Zugriff auf die Datenauskunft hat. Die Sie betreffenden Daten werden - häufig erst nach einem durch Sie veranlassten manuellen Download - lokal auf Ihrem Computer gespeichert, zumeist im Ordner Downloads.
-            Die Datenauskünfte haben verschiedene Formate und Inhalte, so dass eine automatisierte Auswertung/Visualisierung (noch) nicht möglich ist.
+                    Im Hintergrund führt die DARA Extension einen Klickpfad aus, siehe hierzu auch im Abschnitt "Was ist ein Klickpfad"?
+                    DARA hat zu keinem Zeitpunkt Zugriff auf die Datenauskunft. Die Sie betreffenden Daten werden, häufig erst nach Ihrer Interaktion (z.B. dem Abruf einer e-Mail), lokal auf Ihrem Computer gespeichert. 
                 </li>
             </ol>
           </Typography>
@@ -103,9 +145,9 @@ export default function SimpleAccordion() {
         <AccordionDetails>
           <Typography>
             Da die Beantragung teilweise kompliziert ist und keine einheitliche Schnittstelle besteht kann es zu verschiedenen Problemen kommen.
-            1. Authentifizierung 
-            A. Überprüfen Sie, ob Sie bei dem Dienst eingeloggt sind.
-            B. In manchen Prozessen ist eine zusätzliche, nicht automatisierbare Passwortabfrage/ Sicherheitsfrage zu lösen.
+            Sie können die Stelle, an der ein Fehler aufgetreten ist, in dem automatisch geöffneten Tab sehen. Wenn dort eine Passwortabrage o.ä. zu sehen ist liegt hierin oft das Problem. Bitte geben Sie Ihr Passwort ein. Drücken Sie dann ggf. auf "NEUSTART".
+
+            In seltenen Fällen kann der aufgezeichnete Klickpfad ungültig geworden sein, weil sich die Gestaltung der Webseite des Dienstanbieters geändert hat. In diesem Fall müssen Sie die Daten manuell beantragen. Wir würden uns freuen, wenn Sie diesen Prozess neu aufzeichnen und Ihre Aufzeichnung zur Verfügung stellen.
           </Typography>
         </AccordionDetails>
       </Accordion>

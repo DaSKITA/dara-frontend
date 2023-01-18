@@ -238,7 +238,7 @@ export default function CardGrid() {
         <StyledCardGridContainer maxWidth="md">
         <Box sx={{ my: 4 }}>
         <Typography variant="h4">
-          DARA originale Klickpfade 
+          Verifizierte Datenanfragen
         </Typography>
         <Typography variant="body1">
           Hier können Sie für ausgewählte vordefinierte Dienste eine Datenauskunft anfragen. 
@@ -306,10 +306,10 @@ export default function CardGrid() {
 
         <Box sx={{ my: 4 }}>
         <Typography variant="h4" sx={{ marginTop: 8}}>
-          DARA lokale Klickpfade 
+          Lokale Datenanfragen
         </Typography>
         <Typography variant="body1">
-          Hier können Sie Klickpfade sehen, die Sie selbst erstsellt haben.
+          Hier können Sie Dienste sehen bei denen Sie manuell eine Datenanfrage gestellt haben und diesen Prozess (den sogenannten Klickpfad) aufgezeichnet haben. Eine neue Aufzeichnung können Sie mit dem Button im Menü oben recht starten.
         </Typography>
         </Box>
         <Grid
@@ -317,7 +317,8 @@ export default function CardGrid() {
             spacing={4}
             direction="row"
           >
-            {localWorkflows &&
+            {
+            localWorkflows &&
               localWorkflows.map((workflow: any) => (
                 workflow.name.toLowerCase().includes(filter.toLowerCase()) &&
                 <Crd controller={workflow} key={workflow.id} openLoginDialog={handleLoginDialogOpen} />
