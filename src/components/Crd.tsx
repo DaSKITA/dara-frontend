@@ -1,4 +1,4 @@
-import { Grid, Card, CardActionArea, CardHeader, capitalize, CardActions, Button, Avatar, IconButton, Menu, MenuItem, ListItemIcon, ListItemText } from '@mui/material';
+import { Grid, Card, CardHeader, capitalize, CardActions, Button, IconButton, Menu, MenuItem, ListItemIcon, ListItemText } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import CheckIcon from '@mui/icons-material/Check';
 import ErrorIcon from '@mui/icons-material/Error';

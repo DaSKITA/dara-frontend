@@ -6,7 +6,7 @@ import Container from '@mui/material/Container';
 import { Crd } from "./components/Crd"
 import Accordion from "./components/Accordion"
 import daraIcon from "./assets/icon-128.png";
-import { Box, Button, Divider, Icon, InputBase, Modal, TextField } from "@mui/material";
+import { Box, Button, InputBase, Modal, TextField } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import PlusIcon from '@mui/icons-material/Add';
@@ -14,15 +14,6 @@ import { styled, alpha } from '@mui/material/styles';
 import { useEffect, useRef } from "react";
 import React from 'react';
 import { LoginDialog } from "./ApiAuth";
-
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © DARA ' + new Date().getFullYear() + '.'}
-    </Typography>
-  );
-}
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -123,7 +114,7 @@ export default function CardGrid() {
     if (event.origin === window.location.origin) {
       if (event.data.workflows) {
         let workflowArray = []
-        for (const [_, value] of Object.entries(event.data.workflows)) {
+        for (const value of Object.values(event.data.workflows)) {
           workflowArray.push(value)
         }
         setWorkflows(workflowArray);
@@ -152,6 +143,7 @@ export default function CardGrid() {
   let shoppingWorkflows = [];
   let softwareWorkflows = [];
   let streamingWorkflows = [];
+  let mobilityWorkflows = [];
   let localWorkflows = [];
   for (let i = 0; i < workflows.length; i++) {
     let workflow = workflows[i];
@@ -165,6 +157,8 @@ export default function CardGrid() {
         softwareWorkflows.push(workflow);
       } else if (streaming.includes(name)) {
         streamingWorkflows.push(workflow);
+      } else if (mobility.includes(name)) {
+        mobilityWorkflows.push(workflow);
       } else {
         originalWorkflows.push(workflow);
       }
@@ -194,7 +188,7 @@ export default function CardGrid() {
           <Button
             onClick={() => {
               window.dispatchEvent(fetchWorkflowsEvent(true));
-            } }
+            }}
             sx={{ my: 2, mx: 0.5, color: 'white' }}
             startIcon={<RefreshIcon />}
           >
@@ -211,7 +205,7 @@ export default function CardGrid() {
           </Search>
         </Toolbar>
       </AppBar>
-      
+
       <main>
         {/* Introduction */}
 
@@ -243,7 +237,9 @@ export default function CardGrid() {
           </Box>
           {/* Start Card grid */}
           {snwWorkflows.length ? <>
-            <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2 }}>Soziale Netzwerke</Typography>
+            <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2 }}>
+              Soziale Netzwerke
+            </Typography>
             <Grid
               container
               spacing={4}
@@ -256,8 +252,42 @@ export default function CardGrid() {
 
             </Grid></> : <></>}
 
+          {softwareWorkflows.length ? <>
+            <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4 }}>
+              Software
+            </Typography>
+            <Grid
+              container
+              spacing={4}
+              direction="row"
+            >
+              {softwareWorkflows?.map((workflow: any) => (
+                workflow.name.toLowerCase().includes(filter.toLowerCase()) &&
+                <Crd controller={workflow} key={workflow.id} openLoginDialog={handleLoginDialogOpen} />
+              ))}
+
+            </Grid></> : <></>}
+
+          {mobilityWorkflows.length ? <>
+            <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4 }}>
+              Mobilität
+            </Typography>
+            <Grid
+              container
+              spacing={4}
+              direction="row"
+            >
+              {mobilityWorkflows?.map((workflow: any) => (
+                workflow.name.toLowerCase().includes(filter.toLowerCase()) &&
+                <Crd controller={workflow} key={workflow.id} openLoginDialog={handleLoginDialogOpen} />
+              ))}
+
+            </Grid></> : <></>}
+
           {shoppingWorkflows.length ? <>
-            <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4 }}>Online Shopping</Typography>
+            <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4 }}>
+              Online Shopping
+            </Typography>
             <Grid
               container
               spacing={4}
@@ -269,8 +299,10 @@ export default function CardGrid() {
               ))}
 
             </Grid></> : <></>}
-            {streamingWorkflows.length ? <>
-            <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4 }}>Streaminganbieter</Typography>
+          {streamingWorkflows.length ? <>
+            <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4 }}>
+              Streaminganbieter
+            </Typography>
             <Grid
               container
               spacing={4}
@@ -283,7 +315,9 @@ export default function CardGrid() {
             </Grid></> : <></>}
 
           {originalWorkflows.length ? <>
-            <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderBottom: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4 }}>Sonstige</Typography>
+            <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderBottom: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4 }}>
+              Sonstige
+          </Typography>
             <Grid
               container
               spacing={4}
@@ -295,7 +329,7 @@ export default function CardGrid() {
               ))}
             </Grid></> : <></>}
 
-            <Box sx={{ my: 4 }}>
+          <Box sx={{ my: 4 }}>
             <Typography variant="h4" sx={{ marginTop: 8 }}>
               Lokale Datenanfrageprozesse
             </Typography>
@@ -304,74 +338,76 @@ export default function CardGrid() {
             </Typography>
           </Box>
           {localWorkflows.length ? <>
-          <Grid
-          container
-          spacing={4}
-          direction="row"
-        >
-          {localWorkflows?.map((workflow: any) => (
-            workflow.name.toLowerCase().includes(filter.toLowerCase()) &&
-            <Crd controller={workflow} key={workflow.id} openLoginDialog={handleLoginDialogOpen} />
-          ))}
-
-        </Grid></>:<Typography>Zur Zeit liegen keine lokalen Aufzeichnungen vor</Typography>}
-        {/* End Card grid */}
-        
-        {/*Popup New Clickpath Recording*/}
-          <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box
-            component="form"
-            sx={{
-              '& .MuiTextField-root': { m: 1, width: '45ch' },
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              width: 700,
-              bgcolor: 'background.paper',
-              border: '2px solid #000',
-              boxShadow: 24,
-              p: 4,
-            }}
-            width='700'
-            noValidate
-            autoComplete="off">
-            <Typography id="modal-modal-title" variant="h6" component="h2" sx={{ mb: 2 }}>
-              Neuen Klickpfad aufzeichnen
-            </Typography>
-            <Typography id="modal-modal-description" sx={{ mb: 2 }}>
-              Hier können sie einen neuen Klickpfad zur Automatisierung einer Datenanfrage aufzeichenen.
-              Als ersten Schritt geben sie bitte die URL / Internetadresse des Onlineformulars für die Datenanfrage an.
-            </Typography>
-            <TextField
-              required
-              id="outlined-required"
-              label="Formular URL"
-              autoFocus={true}
-              defaultValue=""
-              inputRef={formularUrlRef}
-              sx={{ mb: 2 }} />
-            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              Nach dem Klick auf den "Aufzeichnung starten" Button  wird ein neuer Tab mit der angegebenen URL geöffnet. Hier können sie wie gewohnt ihre Daten beantragen.
-              Nur ihre Klicks werden aufgezeichnet, keine eigegebenen Daten oder sonstige Informationen.
-              Nach dem Absenden der Datenanfrage beenden sie die Aufzeichnung über den roten Button. Der Klickpfand wird lokal gespeichert und erscheint in der Übersicht.
-            </Typography>
-            <Button onClick={() => {
-              handleStartRecording();
-              handleClose();
-            } }
-              sx={{ mt: 2 }}
+            <Grid
+              container
+              spacing={4}
+              direction="row"
             >
-              Aufzeichnung starten
-            </Button>
-          </Box>
-        </Modal>
-      </StyledCardGridContainer>
+              {localWorkflows?.map((workflow: any) => (
+                workflow.name.toLowerCase().includes(filter.toLowerCase()) &&
+                <Crd controller={workflow} key={workflow.id} openLoginDialog={handleLoginDialogOpen} />
+              ))}
+
+            </Grid></> : <Typography>
+              Zur Zeit liegen keine lokalen Aufzeichnungen vor
+            </Typography>}
+          {/* End Card grid */}
+
+          {/*Popup New Clickpath Recording*/}
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box
+              component="form"
+              sx={{
+                '& .MuiTextField-root': { m: 1, width: '45ch' },
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: 700,
+                bgcolor: 'background.paper',
+                border: '2px solid #000',
+                boxShadow: 24,
+                p: 4,
+              }}
+              width='700'
+              noValidate
+              autoComplete="off">
+              <Typography id="modal-modal-title" variant="h6" component="h2" sx={{ mb: 2 }}>
+                Neuen Klickpfad aufzeichnen
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mb: 2 }}>
+                Hier können sie einen neuen Klickpfad zur Automatisierung einer Datenanfrage aufzeichenen.
+                Als ersten Schritt geben sie bitte die URL / Internetadresse des Onlineformulars für die Datenanfrage an.
+              </Typography>
+              <TextField
+                required
+                id="outlined-required"
+                label="Formular URL"
+                autoFocus={true}
+                defaultValue=""
+                inputRef={formularUrlRef}
+                sx={{ mb: 2 }} />
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                Nach dem Klick auf den "Aufzeichnung starten" Button  wird ein neuer Tab mit der angegebenen URL geöffnet. Hier können sie wie gewohnt ihre Daten beantragen.
+                Nur ihre Klicks werden aufgezeichnet, keine eigegebenen Daten oder sonstige Informationen.
+                Nach dem Absenden der Datenanfrage beenden sie die Aufzeichnung über den roten Button. Der Klickpfand wird lokal gespeichert und erscheint in der Übersicht.
+              </Typography>
+              <Button onClick={() => {
+                handleStartRecording();
+                handleClose();
+              }}
+                sx={{ mt: 2 }}
+              >
+                Aufzeichnung starten
+              </Button>
+            </Box>
+          </Modal>
+        </StyledCardGridContainer>
 
 
         <Container maxWidth='md'>
