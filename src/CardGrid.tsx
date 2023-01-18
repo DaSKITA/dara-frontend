@@ -104,11 +104,11 @@ const fetchWorkflowsEvent = (revalidate = false) => new CustomEvent(automaEvent,
 });
 
 const socialNetworks = ['twitter', 'linkedin', 'facebook', 'instagram'];
-  const shopping = ['amazon', 'ebay', 'ebay_kleinanzeigen', 'otto', 'vinted'];
-  const software = ['apple', 'google', 'samsung', 'huawei', 'xiaomi'];
-  const streaming = ['netflix', 'spotify', 'deezer', 'instagram'];
-  const mobility = ['jelbi', 'uber', 'nextbike'];
-  //other - no own array required
+const shopping = ['amazon', 'ebay', 'ebay_kleinanzeigen', 'otto', 'vinted'];
+const software = ['apple', 'google', 'samsung', 'huawei', 'xiaomi'];
+const streaming = ['netflix', 'spotify', 'deezer', 'instagram'];
+const mobility = ['jelbi', 'uber', 'nextbike'];
+//other - no own array required
 
 export default function CardGrid() {
   const [filter, setFilter] = React.useState("");
@@ -117,12 +117,8 @@ export default function CardGrid() {
   const [loginDialogState, setloginDialogState] = React.useState<boolean>(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const handleLoginDialogOpen = () => setloginDialogState(true);
   const formularUrlRef = useRef<HTMLInputElement>();
-
-  const handleLoginDialogOpen = () => {
-    setloginDialogState(true);
-  };
-
   const workflowDataEventHandler = (event: any) => {
     if (event.origin === window.location.origin) {
       if (event.data.workflows) {
@@ -134,7 +130,9 @@ export default function CardGrid() {
       }
     }
   }
+
   window.addEventListener('message', workflowDataEventHandler);
+
   useEffect(() => {
     window.dispatchEvent(fetchWorkflowsEvent(true));
   }, []);
@@ -149,30 +147,30 @@ export default function CardGrid() {
     }
   }
 
-  let originalWorkflows = []; 
+  let originalWorkflows = [];
   let snwWorkflows = [];
   let shoppingWorkflows = [];
   let softwareWorkflows = [];
   let streamingWorkflows = [];
   let localWorkflows = [];
-  for(let i=0; i<workflows.length; i++){
+  for (let i = 0; i < workflows.length; i++) {
     let workflow = workflows[i];
-      if(workflow.verified){
-        let name = workflow.name.toLowerCase();
-         if(socialNetworks.includes(name)){
-          snwWorkflows.push(workflow);
-         }else if(shopping.includes(name)){
-          shoppingWorkflows.push(workflow);
-         }else if(software.includes(name)){
-          softwareWorkflows.push(workflow);
-         }else if(streaming.includes(name)){
-          streamingWorkflows.push(workflow);
-         }else{
+    if (workflow.verified) {
+      let name = workflow.name.toLowerCase();
+      if (socialNetworks.includes(name)) {
+        snwWorkflows.push(workflow);
+      } else if (shopping.includes(name)) {
+        shoppingWorkflows.push(workflow);
+      } else if (software.includes(name)) {
+        softwareWorkflows.push(workflow);
+      } else if (streaming.includes(name)) {
+        streamingWorkflows.push(workflow);
+      } else {
         originalWorkflows.push(workflow);
-         }
-      }else{
-        localWorkflows.push(workflow);
       }
+    } else {
+      localWorkflows.push(workflow);
+    }
   }
 
   return (
@@ -216,116 +214,117 @@ export default function CardGrid() {
       </AppBar>
 
       <main>
-        {/* Explanation? */}
-        <Container maxWidth="lg">
-        <Box sx={{ my: 4 }}>
-        <Typography variant="h2" gutterBottom align='center'>
-          DARA - Automatisierte Datenauskunft 
-        </Typography>
-        </Box>
-        </Container>
+        {/* Introduction */}
+        
         <Container maxWidth="md">
-        <Typography variant='body1'>
-          DARA steht für "Data Access Request Assistant" und ist ein Tool, das Ihnen bei der Ausübung Ihres Rechts auf Datenauskunft assistiert. Es besteht aus dieser Webseite und einer Browserextension, die für Sie eine Datenauskunftsanfrage an verschiedene Dienstanbieter senden kann.
-          Dabei hat DARA zu keiner Zeit Zugriff auf Ihre personenbezogenen Daten, diese Daten werden nur bei den Diensten und anschließend auf Ihrem Computer gespeichert.
-          Probieren Sie es einfach aus oder erfahren Sie im Abschnitt <a href='#faq'>FAQ</a> weitere Informationen.
-        </Typography>
+          <Box sx={{ mt: 5}}>
+            <Typography variant="h3" gutterBottom >
+              DARA - Automatisierte Datenauskunft
+            </Typography>
+          </Box>
         </Container>
-        
-        {/* End Explanation */}
-        
+        <Container maxWidth="md" sx={{ mt: 3 }}>
+          <Typography variant='body1'>
+            DARA steht für "Data Access Request Assistant" und ist ein Tool, das Ihnen bei der Ausübung Ihres Rechts auf Datenauskunft assistiert. Es besteht aus dieser Webseite und einer Browserextension, die für Sie eine Datenauskunftsanfrage an verschiedene Dienstanbieter senden kann.
+            Dabei hat DARA zu keiner Zeit Zugriff auf Ihre personenbezogenen Daten, diese Daten werden nur bei den Diensten und anschließend auf Ihrem Computer gespeichert.
+            Probieren Sie es einfach aus oder erfahren Sie im Abschnitt <a href='#faq'>FAQ</a> weitere Informationen.
+          </Typography>
+        </Container>
+        {/* End Introduction */}
+
         {/* Card grid */}
         <StyledCardGridContainer maxWidth="md">
-        <Box sx={{ my: 4 }}>
-        <Typography variant="h4">
-          DARA originale Klickpfade 
-        </Typography>
-        <Typography variant="body1">
-          Hier können Sie für ausgewählte vordefinierte Dienste eine Datenauskunft anfragen. 
-          Bitte loggen Sie sich bei dem entsprechenden Dienst ein, bevor Sie über diese Webseite die Daten beantragen!
-        </Typography>
-        </Box>
+          <Box sx={{ mb: 2 }}>
+            <Typography variant="h4">
+              DARA originale Klickpfade
+            </Typography>
+            <Typography variant="body1">
+              Hier können Sie für ausgewählte vordefinierte Dienste eine Datenauskunft anfragen.
+              Bitte loggen Sie sich bei dem entsprechenden Dienst ein, bevor Sie über diese Webseite die Daten beantragen!
+            </Typography>
+          </Box>
 
-        <Typography variant='h6' gutterBottom sx={{borderTop: 1, borderColor: 'primary.main', paddingTop: 2}}>Soziale Netzwerke</Typography>
+          {snwWorkflows.length ? <>
+          <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2 }}>Soziale Netzwerke</Typography>
           <Grid
             container
             spacing={4}
             direction="row"
           >
-            {snwWorkflows &&
-              snwWorkflows.map((workflow: any) => (
+            {snwWorkflows?.map((workflow: any) => (
                 workflow.name.toLowerCase().includes(filter.toLowerCase()) &&
                 <Crd controller={workflow} key={workflow.id} openLoginDialog={handleLoginDialogOpen} />
               ))
             }
 
-          </Grid>
-
-          <Typography variant='h6' gutterBottom sx={{borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4}}>Online Shopping</Typography>
+          </Grid></> : <></>}
+          
+          {shoppingWorkflows.length ? <>
+          <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4 }}>Online Shopping</Typography>
           <Grid
             container
             spacing={4}
             direction="row"
           >
-            {shoppingWorkflows &&
-              shoppingWorkflows.map((workflow: any) => (
+            {shoppingWorkflows?.map((workflow: any) => (
                 workflow.name.toLowerCase().includes(filter.toLowerCase()) &&
                 <Crd controller={workflow} key={workflow.id} openLoginDialog={handleLoginDialogOpen} />
               ))
             }
 
-          </Grid>
-    
-          <Typography variant='h6' gutterBottom sx={{borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4}}>Streaminganbieter</Typography>
+          </Grid></> : <></>}
+          
+          {streamingWorkflows.length ? <>
+          <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4 }}>Streaminganbieter</Typography>
           <Grid
             container
             spacing={4}
             direction="row"
           >
-            {streamingWorkflows &&
-              streamingWorkflows.map((workflow: any) => (
+            {streamingWorkflows?.map((workflow: any) => (
                 workflow.name.toLowerCase().includes(filter.toLowerCase()) &&
                 <Crd controller={workflow} key={workflow.id} openLoginDialog={handleLoginDialogOpen} />
               ))
             }
-          </Grid>
-
-          <Typography variant='h6' gutterBottom sx={{borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4}}>Sonstige</Typography>
+          </Grid></> : <></>}
+          
+          {originalWorkflows.length ? <>
+          <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4 }}>Sonstige</Typography>
           <Grid
             container
             spacing={4}
             direction="row"
           >
-            {originalWorkflows &&
-              originalWorkflows.map((workflow: any) => (
+            {originalWorkflows?.map((workflow: any) => (
                 workflow.name.toLowerCase().includes(filter.toLowerCase()) &&
                 <Crd controller={workflow} key={workflow.id} openLoginDialog={handleLoginDialogOpen} />
               ))
             }
-          </Grid>
+          </Grid></> : <></>}
 
-        <Box sx={{ my: 4 }}>
-        <Typography variant="h4" sx={{ marginTop: 8}}>
-          DARA lokale Klickpfade 
-        </Typography>
-        <Typography variant="body1">
-          Hier können Sie Klickpfade sehen, die Sie selbst erstsellt haben.
-        </Typography>
-        </Box>
-        <Grid
+          {localWorkflows.length ? 
+          <><Box sx={{ my: 4 }}>
+            <Typography variant="h4" sx={{ marginTop: 8 }}>
+              DARA lokale Klickpfade
+            </Typography>
+            <Typography variant="body1">
+              Hier können Sie Klickpfade sehen, die Sie selbst erstsellt haben.
+            </Typography>
+          </Box>
+          <Grid
             container
             spacing={4}
             direction="row"
           >
-            {localWorkflows &&
-              localWorkflows.map((workflow: any) => (
+            {localWorkflows?.map((workflow: any) => (
                 workflow.name.toLowerCase().includes(filter.toLowerCase()) &&
                 <Crd controller={workflow} key={workflow.id} openLoginDialog={handleLoginDialogOpen} />
               ))
             }
 
-          </Grid>  
-        {/* End Card grid */}
+          </Grid></>
+          :<></>}
+          {/* End Card grid */}
           <Modal
             open={open}
             onClose={handleClose}
@@ -381,8 +380,8 @@ export default function CardGrid() {
             </Box>
           </Modal>
         </StyledCardGridContainer>
-        <Container maxWidth='md'> 
-          <Accordion />       
+        <Container maxWidth='md'>
+          <Accordion />
         </Container>
       </main>
       <LoginDialog open={loginDialogState} setOpen={setloginDialogState} />
@@ -393,7 +392,7 @@ export default function CardGrid() {
           DARA - Data Access Request Assistant
         </StyledTypography>
         <Typography align='center'>
-        Dieses Tool wurde vom Fachgebiet <a href='https://www.tu.berlin/ise'>Information Systems Engineering</a> der Technischen Universität Berlin <br></br> im Rahmen des Projekts "Datensouveränität durch KI-basierte Transparenz und Auskunft" (<a href='https://daskita.github.io/'>DaSKITA</a>) entwickelt.
+          Dieses Tool wurde vom Fachgebiet <a href='https://www.tu.berlin/ise'>Information Systems Engineering</a> der Technischen Universität Berlin <br></br> im Rahmen des Projekts "Datensouveränität durch KI-basierte Transparenz und Auskunft" (<a href='https://daskita.github.io/'>DaSKITA</a>) entwickelt.
         </Typography>
         { /*<Copyright /> */}
       </StyledFooter >
