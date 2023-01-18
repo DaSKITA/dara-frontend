@@ -21,17 +21,18 @@ export default function SimpleAccordion() {
         aria-controls="panel1-content"
         id="panel1-header"
         >
-            <Typography>Was ist eine Datenauskunft?</Typography>
+            <Typography variant='h6'><b>Was ist eine Datenauskunft?</b></Typography>
         </AccordionSummary>
         <AccordionDetails>
         <Typography variant="body1" align='left'>
           Die Datenschutzgrundverordnung (DSGVO) beinhaltet verschiedene Transparenz- und Auskunftsrechte, die Ihnen bei der Entscheidung, welche Daten Sie an einen Dienstanbieter übermitteln, helfen sollen.
           Unter anderem haben das Recht von einem Anbieter zu erfahren, ob und wenn ja welche Daten über Sie zu welchem Zweck gespeichert werden (Das Recht auf Datenauskunft). 
-          Nach Art. 15 (3) DSGVO haben Sie zudem das Recht eine Kopie dieser Daten zu erhalten. Mehr Informationen zum Auskunftsrecht finden Sie beispielsweise auf den Seite des<a href='https://www.bfdi.bund.de/DE/Buerger/Inhalte/Allgemein/Betroffenenrechte/Betroffenenrechte_Auskunftsrecht.html'>Bundesbeauftragten für Datenschutz und die Informationsfreiheit</a> oder der <a href='https://www.verbraucherzentrale.nrw/wissen/digitale-welt/datenschutz/datenauskunft-so-erfahren-sie-was-unternehmen-ueber-sie-wissen-44238'>Verbraucherzentrale NRW</a>.<br></br>
+          Nach Art. 15 (3) DSGVO haben Sie zudem das Recht eine Kopie dieser Daten zu erhalten. Mehr Informationen zum Auskunftsrecht finden Sie beispielsweise auf den Seite des <a href='https://www.bfdi.bund.de/DE/Buerger/Inhalte/Allgemein/Betroffenenrechte/Betroffenenrechte_Auskunftsrecht.html'>Bundesbeauftragten für Datenschutz und die Informationsfreiheit</a> oder der <a href='https://www.verbraucherzentrale.nrw/wissen/digitale-welt/datenschutz/datenauskunft-so-erfahren-sie-was-unternehmen-ueber-sie-wissen-44238'>Verbraucherzentrale NRW</a>.<br />
          <br />
           In der Praxis wird dieses Recht jedoch selten genutzt. Das hat verschiedene Gründe, einerseits sind sich viele Verbraucher:innen ihrer Rechte nicht bewusst, andererseits beinhaltet die Ausübung des Rechts auch einige Hürden und das Ergebnis ist je nach Anbieter unterschiedlich aussagekräftig.
           Die meisten Verbraucher:innen besteht die erste Hürde bei der Ausübung ihrer Rechte bereits in der Beantragung der Daten. Dieser Prozess ist nicht standardisiert. Jeder Anbieter hat eine eigene Lösung, die beliebig komplex ist. Manche Anbieter beantworten nur schriftliche Anfragen, andere erlauben die Beantragung über ein Webformular, das jedoch häufig in den Profileinstellungen versteckt ist.
           DARA erlaubt Ihnen im zweiten Fall, bei Anbietern die ein Webformular bereitstellen, die Ausübung Ihres Auskunftsrechts mit nur einem Klick.
+          <br />
           <br />
           Nach der erfolgreichen Antragsstellung mit Hilfe von DARA kann die entsprechende Datenauskunft kann je nach Anbieter innerhalb weniger Minuten bis eines Monats abgerufen werden. Häufig wird eine Nachricht an die mit dem jeweiligen Dienst verknüpfte gesendet, sobald die Datenauskunft erstellt wurde.
             Bitte beachten Sie, dass DARA zu keinem Zeitpunkt Zugriff auf die Datenauskunft hat. Die Sie betreffenden Daten werden - häufig erst nach einem durch Sie veranlassten manuellen Download - lokal auf Ihrem Computer gespeichert, zumeist im Ordner Downloads.
@@ -45,7 +46,7 @@ export default function SimpleAccordion() {
           aria-controls="panel3a-content"
           id="panel3a-header"
         >
-          <Typography>Was ist ein Klickpfad?</Typography>
+          <Typography variant='h6'><b>Was ist ein Klickpfad?</b></Typography>
         </AccordionSummary>
         <AccordionDetails>
         <Typography>
@@ -57,7 +58,7 @@ export default function SimpleAccordion() {
             <br />
             Dabei unterteilt DARA zwei Arten von Klickpfaden: 1. verifizierte Klickpfade für ausgewählte Anbieter und 2. lokale Klickpfade für andere Anbieter.
             Ein Klickpfad wird als verifiziert angesehen, wenn er vom Forschungsteam erstellt und getestet wurde oder wenn mehrere Nutzer den gleichen lokalen Klickpfad aufgezeichnet und geteilt haben. Diese verifizierten Klickpfade werden beim Laden dieser Webseite vom DARA-Server angefragt.
-            Ein lokaler Klickpfad entsteht, wenn Sie den Prozess einer Datenanfrage aufzeichnen. Dieser Klickpfad wird zunächst <b>nur in Ihrem Browser</b> gespeichert. Sollten Sie diesen Klickpfad teilen wollen, um anderen Nutzer:innen die Datenanfrage mit einem Klick zu ermäglichen, werden zunächst alle Tastatureingaben entfernt und anschließend wird der Klickpfad an den DARA Server übermittelt. <br />
+            Ein lokaler Klickpfad entsteht, wenn Sie den Prozess einer Datenanfrage aufzeichnen. Dieser Klickpfad wird zunächst <b>nur in Ihrem Browser</b> gespeichert. Sollten Sie diesen Klickpfad teilen wollen, um anderen Nutzer:innen die Datenanfrage mit einem Klick zu ermöglichen, werden zunächst alle Tastatureingaben entfernt und anschließend wird der Klickpfad an den DARA Server übermittelt. <br />
 
 <br />
             Zur Aufzeichnung der Klickpfade benutzen wir die DARA Browserextension, die auf der Open-Source Lösung <a href=''>Automa</a> basiert. Die Klickpfade werden in einem spezifischen Automa-Format gespeichert und können so auch dargestellt und nachvollzogen werden.
@@ -70,7 +71,7 @@ export default function SimpleAccordion() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>Welche Voraussetzungen sind für die Nutzung von DARA erforderlich?</Typography>
+          <Typography variant='h6'><b>Welche Voraussetzungen sind für die Nutzung von DARA erforderlich?</b></Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -78,7 +79,7 @@ export default function SimpleAccordion() {
             <ol>
                 <li>
                     <b>Installation</b><br />
-                    Sie benötigen die zu Ihrem aktuell genutzen Browser passende Browserextension, die Sie unter den folgenden Links installieren können:
+                    Sie benötigen die zu Ihrem aktuell genutzten Browser passende Browserextension, die Sie unter den folgenden Links installieren können:
                     <Container sx={{ 'align': 'center'}}>
                         <table>
                             <tr>
@@ -119,18 +120,18 @@ export default function SimpleAccordion() {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Wie führt DARA eine Datenanfrage durch?</Typography>
+          <Typography variant='h6'><b>Wie führt DARA eine Datenanfrage durch?</b></Typography>
         </AccordionSummary>
         <AccordionDetails>
         <Typography>
           DARA nutzt sogenannte Klickpfade, um lästige manuelle Arbeit bei der Beantragung einer Datenauskunft zu automatisieren. 
             <ol>
                 <li>
-                    <b>Sichtbarer Prozess </b>
+                    <b>Sichtbarer Prozess </b><br />
                     Mit dem Klick auf den Button "Sende Datenanfrage" wird die Beantragung angestoßen. Dafür wird die DARA Browserextension genutzt, die im Hintergrund einen neuen Tab öffnet und die notwendigen Schritte automatisiert ausführt.
-                    Im Vordergrund sehen Sie in der unteren linken Ecke dieser Webseite Statusmeldungen. Im Idealfall warten Sie wenige Minuten, bis eine grüne Meldung "Daten erfolgreich angefragt" erscheint. Falls stattdessen eine gelbe Statusmeldung oder gar eine rote Fehlermeldung erscheint ist Ihre manuelle Interaktion notwendig. Mehr Informationen hierzu gibt es auch im Abschnitt "Fehlermeldung".                </li>
+                    Im Vordergrund sehen Sie in der unteren linken Ecke dieser Webseite Statusmeldungen. Im Idealfall warten Sie wenige Minuten, bis eine grüne Meldung "Daten erfolgreich angefragt" erscheint. Falls stattdessen eine gelbe Statusmeldung oder gar eine rote Fehlermeldung erscheint, ist Ihre manuelle Interaktion notwendig. Mehr Informationen hierzu gibt es auch im Abschnitt "Fehlermeldung".                </li>
                 <li>
-                    <b>Unsichtbarer Prozess</b>
+                    <b>Unsichtbarer Prozess</b><br />
                     Im Hintergrund führt die DARA Extension einen Klickpfad aus, siehe hierzu auch im Abschnitt "Was ist ein Klickpfad"?
                     DARA hat zu keinem Zeitpunkt Zugriff auf die Datenauskunft. Die Sie betreffenden Daten werden, häufig erst nach Ihrer Interaktion (z.B. dem Abruf einer e-Mail), lokal auf Ihrem Computer gespeichert. 
                 </li>
@@ -140,12 +141,12 @@ export default function SimpleAccordion() {
     </Accordion>
     <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel3d-content" id="panel3d-header">
-          <Typography>Ich habe eine Fehlermeldung erhalten. Woran liegt das?</Typography>
+          <Typography variant='h6'><b>Ich habe eine Fehlermeldung erhalten. Woran liegt das?</b></Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
             Da die Beantragung teilweise kompliziert ist und keine einheitliche Schnittstelle besteht kann es zu verschiedenen Problemen kommen.
-            Sie können die Stelle, an der ein Fehler aufgetreten ist, in dem automatisch geöffneten Tab sehen. Wenn dort eine Passwortabrage o.ä. zu sehen ist liegt hierin oft das Problem. Bitte geben Sie Ihr Passwort ein. Drücken Sie dann ggf. auf "NEUSTART".
+            Sie können die Stelle, an der ein Fehler aufgetreten ist, in dem automatisch geöffneten Tab sehen. Wenn dort eine Passwortabfrage o.ä. zu sehen ist liegt hierin oft das Problem. Bitte geben Sie Ihr Passwort ein. Drücken Sie dann ggf. auf "NEUSTART".
 
             In seltenen Fällen kann der aufgezeichnete Klickpfad ungültig geworden sein, weil sich die Gestaltung der Webseite des Dienstanbieters geändert hat. In diesem Fall müssen Sie die Daten manuell beantragen. Wir würden uns freuen, wenn Sie diesen Prozess neu aufzeichnen und Ihre Aufzeichnung zur Verfügung stellen.
           </Typography>
@@ -153,7 +154,7 @@ export default function SimpleAccordion() {
       </Accordion>
       <Accordion>
         <AccordionSummary>
-        <Typography>Ich möchte eine Datenauskunft bei einem anderen Dienst beantragen. Was kann ich tun?</Typography>
+        <Typography variant='h6'><b>Ich möchte eine Datenauskunft bei einem anderen Dienst beantragen. Was kann ich tun?</b></Typography>
         </AccordionSummary>
         <AccordionDetails>
         <Typography variant="body1">

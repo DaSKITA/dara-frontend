@@ -115,7 +115,7 @@ export const Crd = (props: CrdProps) => {
         window.dispatchEvent(openTabEvent());
 
       }}>
-        RESTART
+        NEUSTART
       </Button>
       <Button color="inherit" onClick={() => {
         endExecution();
