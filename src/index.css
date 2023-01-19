@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+a:link {
+  color: lightblue;
+}
+
+a:active, a:hover {
+  color: lightblue;
+}
+
+a:visited {
+  color: lightskyblue;
+}
