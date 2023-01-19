@@ -11,6 +11,7 @@ import { checkLoginStatus, uploadClickpath } from '../ApiAuth';
 import React from 'react';
 import { useSnackbar, SnackbarKey } from 'notistack';
 import { checkExtensionAvailability } from '../availabilityCheck'
+import { fetchWorkflowsEvent, executeWorkflowEvent, deleteWorkflowEvent, editWorkflowEvent } from '../events'
 
 
 interface CrdProps {
@@ -27,52 +28,26 @@ export const Crd = (props: CrdProps) => {
   const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
+  const handleClose = () => setAnchorEl(null);
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
-
   const timer = React.useRef<number>();
-  const automaEvent = '__automa-ext__';
   let currentWorkflowTabId = 0;
+  let automaEvent = '__automa-ext__';
 
-  const executeWorkflowEvent = new CustomEvent(automaEvent, {
-    'detail': {
-      'type': 'execute-workflow',
-      'data': { "workflow": props.controller }
-    }
-  });
-
-  const deleteWorkflowEvent = new CustomEvent(automaEvent, {
-    'detail': {
-      'type': 'workflow-delete',
-      'data': { "workflowId": props.controller.id }
-    }
-  });
-
-  const editWorkflowEvent = new CustomEvent(automaEvent, {
-    'detail': {
-      'type': 'open-workflow',
-      'data': { "workflowId": props.controller.id }
-    }
-  });
-
-  const closeTabEvent = () => new CustomEvent(automaEvent, {
+  let closeTabEvent = () => new CustomEvent(automaEvent, {
     'detail': {
       'type': 'remove-tab',
       'data': { "tabId": currentWorkflowTabId }
     }
   });
 
-  const openTabEvent = () => {
-    return new CustomEvent(automaEvent, {
-      'detail': {
-        'type': 'set-active-tab',
-        'data': { "tabId": currentWorkflowTabId }
-      }
-    })
-  };
+  let openTabEvent = () => new CustomEvent(automaEvent, {
+    'detail': {
+      'type': 'set-active-tab',
+      'data': { "tabId": currentWorkflowTabId }
+    }
+  });
+
 
   const setExecutionTimeout = (timeout: number) => {
     timer.current = window.setTimeout(() => {
@@ -108,7 +83,7 @@ export const Crd = (props: CrdProps) => {
   const restartWfForeground = (snackbarId: SnackbarKey | undefined) => (
     <>
       <Button color="inherit" onClick={() => {
-        window.dispatchEvent(executeWorkflowEvent);
+        window.dispatchEvent(executeWorkflowEvent(props.controller));
         window.addEventListener('message', eventHandler);
 
         closeSnackbar(snackbarId);
@@ -202,7 +177,7 @@ export const Crd = (props: CrdProps) => {
       setLoading(true);
       setExecutionTimeout(15000);
     }
-    window.dispatchEvent(executeWorkflowEvent);
+    window.dispatchEvent(executeWorkflowEvent(props.controller));
     window.addEventListener('message', eventHandler);
   }
 
@@ -239,13 +214,13 @@ export const Crd = (props: CrdProps) => {
                   open={open}
                   onClose={handleClose}
                   anchorEl={anchorEl}>
-                  <MenuItem onClick={() => { window.dispatchEvent(editWorkflowEvent) }}>
+                  <MenuItem onClick={() => { window.dispatchEvent(editWorkflowEvent(props.controller.id)) }}>
                     <ListItemIcon>
                       <EditIcon />
                     </ListItemIcon>
                     <ListItemText>Bearbeiten</ListItemText>
                   </MenuItem>
-                  <MenuItem onClick={() => { window.dispatchEvent(deleteWorkflowEvent) }}>
+                  <MenuItem onClick={() => { window.dispatchEvent(deleteWorkflowEvent(props.controller.id)) }}>
                     <ListItemIcon>
                       <CloseIcon />
                     </ListItemIcon>
@@ -272,6 +247,7 @@ export const Crd = (props: CrdProps) => {
                       }
 
                       uploadClickpath(controller, enqueueSnackbar)
+                      window.dispatchEvent(fetchWorkflowsEvent(true))
                     } else {
                       props.openLoginDialog();
                     }

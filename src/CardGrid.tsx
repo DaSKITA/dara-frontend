@@ -14,6 +14,7 @@ import { styled, alpha } from '@mui/material/styles';
 import { useEffect, useRef } from "react";
 import React from 'react';
 import { LoginDialog } from "./ApiAuth";
+import { fetchWorkflowsEvent, recordWorkflowEvent } from "./events";
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -76,23 +77,6 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
     display: 'block',
   },
 }));
-
-const automaEvent = '__automa-ext__';
-let recordWorkflowEvent = (url = "") => new CustomEvent(
-  automaEvent, {
-  'detail': {
-    'type': 'record-workflow',
-    'data': {
-      "url": url
-    },
-  }
-});
-const fetchWorkflowsEvent = (revalidate = false) => new CustomEvent(automaEvent, {
-  'detail': {
-    'type': 'worflow-fetchall',
-    'data': { "revalidate": revalidate },
-  }
-});
 
 const socialNetworks = ['twitter', 'linkedin', 'facebook', 'instagram'];
 const shopping = ['amazon', 'ebay', 'ebay_kleinanzeigen', 'otto', 'vinted'];
