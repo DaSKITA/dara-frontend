@@ -29,6 +29,7 @@ export default function ExtensionAvailabilityCheck() {
     React.useEffect(() => {
         if (checkExtensionAvailability()) {
             enqueueSnackbar(`Verbunden zur Browsererweiterung, es kann los gehen!`)
+            setOpen(false);
         } else {
             setOpen(true);
         }
@@ -39,8 +40,11 @@ export default function ExtensionAvailabilityCheck() {
             <Dialog
                 open={open}
                 onClose={handleClose}
+                container={() => document.getElementById('aviailabilty-check-parent')}
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
+                sx={{ position: 'absolute' }}
+                BackdropProps={{ style: { position: 'absolute' }, invisible: true }}
             >
                 <DialogTitle id="alert-dialog-title">
                     {"Sie benötigen die DARA-Browsererweiterung um diesen Dienst nutzen zu können."}
@@ -59,14 +63,14 @@ export default function ExtensionAvailabilityCheck() {
                             <tr>
                                 <td>
                                     <Container>
-                                        <a href="https://chrome.google.com/webstore/detail/automa/heolgaalbnnelipfhbccbkdohecmaimo">
+                                        <a href="https://chrome.google.com/webstore/detail/automa/heolgaalbnnelipfhbccbkdohecmaimo" target='_blank' rel="noreferrer">
                                             <img height={'60px'} src={chormelogo} alt="Chrome webstore" />
                                         </a>
                                     </Container>
                                 </td>
                                 <td>
                                     <Container>
-                                        <a href="https://addons.mozilla.org/en-US/firefox/addon/dara/">
+                                        <a href="https://addons.mozilla.org/en-US/firefox/addon/dara/" target='_blank' rel="noreferrer">
                                             <img height={'60px'} src={firefoxlogo} alt="Firefox add-ons" />
                                         </a>
                                     </Container>

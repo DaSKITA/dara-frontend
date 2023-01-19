@@ -247,10 +247,10 @@ export const Crd = (props: CrdProps) => {
                       }
 
                       uploadClickpath(controller, enqueueSnackbar)
-                      setTimeout(() => window.dispatchEvent(fetchWorkflowsEvent(true)), 1200);
                     } else {
-                      props.openLoginDialog();
+                      props.openLoginDialog(props.controller);
                     }
+                    setTimeout(() => window.dispatchEvent(fetchWorkflowsEvent(true)), 1200);
                   }}>
                     <ListItemIcon>
                       <CloudUploadIcon />

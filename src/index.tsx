@@ -6,7 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline  from '@mui/material/CssBaseline';
 import { SnackbarProvider } from 'notistack';
-import ExtensionAvailabilityCheck from './availabilityCheck';
 
 const darkTheme = createTheme({
   palette: {
@@ -23,7 +22,6 @@ root.render(
       <CssBaseline />
       <SnackbarProvider maxSnack={3} preventDuplicate>
         <CardGrid />
-        <ExtensionAvailabilityCheck />
       </SnackbarProvider>
     </ThemeProvider>
   </React.StrictMode>
