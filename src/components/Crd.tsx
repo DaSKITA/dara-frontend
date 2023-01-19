@@ -247,7 +247,7 @@ export const Crd = (props: CrdProps) => {
                       }
 
                       uploadClickpath(controller, enqueueSnackbar)
-                      window.dispatchEvent(fetchWorkflowsEvent(true))
+                      setTimeout(() => window.dispatchEvent(fetchWorkflowsEvent(true)), 1200);
                     } else {
                       props.openLoginDialog();
                     }

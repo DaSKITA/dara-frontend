@@ -299,9 +299,9 @@ export default function CardGrid() {
             </Grid></> : <></>}
 
           {originalWorkflows.length ? <>
-            <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderBottom: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4 }}>
+            <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4 }}>
               Sonstige
-          </Typography>
+            </Typography>
             <Grid
               container
               spacing={4}
@@ -314,7 +314,7 @@ export default function CardGrid() {
             </Grid></> : <></>}
 
           <Box sx={{ my: 4 }}>
-            <Typography variant="h4" sx={{ marginTop: 8 }}>
+            <Typography variant="h4" sx={{ marginTop: 6 }}>
               Lokale Datenanfrageprozesse
             </Typography>
             <Typography variant="body1">
@@ -333,8 +333,8 @@ export default function CardGrid() {
               ))}
 
             </Grid></> : <Typography>
-              Zur Zeit liegen keine lokalen Aufzeichnungen vor
-            </Typography>}
+            Zur Zeit liegen keine lokalen Aufzeichnungen vor
+          </Typography>}
           {/* End Card grid */}
 
           {/*Popup New Clickpath Recording*/}
