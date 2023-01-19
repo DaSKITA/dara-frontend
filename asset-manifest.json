@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/dara-frontend/static/css/main.30a3ec98.css",
-    "main.js": "/dara-frontend/static/js/main.d72395b9.js",
+    "main.js": "/dara-frontend/static/js/main.994f4036.js",
     "static/js/787.22e3b59d.chunk.js": "/dara-frontend/static/js/787.22e3b59d.chunk.js",
     "index.html": "/dara-frontend/index.html",
     "main.30a3ec98.css.map": "/dara-frontend/static/css/main.30a3ec98.css.map",
-    "main.d72395b9.js.map": "/dara-frontend/static/js/main.d72395b9.js.map",
+    "main.994f4036.js.map": "/dara-frontend/static/js/main.994f4036.js.map",
     "787.22e3b59d.chunk.js.map": "/dara-frontend/static/js/787.22e3b59d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.30a3ec98.css",
-    "static/js/main.d72395b9.js"
+    "static/js/main.994f4036.js"
   ]
 }
