@@ -78,10 +78,10 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const socialNetworks = ['twitter', 'linkedin', 'facebook', 'instagram'];
+const socialNetworks = ['twitter', 'linkedin', 'facebook', 'instagram', 'reddit'];
 const shopping = ['amazon', 'ebay', 'ebay_kleinanzeigen', 'otto', 'vinted'];
-const software = ['apple', 'google', 'samsung', 'huawei', 'xiaomi'];
-const streaming = ['netflix', 'spotify', 'deezer', 'instagram'];
+const software = ['apple', 'google', 'samsung', 'huawei', 'xiaomi', 'microsoft'];
+const streaming = ['netflix', 'spotify', 'deezer'];
 const mobility = ['jelbi', 'uber', 'nextbike'];
 //other - no own array required
 
