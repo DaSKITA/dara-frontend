@@ -109,6 +109,11 @@ export default function SimpleAccordion() {
                 <b>Starten</b><br />
                 Anschließend können Sie die Datenanfrage starten.
               </li>
+              <li>
+                <b>Anfrageprozess abschließen</b><br />
+                DARA übernimmt für Sie einige automatisierbare Schritte in der Datenbeantragung. Häufig ist jedoch der Download (noch) nicht vollständig automatisierbar, beispielsweise weil Sie eine e-Mail bestätigen müssen oder den Downloadlink nach einer unbekannten Zeitspanne per e-Mail erhalten.
+                Sie benötigen deshalb für den Abschluss der meisten Anfrageprozesse Zugriff auf das e-Mailkonto, mit dem Sie bei dem jeweiligen Dienst registriert sind. Bitte prüfen Sie regelmäßig auch Ihren Spam-Ordner, um die Datenanfrage abzuschließen und Ihre Daten zu erhalten.
+              </li>
             </ol>
           </Typography>
         </AccordionDetails>
@@ -128,7 +133,8 @@ export default function SimpleAccordion() {
               <li>
                 <b>Sichtbarer Prozess </b><br />
                 Mit dem Klick auf den Button "Sende Datenanfrage" wird die Beantragung angestoßen. Dafür wird die DARA Browserextension genutzt, die im Hintergrund einen neuen Tab öffnet und die notwendigen Schritte automatisiert ausführt.
-                Im Vordergrund sehen Sie in der unteren linken Ecke dieser Webseite Statusmeldungen. Im Idealfall warten Sie wenige Minuten, bis eine grüne Meldung "Daten erfolgreich angefragt" erscheint. Falls stattdessen eine gelbe Statusmeldung oder gar eine rote Fehlermeldung erscheint, ist Ihre manuelle Interaktion notwendig. Mehr Informationen hierzu gibt es auch im Abschnitt "Fehlermeldung".                </li>
+                Im Vordergrund sehen Sie in der unteren linken Ecke dieser Webseite Statusmeldungen. Im Idealfall warten Sie wenige Minuten, bis eine grüne Meldung "Daten erfolgreich angefragt" erscheint. Falls stattdessen eine gelbe Statusmeldung oder gar eine rote Fehlermeldung erscheint, ist Ihre manuelle Interaktion notwendig. Mehr Informationen hierzu gibt es auch im Abschnitt "Fehlermeldung".
+                Im Erfolgsfall (Daten erfolgreich angefragt) haben Sie den Datenanfrageprozess angestoßen. In den meisten Fällen schickt Ihnen der Dienstanbieter eine e-Mail, wenn die Daten zum Download bereitstehen (üblicherweise geschieht das innerhalb einer Stunde, es kann aber auch bis zu 30 Tage in Anspruch nehmen). Bitte überprüfen Sie regelmäßig auch Ihren SPAM Ordner.            </li>
               <li>
                 <b>Unsichtbarer Prozess</b><br />
                 Im Hintergrund führt die DARA Extension einen Klickpfad aus, siehe hierzu auch im Abschnitt "Was ist ein Klickpfad"?
