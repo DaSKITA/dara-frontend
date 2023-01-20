@@ -15,6 +15,8 @@ import { useEffect, useRef } from "react";
 import React from 'react';
 import { LoginDialog } from "./ApiAuth";
 import { fetchWorkflowsEvent, recordWorkflowEvent } from "./events";
+import ExtensionAvailabilityCheck from './availabilityCheck';
+
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -90,9 +92,13 @@ export default function CardGrid() {
   const [workflows, setWorkflows] = React.useState<any[]>([]);
   const [open, setOpen] = React.useState(false);
   const [loginDialogState, setloginDialogState] = React.useState<boolean>(false);
+  const [loginDialogController, setloginDialogController] = React.useState<any>(null);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const handleLoginDialogOpen = () => setloginDialogState(true);
+  const handleLoginDialogOpen = (controller: any) => {
+    setloginDialogState(true);
+    setloginDialogController(controller);
+  };
   const formularUrlRef = useRef<HTMLInputElement>();
   const workflowDataEventHandler = (event: any) => {
     if (event.origin === window.location.origin) {
@@ -209,8 +215,12 @@ export default function CardGrid() {
         </Container>
         {/* End Introduction */}
         {/* Main */}
-        <StyledCardGridContainer maxWidth="md">
-          <Box sx={{ mb: 2 }}>
+        <StyledCardGridContainer 
+          maxWidth="md" 
+          id="aviailabilty-check-parent"
+          sx={{ position: 'relative' }}>
+          <ExtensionAvailabilityCheck />
+          <Box sx={{ mb: 2, mt: -2 }}>
             <Typography variant="h4">
               Verifizierte Datenanfrageprozesse
             </Typography>
@@ -221,7 +231,7 @@ export default function CardGrid() {
           </Box>
           {/* Start Card grid */}
           {snwWorkflows.length ? <>
-            <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2 }}>
+            <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2}}>
               Soziale Netzwerke
             </Typography>
             <Grid
@@ -398,7 +408,7 @@ export default function CardGrid() {
           <Accordion />
         </Container>
       </main>
-      <LoginDialog open={loginDialogState} setOpen={setloginDialogState} />
+      <LoginDialog open={loginDialogState} setOpen={setloginDialogState} controller={loginDialogController} />
 
       {/* Footer */}
       < StyledFooter >

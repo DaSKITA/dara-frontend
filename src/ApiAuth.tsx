@@ -19,16 +19,16 @@ export function uploadClickpath(controller: any, enqueueSnackbar: any) {
         .then(response => response.json())
         .then(data => {
             if (data.detail === "Could not validate credentials") {
-                enqueueSnackbar(`Login abgelaufen, bitte neu anmelden.`)
+                enqueueSnackbar(`Login abgelaufen, bitte neu anmelden.`, { variant: 'info' })
                 sessionStorage.setItem('access_token', '');
             } else {
                 console.log('Success:', data);
-                enqueueSnackbar(`Klickpfad erfolgreich hochgeladen!`)
+                enqueueSnackbar(`Klickpfad erfolgreich hochgeladen!`, { variant: 'success' })
             }
         })
         .catch((error) => {
             console.error('Error:', error);
-            enqueueSnackbar(`Fehler beim Hochladen!`)
+            enqueueSnackbar(`Fehler beim Hochladen!`, { variant: 'error' })
         });
 }
 
@@ -43,6 +43,7 @@ export function checkLoginStatus() {
 
 interface LoginDialogProps {
     setOpen: Function,
+    controller: any,
     open: boolean
 }
 
@@ -82,15 +83,16 @@ export function LoginDialog(props: LoginDialogProps) {
                     // Set access_token in sessionStorage
                     if (data['access_token']) {
                         sessionStorage.setItem('access_token', data['access_token']);
-                        enqueueSnackbar(`Erfolgreich eingeloggt!`)
+                        enqueueSnackbar(`Erfolgreich eingeloggt!`, { variant: 'success' })
+                        if (props.controller) uploadClickpath(props.controller, enqueueSnackbar);
                         handleClose();
                     } else {
-                        enqueueSnackbar(`Fehler beim Login!`)
+                        enqueueSnackbar(`Fehler beim Login!`, { variant: 'error' })
                     }
                 })
                 .catch((error) => {
                     console.error('Error:', error);
-                    enqueueSnackbar(`Fehler beim Login!`)
+                    enqueueSnackbar(`Fehler beim Login!`, { variant: 'error' })
                 });
         }
     }
@@ -109,23 +111,21 @@ export function LoginDialog(props: LoginDialogProps) {
                 <DialogActions sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', maxWidth: '350px' }}>
                     <TextField
                         required
+                        type="text"
                         label="Username"
                         autoFocus={true}
                         defaultValue=""
                         inputRef={usernameRef}
                         sx={{ m: 1 }}
                     />
-
                     <TextField
                         required
                         type="password"
                         label="Passwort"
-                        autoFocus={true}
                         defaultValue=""
                         inputRef={passwordRef}
                         sx={{ m: 1 }}
                     />
-
                     <Button onClick={() => {
                         fetchAccessToken();
                     }}
