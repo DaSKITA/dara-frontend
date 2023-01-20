@@ -78,7 +78,7 @@ const StyledTypography = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const socialNetworks = ['twitter', 'linkedin', 'facebook', 'instagram', 'reddit'];
+const socialNetworks = ['twitter', 'linkedin', 'facebook', 'instagram', 'reddit', 'tiktok'];
 const shopping = ['amazon', 'ebay', 'ebay_kleinanzeigen', 'otto', 'vinted'];
 const software = ['apple', 'google', 'samsung', 'huawei', 'xiaomi', 'microsoft'];
 const streaming = ['netflix', 'spotify', 'deezer'];
