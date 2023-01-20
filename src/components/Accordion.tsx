@@ -158,9 +158,9 @@ export default function SimpleAccordion() {
         <AccordionDetails>
           <Typography variant="body1">
             Wenn Sie Daten von anderen als den oben aufgezählten Anbietern anfragen wollen, haben Sie verschiedene Möglichkeiten.
-            Eine Auflistung weiterer Anbieter mit Anleitungen finden Sie beispielsweise hier: {/*todo*/}
+            Eine Auflistung weiterer Anbieter mit Anleitungen finden Sie beispielsweise hier:  <a href='https://justgetmydata.com/'>justgetmydata.com</a> [eng].
             Falls Sie einen Anbieter mit einem Webformular gefunden haben, würden wir uns freuen, wenn Sie den Klickpfad aufzeichnen.
-            Für Anbieter, die keine Angabe zur Datenauskunft machen oder die eine e-Mail-Adresse als Kontaktpunkt angeben, können Sie andere Tools nutzen, die Sie bei der Antragsstellung unterstützen: <a href='https://www.datenanfragen.de/'>www.datenanfragen.de</a> .
+            Für Anbieter, die keine Angabe zur Datenauskunft machen oder die eine e-Mail-Adresse als Kontaktpunkt angeben (wie Beispielsweise Netflix, DB, Flixbus, Miles, Zalando, und viele weitere), können Sie andere Tools nutzen, die Sie bei der Antragsstellung unterstützen: <a href='https://www.datenanfragen.de/'>www.datenanfragen.de</a> .
           </Typography>
         </AccordionDetails>
       </Accordion>
