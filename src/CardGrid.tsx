@@ -416,25 +416,31 @@ export default function CardGrid() {
 
       {/* Footer */}
       < StyledFooter sx={{bgcolor: "rgba(255, 255, 255, 0.12)", color: "white", marginTop: 10}}>
-        <TableContainer>
-          <TableRow><TableCell sx={{border:"none", width:"800px"}}></TableCell>
-            <TableCell sx={{border:"none"}} width="800px">
-            <StyledTypography variant="h5" align="center" gutterBottom>
-          DARA - Data Access Request Assistant
-        </StyledTypography>
-        <Typography align='center' gutterBottom>
-          Dieses Tool wurde vom Fachgebiet <a href='https://www.tu.berlin/ise'>Information Systems Engineering</a> der Technischen Universität Berlin <br></br> im Rahmen des Projekts "Datensouveränität durch KI-basierte Transparenz und Auskunft" (<a href='https://daskita.github.io/'>DaSKITA</a>) entwickelt.
-        </Typography>
-            </TableCell>
-              <TableCell sx={{bgcolor: "white", border:"1px solid black", color: "black", align: "center"}}>
-                <img src={bmuvLogo} height="130px" alt="Gefördert durch das BMUV aufgrund eines Beschlusses des Deutschen Bundestages"></img>
+        <Grid container direction ="row" spacing={2}>
+          <Grid item xs></Grid>
+          <Grid item xs={7} alignContent={"center"}>
+            <StyledTypography variant="h5" align="center" gutterBottom marginTop={2}>
+              DARA - Data Access Request Assistant
+            </StyledTypography>
+            <Typography align='center' gutterBottom>
+              Dieses Tool wurde vom Fachgebiet <a href='https://www.tu.berlin/ise'>Information Systems Engineering</a> <br/>der Technischen Universität Berlin <br/> im Rahmen des Projekts <br/>"Datensouveränität durch KI-basierte Transparenz und Auskunft" (<a href='https://daskita.github.io/'>DaSKITA</a>) entwickelt.
+            </Typography>
+            </Grid>
+            <Grid item xs>
+            <TableContainer>
+          <TableRow>
+              <TableCell sx={{bgcolor: "white", align: "center", border:"none"}}>
+                <img src={bmuvLogo} height="100em" alt="Gefördert durch das BMUV aufgrund eines Beschlusses des Deutschen Bundestages"></img>
               </TableCell>
-              <TableCell sx={{border:"none"}}></TableCell>
-              <TableCell sx={{bgcolor: "white", border:"1px solid black", color: "black", align: "center"}}>
-                <img src={ptbleLogo} height="65px"alt="Projektträger ist die Bundesanstalt für Landwirtschaft und Ernährung"></img>
+          </TableRow>
+          <TableRow>
+              <TableCell sx={{bgcolor: "white", align: "center", border:"none"}}>
+                <img src={ptbleLogo} height="40em"alt="Projektträger ist die Bundesanstalt für Landwirtschaft und Ernährung"></img>
               </TableCell>
           </TableRow>
         </TableContainer>
+            </Grid>
+          </Grid>
         { /*<Copyright /> */}
       </StyledFooter >
       {/* End footer */}
