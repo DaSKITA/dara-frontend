@@ -237,25 +237,7 @@ export const Crd = (props: CrdProps) => {
                   </MenuItem>
                   <MenuItem onClick={() => {
                     if (checkLoginStatus()) {
-                      let controller_id = "";
-                      let nodes = props.controller.drawflow.nodes;
-                      for (let node in nodes) {
-                        if (nodes[node].label === "new-tab") {
-                          let controller_url = new URL(nodes[node].data.url);
-                          controller_id = controller_url.hostname;
-                          break;
-                        }
-                      }
-                      let controller = {
-                        "controller_id": controller_id,
-                        "automation": {
-                          "format": "automa",
-                          "version": "0.1",
-                          "definition": { "verified": true, ...props.controller }
-                        }
-                      }
-
-                      uploadClickpath(controller, enqueueSnackbar)
+                      uploadClickpath(props.controller, enqueueSnackbar)
                     } else {
                       props.openLoginDialog(props.controller);
                     }

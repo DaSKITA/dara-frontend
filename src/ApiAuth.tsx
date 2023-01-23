@@ -11,6 +11,24 @@ export function uploadClickpath(controller: any, enqueueSnackbar: any) {
     headers.append('Authorization', `Bearer ${access_token}`);
     headers.append('Content-Type', 'application/json');
 
+    let controller_id = "";
+    let nodes = controller.drawflow.nodes;
+    for (let node in nodes) {
+        if (nodes[node].label === "new-tab") {
+            let controller_url = new URL(nodes[node].data.url);
+            controller_id = controller_url.hostname;
+            break;
+        }
+    }
+    controller = {
+        "controller_id": controller_id,
+        "automation": {
+            "format": "automa",
+            "version": "0.1",
+            "definition": { "verified": true, ...controller }
+        }
+    }
+
     fetch('https://v2202301191442214869.powersrv.de/controllers/', {
         method: 'POST',
         headers: headers,
