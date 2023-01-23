@@ -1,6 +1,7 @@
 # DARA Frontend
 
-This is the prototype frontend for the DataAccessRequestAssistant DARA. 
+This is the prototype frontend for the DataAccessRequestAssistant DARA.  
+It is currently accessible via https://daskita.github.io/dara-frontend.
 
 ## Usage
 It is ment to be used together with DARA browser extension, which is based on the automa extension.  
