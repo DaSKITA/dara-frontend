@@ -6,7 +6,11 @@ import Container from '@mui/material/Container';
 import { Crd } from "./components/Crd"
 import Accordion from "./components/Accordion"
 import daraIcon from "./assets/icon-128.png";
-import { Box, Button, InputBase, Modal, TextField } from "@mui/material";
+import daskitaLogo from "./assets/daskita_logo.png";
+import tubLogo from "./assets/tub_logo.png";
+import bmuvLogo from "./assets/bmuv_logo.svg";
+import ptbleLogo from "./assets/ptble_logo.jpg";
+import { Box, Button, InputBase, Modal, TableCell, TableContainer, TableRow, TextField } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import PlusIcon from '@mui/icons-material/Add';
@@ -328,7 +332,7 @@ export default function CardGrid() {
               Lokale Datenanfrageprozesse
             </Typography>
             <Typography variant="body1">
-              Hier können Sie Dienste sehen bei denen Sie manuell eine Datenanfrage gestellt haben und diesen Prozess (den sogenannten Klickpfad) aufgezeichnet haben. Eine neue Aufzeichnung können Sie mit dem Button im Menü oben recht starten.
+              Hier können Sie Dienste sehen bei denen Sie manuell eine Datenanfrage gestellt haben und diesen Prozess (den sogenannten Klickpfad) aufgezeichnet haben. Eine neue Aufzeichnung können Sie mit dem Button im Menü oben rechts starten.
             </Typography>
           </Box>
           {localWorkflows.length ? <>
@@ -411,13 +415,32 @@ export default function CardGrid() {
       <LoginDialog open={loginDialogState} setOpen={setloginDialogState} controller={loginDialogController} />
 
       {/* Footer */}
-      < StyledFooter >
-        <StyledTypography variant="h6" align="center" gutterBottom>
-          DARA - Data Access Request Assistant
-        </StyledTypography>
-        <Typography align='center'>
-          Dieses Tool wurde vom Fachgebiet <a href='https://www.tu.berlin/ise'>Information Systems Engineering</a> der Technischen Universität Berlin <br></br> im Rahmen des Projekts "Datensouveränität durch KI-basierte Transparenz und Auskunft" (<a href='https://daskita.github.io/'>DaSKITA</a>) entwickelt.
-        </Typography>
+      < StyledFooter sx={{bgcolor: "rgba(255, 255, 255, 0.12)", color: "white", marginTop: 10}}>
+        <Grid container direction ="row" spacing={2}>
+          <Grid item xs></Grid>
+          <Grid item xs={7} alignContent={"center"}>
+            <StyledTypography variant="h5" align="center" gutterBottom marginTop={2}>
+              DARA - Data Access Request Assistant
+            </StyledTypography>
+            <Typography align='center' gutterBottom>
+              Dieses Tool wurde vom Fachgebiet <a href='https://www.tu.berlin/ise'>Information Systems Engineering</a> <br/>der Technischen Universität Berlin <br/> im Rahmen des Projekts <br/>"Datensouveränität durch KI-basierte Transparenz und Auskunft" (<a href='https://daskita.github.io/'>DaSKITA</a>) entwickelt.
+            </Typography>
+            </Grid>
+            <Grid item xs>
+            <TableContainer>
+          <TableRow>
+              <TableCell sx={{bgcolor: "white", align: "center", border:"none"}}>
+                <img src={bmuvLogo} height="100em" alt="Gefördert durch das BMUV aufgrund eines Beschlusses des Deutschen Bundestages"></img>
+              </TableCell>
+          </TableRow>
+          <TableRow>
+              <TableCell sx={{bgcolor: "white", align: "center", border:"none"}}>
+                <img src={ptbleLogo} height="40em"alt="Projektträger ist die Bundesanstalt für Landwirtschaft und Ernährung"></img>
+              </TableCell>
+          </TableRow>
+        </TableContainer>
+            </Grid>
+          </Grid>
         { /*<Copyright /> */}
       </StyledFooter >
       {/* End footer */}
