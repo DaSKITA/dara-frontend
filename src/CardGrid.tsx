@@ -328,7 +328,7 @@ export default function CardGrid() {
               Lokale Datenanfrageprozesse
             </Typography>
             <Typography variant="body1">
-              Hier können Sie Dienste sehen bei denen Sie manuell eine Datenanfrage gestellt haben und diesen Prozess (den sogenannten Klickpfad) aufgezeichnet haben. Eine neue Aufzeichnung können Sie mit dem Button im Menü oben recht starten.
+              Hier können Sie Dienste sehen bei denen Sie manuell eine Datenanfrage gestellt haben und diesen Prozess (den sogenannten Klickpfad) aufgezeichnet haben. Eine neue Aufzeichnung können Sie mit dem Button im Menü oben rechts starten.
             </Typography>
           </Box>
           {localWorkflows.length ? <>
