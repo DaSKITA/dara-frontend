@@ -19,6 +19,10 @@ interface CrdProps {
   controller: any
 }
 
+function isFF() {
+  return navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+}
+
 export const Crd = (props: CrdProps) => {
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
@@ -172,25 +176,30 @@ export const Crd = (props: CrdProps) => {
       return;
     }
 
-    if (!loading) {
-      setSuccess(false);
-      setLoading(true);
-      setExecutionTimeout(15000);
+    if (isFF()) {
+      setSuccess(true);
+      let nodes = props.controller.drawflow.nodes;
+      for (let node in nodes) {
+        if (nodes[node].label === "new-tab") {
+          nodes[node].data.active = true;
+        }
+      }
+
+    } else {
+      if (!loading) {
+        setSuccess(false);
+        setLoading(true);
+        setExecutionTimeout(15000);
+      }
+      window.addEventListener('message', eventHandler);
     }
     window.dispatchEvent(executeWorkflowEvent(props.controller));
-    window.addEventListener('message', eventHandler);
   }
 
   return (
     <>
       <Grid item key={props.controller.name} xs={12} sm={6} md={4}>
         <Card>
-          {/*
-          <CardActionArea
-            target="_blank"
-            href={props.controller.dsar_url}
-          >
-          */}
           <CardHeader
             title={capitalize(props.controller.name)}
             titleTypographyProps={{
@@ -261,18 +270,7 @@ export const Crd = (props: CrdProps) => {
               </>
             }
             subheader={props.controller.verified ? "✓ DARA Orginal Klickpfad" : "Lokaler Klickpfad"}
-          /*
-          avatar={
-            <Avatar
-              alt={capitalize(props.controller.name) + ' logo'}
-            // src={"https://besticon.herokuapp.com/icon?size=32..200..500&url=" + props.controller.hostnames[0]}
-            >
-              <BusinessIcon />
-            </Avatar>
-          }
-          */
           />
-          {/*</CardActionArea>*/}
           <CardActions>
             {props.controller &&
               <LoadingButton
