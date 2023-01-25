@@ -25,7 +25,7 @@ export default function SimpleAccordion() {
         <AccordionDetails>
           <Typography variant="body1" align='left'>
             Die Datenschutzgrundverordnung (DSGVO) beinhaltet verschiedene Transparenz- und Auskunftsrechte, die Ihnen bei der Entscheidung, welche Daten Sie an einen Dienstanbieter übermitteln, helfen sollen.
-            Unter anderem haben das Recht von einem Anbieter zu erfahren, ob und wenn ja welche Daten über Sie zu welchem Zweck gespeichert werden (Das Recht auf Datenauskunft).
+            Unter anderem haben Sie das Recht von einem Anbieter zu erfahren, ob und wenn ja welche Daten über Sie zu welchem Zweck gespeichert werden (das Recht auf Datenauskunft).
             Nach Art. 15 (3) DSGVO haben Sie zudem das Recht eine Kopie dieser Daten zu erhalten. Mehr Informationen zum Auskunftsrecht finden Sie beispielsweise auf den Seite des <a href='https://www.bfdi.bund.de/DE/Buerger/Inhalte/Allgemein/Betroffenenrechte/Betroffenenrechte_Auskunftsrecht.html'>Bundesbeauftragten für Datenschutz und die Informationsfreiheit</a> oder der <a href='https://www.verbraucherzentrale.nrw/wissen/digitale-welt/datenschutz/datenauskunft-so-erfahren-sie-was-unternehmen-ueber-sie-wissen-44238'>Verbraucherzentrale NRW</a>.<br />
             <br />
             In der Praxis wird dieses Recht jedoch selten genutzt. Das hat verschiedene Gründe, einerseits sind sich viele Verbraucher:innen ihrer Rechte nicht bewusst, andererseits beinhaltet die Ausübung des Rechts auch einige Hürden und das Ergebnis ist je nach Anbieter unterschiedlich aussagekräftig.
@@ -99,6 +99,7 @@ export default function SimpleAccordion() {
                     </tr>
                   </table>
                 </Container>
+                Die volle Funktionalität der Anwendung können Sie über Chrome-basierte Browser abrufen (Chrome, Opera, Brave, etc.). Firefox hat einige Einschränkungen, die bei manchen Prozessen eine vollständige Automatisierung des Klickpfads verhindern. In diesem Fall wird Ihre manuelle Interaktion notwendig, z.B. öffnet sich das Formular, es wird aber nicht abgeschickt. In diesem Fall müssen Sie auf der Anbieterseite den Button "Download", "Anfrage senden", oder ähnliches eigenständig klicken. 
               </li>
               <li>
                 <b>Vorbereitung</b><br />
