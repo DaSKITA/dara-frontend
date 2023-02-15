@@ -2,6 +2,12 @@
 
 This is the prototype frontend for the DataAccessRequestAssistant DARA.  
 It is currently accessible via https://daskita.github.io/dara-frontend.
+
+The Data Access Request Assistant (DARA) consists of 
+* a process repository ([DARA-API](https://github.com/DaSKITA/dara-api)), 
+* a browser-extension as automation engine ([DARA-Extension](https://github.com/DaSKITA/dara-extension)), and 
+* this frontend (DARA-Frontend)
+
 For more information on DARA, please refer to the general DaSKITA [readme](https://github.com/DaSKITA).
 
 ## Usage
