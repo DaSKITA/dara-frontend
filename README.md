@@ -2,9 +2,10 @@
 
 This is the prototype frontend for the DataAccessRequestAssistant DARA.  
 It is currently accessible via https://daskita.github.io/dara-frontend.
+For more information on DARA, please refer to the general DaSKITA [readme](https://github.com/DaSKITA).
 
 ## Usage
-It is ment to be used together with DARA browser extension, which is based on the automa extension.  
+It is ment to be used together with [DARA browser extension](https://github.com/DaSKITA/dara-extension), which is based on the automa extension.  
 You can download the extension here:
 
 <table cellspacing="0" cellpadding="0">
