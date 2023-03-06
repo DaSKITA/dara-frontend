@@ -10,9 +10,10 @@ import daskitaLogo from "./assets/daskita_logo.png";
 import tubLogo from "./assets/tub_logo.png";
 import bmuvLogo from "./assets/bmuv_logo.svg";
 import ptbleLogo from "./assets/ptble_logo.jpg";
-import { Box, Button, InputBase, Modal, TableCell, TableContainer, TableRow, TextField } from "@mui/material";
+import { Box, Button, IconButton, InputBase, Menu, MenuItem, Modal, TableCell, TableContainer, TableRow, TextField } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 import RefreshIcon from '@mui/icons-material/Refresh';
+import TranslateIcon from '@mui/icons-material/Translate';
 import PlusIcon from '@mui/icons-material/Add';
 import { styled, alpha } from '@mui/material/styles';
 import { useEffect, useRef } from "react";
@@ -20,7 +21,7 @@ import React from 'react';
 import { LoginDialog } from "./ApiAuth";
 import { fetchWorkflowsEvent, recordWorkflowEvent } from "./events";
 import ExtensionAvailabilityCheck from './availabilityCheck';
-
+import { useTranslation } from 'react-i18next';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -92,17 +93,27 @@ const mobility = ['jelbi', 'uber', 'nextbike'];
 //other - no own array required
 
 export default function CardGrid() {
+  const { t, i18n } = useTranslation();
   const [filter, setFilter] = React.useState("");
   const [workflows, setWorkflows] = React.useState<any[]>([]);
   const [open, setOpen] = React.useState(false);
   const [loginDialogState, setloginDialogState] = React.useState<boolean>(false);
   const [loginDialogController, setloginDialogController] = React.useState<any>(null);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const openLngMenu = Boolean(anchorEl);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const handleLoginDialogOpen = (controller: any) => {
     setloginDialogState(true);
     setloginDialogController(controller);
   };
+  const handleTrans = (code: any) => {
+    i18n.changeLanguage(code);
+  };
+  const handleLngMenuClick = (event: any) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleLngMenuClose = () => setAnchorEl(null);
   const formularUrlRef = useRef<HTMLInputElement>();
   const workflowDataEventHandler = (event: any) => {
     if (event.origin === window.location.origin) {
@@ -197,6 +208,25 @@ export default function CardGrid() {
               inputProps={{ 'aria-label': 'search' }}
               onChange={handleSearchChange} />
           </Search>
+          {/*Language switcher*/}
+          <IconButton
+            onClick={handleLngMenuClick}
+            sx={{ ml: 1 }}
+            aria-label="more"
+            id="lng-menu"
+            aria-controls={openLngMenu ? 'menu' : undefined}
+            aria-expanded={openLngMenu ? 'true' : undefined}
+            aria-haspopup="true">
+            <TranslateIcon />
+          </IconButton>
+          <Menu
+            id="lng-menu"
+            open={openLngMenu}
+            onClose={handleLngMenuClose}
+            anchorEl={anchorEl}>
+            <MenuItem onClick={() => handleTrans('de')}>Deutsch</MenuItem>
+            <MenuItem onClick={() => handleTrans('en')}>English</MenuItem>
+          </Menu>
         </Toolbar>
       </AppBar>
 
@@ -206,7 +236,7 @@ export default function CardGrid() {
         <Container maxWidth="md">
           <Box sx={{ mt: 5 }}>
             <Typography variant="h3" gutterBottom>
-              DARA - Automatisierte Datenauskunft
+              { t('site_title') }
             </Typography>
           </Box>
         </Container>
@@ -219,8 +249,8 @@ export default function CardGrid() {
         </Container>
         {/* End Introduction */}
         {/* Main */}
-        <StyledCardGridContainer 
-          maxWidth="md" 
+        <StyledCardGridContainer
+          maxWidth="md"
           id="aviailabilty-check-parent"
           sx={{ position: 'relative' }}>
           <ExtensionAvailabilityCheck />
@@ -235,7 +265,7 @@ export default function CardGrid() {
           </Box>
           {/* Start Card grid */}
           {snwWorkflows.length ? <>
-            <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2}}>
+            <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2 }}>
               Soziale Netzwerke
             </Typography>
             <Grid
@@ -415,32 +445,32 @@ export default function CardGrid() {
       <LoginDialog open={loginDialogState} setOpen={setloginDialogState} controller={loginDialogController} />
 
       {/* Footer */}
-      < StyledFooter sx={{bgcolor: "rgba(255, 255, 255, 0.12)", color: "white", marginTop: 10}}>
-        <Grid container direction ="row" spacing={2}>
+      < StyledFooter sx={{ bgcolor: "rgba(255, 255, 255, 0.12)", color: "white", marginTop: 10 }}>
+        <Grid container direction="row" spacing={2}>
           <Grid item xs></Grid>
           <Grid item xs={7} alignContent={"center"}>
             <StyledTypography variant="h5" align="center" gutterBottom marginTop={2}>
               DARA - Data Access Request Assistant
             </StyledTypography>
             <Typography align='center' gutterBottom>
-              Dieses Tool wurde vom Fachgebiet <a href='https://www.tu.berlin/ise'>Information Systems Engineering</a> <br/>der Technischen Universität Berlin <br/> im Rahmen des Projekts <br/>"Datensouveränität durch KI-basierte Transparenz und Auskunft" (<a href='https://daskita.github.io/'>DaSKITA</a>) entwickelt.
+              Dieses Tool wurde vom Fachgebiet <a href='https://www.tu.berlin/ise'>Information Systems Engineering</a> <br />der Technischen Universität Berlin <br /> im Rahmen des Projekts <br />"Datensouveränität durch KI-basierte Transparenz und Auskunft" (<a href='https://daskita.github.io/'>DaSKITA</a>) entwickelt.
             </Typography>
-            </Grid>
-            <Grid item xs>
-            <TableContainer>
-          <TableRow>
-              <TableCell sx={{bgcolor: "white", align: "center", border:"none"}}>
-                <img src={bmuvLogo} height="100em" alt="Gefördert durch das BMUV aufgrund eines Beschlusses des Deutschen Bundestages"></img>
-              </TableCell>
-          </TableRow>
-          <TableRow>
-              <TableCell sx={{bgcolor: "white", align: "center", border:"none"}}>
-                <img src={ptbleLogo} height="40em"alt="Projektträger ist die Bundesanstalt für Landwirtschaft und Ernährung"></img>
-              </TableCell>
-          </TableRow>
-        </TableContainer>
-            </Grid>
           </Grid>
+          <Grid item xs>
+            <TableContainer>
+              <TableRow>
+                <TableCell sx={{ bgcolor: "white", align: "center", border: "none" }}>
+                  <img src={bmuvLogo} height="100em" alt="Gefördert durch das BMUV aufgrund eines Beschlusses des Deutschen Bundestages"></img>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell sx={{ bgcolor: "white", align: "center", border: "none" }}>
+                  <img src={ptbleLogo} height="40em" alt="Projektträger ist die Bundesanstalt für Landwirtschaft und Ernährung"></img>
+                </TableCell>
+              </TableRow>
+            </TableContainer>
+          </Grid>
+        </Grid>
         { /*<Copyright /> */}
       </StyledFooter >
       {/* End footer */}

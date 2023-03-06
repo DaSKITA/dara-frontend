@@ -60,26 +60,28 @@ export default function ExtensionAvailabilityCheck() {
                     <br></br>
                     <Container sx={{ 'align': 'center' }}>
                         <table>
-                            <tr>
-                                <td>
-                                    <Container>
-                                        <a href="https://chrome.google.com/webstore/detail/automa/heolgaalbnnelipfhbccbkdohecmaimo" target='_blank' rel="noreferrer">
-                                            <img height={'60px'} src={chormelogo} alt="Chrome webstore" />
-                                        </a>
-                                    </Container>
-                                </td>
-                                <td>
-                                    <Container>
-                                        <a href="https://addons.mozilla.org/en-US/firefox/addon/dara/" target='_blank' rel="noreferrer">
-                                            <img height={'60px'} src={firefoxlogo} alt="Firefox add-ons" />
-                                        </a>
-                                    </Container>
-                                </td>
-                            </tr>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <Container>
+                                            <a href="https://chrome.google.com/webstore/detail/automa/heolgaalbnnelipfhbccbkdohecmaimo" target='_blank' rel="noreferrer">
+                                                <img height={'60px'} src={chormelogo} alt="Chrome webstore" />
+                                            </a>
+                                        </Container>
+                                    </td>
+                                    <td>
+                                        <Container>
+                                            <a href="https://addons.mozilla.org/en-US/firefox/addon/dara/" target='_blank' rel="noreferrer">
+                                                <img height={'60px'} src={firefoxlogo} alt="Firefox add-ons" />
+                                            </a>
+                                        </Container>
+                                    </td>
+                                </tr>
+                            </tbody>
                         </table>
                     </Container>
                 </DialogContent>
-            </Dialog>
+            </Dialog >
         </>
     );
 };

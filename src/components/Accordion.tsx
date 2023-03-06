@@ -73,7 +73,6 @@ export default function SimpleAccordion() {
           <Typography variant='h6'><b>Welche Voraussetzungen sind für die Nutzung von DARA erforderlich?</b></Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
             Um eine automatisierte Auskunft zu erhalten sind folgende Schritte notwendig:
             <ol>
               <li>
@@ -81,25 +80,27 @@ export default function SimpleAccordion() {
                 Sie benötigen die zu Ihrem aktuell genutzten Browser passende Browserextension, die Sie unter den folgenden Links installieren können:
                 <Container sx={{ 'align': 'center' }}>
                   <table>
-                    <tr>
-                      <td>
-                        <Container>
-                          <a href="https://chrome.google.com/webstore/detail/automa/heolgaalbnnelipfhbccbkdohecmaimo">
-                            <img height={'60px'} src={chormelogo} alt="Chrome webstore" />
-                          </a>
-                        </Container>
-                      </td>
-                      <td>
-                        <Container>
-                          <a href="https://addons.mozilla.org/en-US/firefox/addon/dara/">
-                            <img height={'60px'} src={firefoxlogo} alt="Firefox add-ons" />
-                          </a>
-                        </Container>
-                      </td>
-                    </tr>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <Container>
+                            <a href="https://chrome.google.com/webstore/detail/automa/heolgaalbnnelipfhbccbkdohecmaimo">
+                              <img height={'60px'} src={chormelogo} alt="Chrome webstore" />
+                            </a>
+                          </Container>
+                        </td>
+                        <td>
+                          <Container>
+                            <a href="https://addons.mozilla.org/en-US/firefox/addon/dara/">
+                              <img height={'60px'} src={firefoxlogo} alt="Firefox add-ons" />
+                            </a>
+                          </Container>
+                        </td>
+                      </tr>
+                    </tbody>
                   </table>
                 </Container>
-                Die volle Funktionalität der Anwendung können Sie über Chrome-basierte Browser abrufen (Chrome, Opera, Brave, etc.). Firefox hat einige Einschränkungen, die bei manchen Prozessen eine vollständige Automatisierung des Klickpfads verhindern. In diesem Fall wird Ihre manuelle Interaktion notwendig, z.B. öffnet sich das Formular, es wird aber nicht abgeschickt. In diesem Fall müssen Sie auf der Anbieterseite den Button "Download", "Anfrage senden", oder ähnliches eigenständig klicken. 
+                Die volle Funktionalität der Anwendung können Sie über Chrome-basierte Browser abrufen (Chrome, Opera, Brave, etc.). Firefox hat einige Einschränkungen, die bei manchen Prozessen eine vollständige Automatisierung des Klickpfads verhindern. In diesem Fall wird Ihre manuelle Interaktion notwendig, z.B. öffnet sich das Formular, es wird aber nicht abgeschickt. In diesem Fall müssen Sie auf der Anbieterseite den Button "Download", "Anfrage senden", oder ähnliches eigenständig klicken.
               </li>
               <li>
                 <b>Vorbereitung</b><br />
@@ -116,7 +117,6 @@ export default function SimpleAccordion() {
                 Sie benötigen deshalb für den Abschluss der meisten Anfrageprozesse Zugriff auf das e-Mailkonto, mit dem Sie bei dem jeweiligen Dienst registriert sind. Bitte prüfen Sie regelmäßig auch Ihren Spam-Ordner, um die Datenanfrage abzuschließen und Ihre Daten zu erhalten.
               </li>
             </ol>
-          </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion>
