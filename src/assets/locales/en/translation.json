@@ -50,7 +50,7 @@
     "what_preconditions_text1":"In order to receive automated information, the following steps are necessary:",
     "what_preconditions_text2":"You need the browser extension that matches the browser you are currently using, which you can install using the following links:",
     "what_preconditions_text3":"You can access the full functionality of the application via Chrome-based browsers (Chrome, Opera, Brave, etc.). Firefox has some limitations that prevent full automation of the click path for some processes. In this case, your Manual interaction necessary, e.g. the form opens but is not sent. In this case, you must click the button \"Download\", \"Send request\", or similar independently on the provider's page.",
-    "preparation":"Preparation",
+    "preperation":"Preparation",
     "preperation_text":"So that the request for your data information works as smoothly as possible, you should log in to the relevant service before starting a data request. This should be done in the same browser with which you opened this website by opening a new tab and call up the page of the respective service provider.",
     "start":"Start",
     "start_text":"You can then start the data request.",
