@@ -34,7 +34,6 @@ i18n
     .init({
         resources,
         fallbackLng: 'en',
-        debug: true,
         whitelist: lngs,
 
         interpolation: {
