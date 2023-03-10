@@ -7,7 +7,7 @@ import { useSnackbar } from 'notistack';
 import { Container } from '@mui/system';
 import chormelogo from './assets/webstore.png';
 import firefoxlogo from './assets/ffaddons.png';
-
+import { useTranslation } from 'react-i18next';
 
 export const checkExtensionAvailability = () => {
     if (document.body.getAttribute('data-atm-ext-installed')) {
@@ -25,10 +25,11 @@ export default function ExtensionAvailabilityCheck() {
             return;
         setOpen(false);
     }
+    const { t } = useTranslation();
 
     React.useEffect(() => {
         if (checkExtensionAvailability()) {
-            enqueueSnackbar(`Verbunden zur Browsererweiterung, es kann los gehen!`)
+            enqueueSnackbar(`${t('extension_available')}`)
             setOpen(false);
         } else {
             setOpen(true);
@@ -47,15 +48,15 @@ export default function ExtensionAvailabilityCheck() {
                 BackdropProps={{ style: { position: 'absolute' }, invisible: true }}
             >
                 <DialogTitle id="alert-dialog-title">
-                    {"Sie benötigen die DARA-Browsererweiterung um diesen Dienst nutzen zu können."}
+                    {`${t('extension_not_available')}`}
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
-                        Damit DARA automatisch eine Datenanfrage für sie stellen kann, muss unsere Erweiterung in Ihrem Browser installiert sein.
+                        `${t('extension_not_available_text')}`
                     </DialogContentText>
                     <br></br>
                     <DialogContentText id="alert-dialog-description" sx={{ 'text-align': 'center' }} >
-                        Sie können die Erweiterung für Chrome-basierte Browser oder Firefox installieren:
+                        `${t('extension_not_available_text2')}`
                     </DialogContentText>
                     <br></br>
                     <Container sx={{ 'align': 'center' }}>

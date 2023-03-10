@@ -3,11 +3,12 @@ import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import { useSnackbar } from 'notistack';
 import { Button, DialogActions, TextField } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
-
-export function uploadClickpath(controller: any, enqueueSnackbar: any) {
+export function UploadClickpath(controller: any, enqueueSnackbar: any) {
     const access_token = sessionStorage.getItem('access_token');
     const headers = new Headers();
+    const { t } = useTranslation();
     headers.append('Authorization', `Bearer ${access_token}`);
     headers.append('Content-Type', 'application/json');
 
@@ -37,16 +38,16 @@ export function uploadClickpath(controller: any, enqueueSnackbar: any) {
         .then(response => response.json())
         .then(data => {
             if (data.detail === "Could not validate credentials") {
-                enqueueSnackbar(`Login abgelaufen, bitte neu anmelden.`, { variant: 'info' })
+                enqueueSnackbar(`${t('login_invalid')}`, { variant: 'info' })
                 sessionStorage.setItem('access_token', '');
             } else {
                 console.log('Success:', data);
-                enqueueSnackbar(`Klickpfad erfolgreich hochgeladen!`, { variant: 'success' })
+                enqueueSnackbar(`${t('successful_upload')}`, { variant: 'success' })
             }
         })
         .catch((error) => {
             console.error('Error:', error);
-            enqueueSnackbar(`Fehler beim Hochladen!`, { variant: 'error' })
+            enqueueSnackbar(`${t('error_upload')}`, { variant: 'error' })
         });
 }
 
@@ -69,6 +70,7 @@ export function LoginDialog(props: LoginDialogProps) {
     const { enqueueSnackbar } = useSnackbar();
     const usernameRef = React.useRef<HTMLInputElement>();
     const passwordRef = React.useRef<HTMLInputElement>();
+    const { t } = useTranslation();
 
     const handleClose = () => {
         props.setOpen(false);
@@ -101,16 +103,16 @@ export function LoginDialog(props: LoginDialogProps) {
                     // Set access_token in sessionStorage
                     if (data['access_token']) {
                         sessionStorage.setItem('access_token', data['access_token']);
-                        enqueueSnackbar(`Erfolgreich eingeloggt!`, { variant: 'success' })
-                        if (props.controller) uploadClickpath(props.controller, enqueueSnackbar);
+                        enqueueSnackbar(`${t('successful_login')}`, { variant: 'success' })
+                        if (props.controller) UploadClickpath(props.controller, enqueueSnackbar);
                         handleClose();
                     } else {
-                        enqueueSnackbar(`Fehler beim Login!`, { variant: 'error' })
+                        enqueueSnackbar(`${t('error_login')}`, { variant: 'error' })
                     }
                 })
                 .catch((error) => {
                     console.error('Error:', error);
-                    enqueueSnackbar(`Fehler beim Login!`, { variant: 'error' })
+                    enqueueSnackbar(`${t('error_login')}`, { variant: 'error' })
                 });
         }
     }
@@ -124,7 +126,7 @@ export function LoginDialog(props: LoginDialogProps) {
                 aria-describedby="alert-dialog-description"
             >
                 <DialogTitle id="alert-dialog-title" sx={{ maxWidth: '350px' }}>
-                    {"Um den Klickpfad hochzuladen, müssen Sie sich einloggen."}
+                    {t('login_required')}
                 </DialogTitle>
                 <DialogActions sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', maxWidth: '350px' }}>
                     <TextField
@@ -139,7 +141,7 @@ export function LoginDialog(props: LoginDialogProps) {
                     <TextField
                         required
                         type="password"
-                        label="Passwort"
+                        label={`${t('password')}`}
                         defaultValue=""
                         inputRef={passwordRef}
                         sx={{ m: 1 }}

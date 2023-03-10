@@ -7,8 +7,9 @@ import EditIcon from '@mui/icons-material/Edit';
 import LoadingButton from '@mui/lab/LoadingButton';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import CloseIcon from '@mui/icons-material/Close';
-import { checkLoginStatus, uploadClickpath } from '../ApiAuth';
+import { checkLoginStatus, UploadClickpath } from '../ApiAuth';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSnackbar, SnackbarKey } from 'notistack';
 import { checkExtensionAvailability } from '../availabilityCheck'
 import { fetchWorkflowsEvent, executeWorkflowEvent, deleteWorkflowEvent, editWorkflowEvent } from '../events'
@@ -28,6 +29,7 @@ export const Crd = (props: CrdProps) => {
   const [success, setSuccess] = React.useState(false);
   const [failed, setFailed] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const { t } = useTranslation();
   const open = Boolean(anchorEl);
   const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget);
@@ -57,7 +59,7 @@ export const Crd = (props: CrdProps) => {
     timer.current = window.setTimeout(() => {
       // endExecution();
       // Offer to repeat execution with tab in foreground
-      enqueueSnackbar(`[${props.controller.name}] Die Anfrage braucht länger als erwartet.`, { variant: 'warning', action: restartWfForeground, persist: true })
+      enqueueSnackbar(`[${props.controller.name}] ${t('takes_longer')}`, { variant: 'warning', action: restartWfForeground, persist: true })
     }, timeout);
   }
 
@@ -70,7 +72,7 @@ export const Crd = (props: CrdProps) => {
           setExecutionTimeout(20000);
           closeSnackbar(snackbarId);
         }}>
-        TAB ÖFFNEN
+        {t('open_tab')}
       </Button>
       <IconButton
         size="small"
@@ -94,13 +96,13 @@ export const Crd = (props: CrdProps) => {
         window.dispatchEvent(openTabEvent());
 
       }}>
-        NEUSTART
+        {t('new_start')}
       </Button>
       <Button color="inherit" onClick={() => {
         endExecution();
         closeSnackbar(snackbarId);
       }}>
-        STOP
+        {t('stop')}
       </Button>
       <IconButton
         size="small"
@@ -130,7 +132,7 @@ export const Crd = (props: CrdProps) => {
       clearTimeout(timer.current);
       window.removeEventListener('message', eventHandler);
       closeSnackbar();
-      enqueueSnackbar(`[${props.controller.name}] Daten erfolgreich angefragt.`, { variant: 'success' });
+      enqueueSnackbar(`[${props.controller.name}] ${t('success')}`, { variant: 'success' });
 
       // Todo: Inform user about how and when the data will be transmitted to them. 
       // This could be done via a props.controller-specific modal offering information. Possibly offer a calendar reminder ics?
@@ -138,11 +140,11 @@ export const Crd = (props: CrdProps) => {
       // The workflow execution started
     } else if (event.data.workflow_state === 'started') {
       currentWorkflowTabId = event.data.workflowTabId;
-      enqueueSnackbar(`[${props.controller.name}] Der Klickpfad wird ausgeführt.`, { variant: 'info' });
+      enqueueSnackbar(`[${props.controller.name}] ${t('started')}`, { variant: 'info' });
 
       // A previous request is still pending
     } else if (event.data.workflow_state === 'request-pending') {
-      enqueueSnackbar(`[${props.controller.name}] Ein vorherige Anfrage wird noch bearbeitet.`, { variant: 'info' });
+      enqueueSnackbar(`[${props.controller.name}] ${t('pending')}`, { variant: 'info' });
       setSuccess(true);
       setLoading(false);
       clearTimeout(timer.current);
@@ -152,27 +154,27 @@ export const Crd = (props: CrdProps) => {
     } else if (event.data.workflow_state === 'interaction-needed') {
       currentWorkflowTabId = event.data.workflowTabId;
       clearTimeout(timer.current);
-      enqueueSnackbar(`[${props.controller.name}] Eine Eingabe wird benötigt um die Anfrage abzuschließen.`, { variant: 'warning', action: openTabAction, persist: true });
+      enqueueSnackbar(`[${props.controller.name}] ${t('interaction_needed')}`, { variant: 'warning', action: openTabAction, persist: true });
 
       // Could not start the request
     } else if (event.data.workflow_state === 'start-failed') {
       currentWorkflowTabId = event.data.workflowTabId;
       clearTimeout(timer.current);
-      enqueueSnackbar(`[${props.controller.name}] Konnte die Anfrage nicht starten, sind sie auf der Seite des Anbieters eingeloggt?`, { variant: 'warning', action: openTabAction, persist: true });
+      enqueueSnackbar(`[${props.controller.name}] ${t('start_failed')}`, { variant: 'warning', action: openTabAction, persist: true });
 
       // The execution failed
     } else if (event.data.workflow_state === 'failed') {
       endExecution();
 
       // Offer to repeat execution with tab in foreground
-      enqueueSnackbar(`[${props.controller.name}] Konnte die Anfrage leider nicht abschließen.`, { variant: 'error', action: restartWfForeground, persist: true })
+      enqueueSnackbar(`[${props.controller.name}] ${t('could_not_finish')}`, { variant: 'error', action: restartWfForeground, persist: true })
     }
   }
 
   const onClickExecuteRequest = () => {
 
     if (!checkExtensionAvailability()) {
-      enqueueSnackbar(`Konnte die DARA-Browsererweiterung nicht erreichen, ist sie installiert?`, { variant: 'error' })
+      enqueueSnackbar(`${t('could_not_reach_ext')}`, { variant: 'error' })
       return;
     }
 
@@ -227,17 +229,17 @@ export const Crd = (props: CrdProps) => {
                     <ListItemIcon>
                       <EditIcon />
                     </ListItemIcon>
-                    <ListItemText>Bearbeiten</ListItemText>
+                    <ListItemText>{t('edit')}</ListItemText>
                   </MenuItem>
                   <MenuItem onClick={() => { window.dispatchEvent(deleteWorkflowEvent(props.controller.id)) }}>
                     <ListItemIcon>
                       <CloseIcon />
                     </ListItemIcon>
-                    <ListItemText>Löschen</ListItemText>
+                    <ListItemText>{t('delete')}</ListItemText>
                   </MenuItem>
                   <MenuItem onClick={() => {
                     if (checkLoginStatus()) {
-                      uploadClickpath(props.controller, enqueueSnackbar)
+                      UploadClickpath(props.controller, enqueueSnackbar)
                     } else {
                       props.openLoginDialog(props.controller);
                     }
@@ -246,12 +248,12 @@ export const Crd = (props: CrdProps) => {
                     <ListItemIcon>
                       <CloudUploadIcon />
                     </ListItemIcon>
-                    <ListItemText>Upload</ListItemText>
+                    <ListItemText>{t('upload')}</ListItemText>
                   </MenuItem>
                 </Menu>
               </>
             }
-            subheader={props.controller.verified ? "✓ DARA Orginal Klickpfad" : "Lokaler Klickpfad"}
+            subheader={props.controller.verified ? `${t('org_path')}` : `${t('local_path')}`}
           />
           <CardActions>
             {props.controller &&
@@ -271,7 +273,7 @@ export const Crd = (props: CrdProps) => {
                 loadingPosition="end"
                 onClick={() => onClickExecuteRequest()}
               >
-                {success ? "Daten angefragt" : "Sende Datenanfrage"}
+                {success ? `${t('data_requested')}` : `${t('request_data')}`}
               </LoadingButton>
             }
           </CardActions>

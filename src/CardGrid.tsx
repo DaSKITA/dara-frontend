@@ -10,7 +10,7 @@ import daskitaLogo from "./assets/daskita_logo.png";
 import tubLogo from "./assets/tub_logo.png";
 import bmuvLogo from "./assets/bmuv_logo.svg";
 import ptbleLogo from "./assets/ptble_logo.jpg";
-import { Box, Button, IconButton, InputBase, Menu, MenuItem, Modal, TableCell, TableContainer, TableRow, TextField } from "@mui/material";
+import { Box, Button, capitalize, IconButton, InputBase, Menu, MenuItem, Modal, TableCell, TableContainer, TableRow, TextField } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import TranslateIcon from '@mui/icons-material/Translate';
@@ -21,7 +21,7 @@ import React from 'react';
 import { LoginDialog } from "./ApiAuth";
 import { fetchWorkflowsEvent, recordWorkflowEvent } from "./events";
 import ExtensionAvailabilityCheck from './availabilityCheck';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -181,14 +181,14 @@ export default function CardGrid() {
 
 
           <StyledTypography variant="h6" color="inherit" sx={{ ml: 2 }}>
-            DARA - Ihr Assistent für Datenanfragen
+            {t('app_name')}
           </StyledTypography>
           <Button
             onClick={handleOpen}
             startIcon={<PlusIcon />}
             sx={{ my: 2, mx: 0.5, color: 'white' }}
           >
-            Neuen Anfrageprozess aufzeichnen
+            {t('add_service_provider')}
           </Button>
           <Button
             onClick={() => {
@@ -197,14 +197,14 @@ export default function CardGrid() {
             sx={{ my: 2, mx: 0.5, color: 'white' }}
             startIcon={<RefreshIcon />}
           >
-            Dienstanbieter aktualisieren
+            {t('refresh')}
           </Button>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Suche…"
+              placeholder={ `${t('search')}` }
               inputProps={{ 'aria-label': 'search' }}
               onChange={handleSearchChange} />
           </Search>
@@ -218,14 +218,15 @@ export default function CardGrid() {
             aria-expanded={openLngMenu ? 'true' : undefined}
             aria-haspopup="true">
             <TranslateIcon />
+            {capitalize(i18n.language)}
           </IconButton>
           <Menu
             id="lng-menu"
             open={openLngMenu}
             onClose={handleLngMenuClose}
             anchorEl={anchorEl}>
-            <MenuItem onClick={() => handleTrans('de')}>Deutsch</MenuItem>
-            <MenuItem onClick={() => handleTrans('en')}>English</MenuItem>
+            <MenuItem onClick={() => handleTrans('de')}>{t('german')}</MenuItem>
+            <MenuItem onClick={() => handleTrans('en')}>{t('english')}</MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>
@@ -242,9 +243,11 @@ export default function CardGrid() {
         </Container>
         <Container maxWidth="md" sx={{ mt: 3 }}>
           <Typography variant='body1'>
-            DARA steht für "Data Access Request Assistant" und ist ein Tool, das Ihnen bei der Ausübung Ihres Rechts auf Datenauskunft assistiert. Es besteht aus dieser Webseite und einer Browserextension, die für Sie eine Datenauskunftsanfrage an verschiedene Dienstanbieter senden kann.
-            Dabei hat DARA zu keiner Zeit Zugriff auf Ihre personenbezogenen Daten, diese Daten werden nur bei den Diensten und anschließend auf Ihrem Computer gespeichert.
-            Probieren Sie es einfach aus oder erfahren Sie im Abschnitt <a href='#faq'>FAQ</a> weitere Informationen.
+            <Trans i18nKey="site_description">
+              DARA steht für "Data Access Request Assistant" und ist ein Tool, das Ihnen bei der Ausübung Ihres Rechts auf Datenauskunft assistiert. Es besteht aus dieser Webseite und einer Browserextension, die für Sie eine Datenauskunftsanfrage an verschiedene Dienstanbieter senden kann.
+              Dabei hat DARA zu keiner Zeit Zugriff auf Ihre personenbezogenen Daten, diese Daten werden nur bei den Diensten und anschließend auf Ihrem Computer gespeichert.
+              Probieren Sie es einfach aus oder erfahren Sie im Abschnitt <a href='#faq'>FAQ</a> weitere Informationen.
+            </Trans>
           </Typography>
         </Container>
         {/* End Introduction */}
@@ -256,17 +259,16 @@ export default function CardGrid() {
           <ExtensionAvailabilityCheck />
           <Box sx={{ mb: 2, mt: -2 }}>
             <Typography variant="h4">
-              Verifizierte Datenanfrageprozesse
+              {t('verified_data_request')}
             </Typography>
             <Typography variant="body1">
-              Hier können Sie für ausgewählte vordefinierte Dienste eine Datenauskunft anfragen.
-              Bitte loggen Sie sich bei dem entsprechenden Dienst ein, bevor Sie über diese Webseite die Daten beantragen!
+              {t('verified_data_request_description')}
             </Typography>
           </Box>
           {/* Start Card grid */}
           {snwWorkflows.length ? <>
             <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2 }}>
-              Soziale Netzwerke
+              {t('social_networks')}
             </Typography>
             <Grid
               container
@@ -282,7 +284,7 @@ export default function CardGrid() {
 
           {softwareWorkflows.length ? <>
             <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4 }}>
-              Software
+              {t('software')}
             </Typography>
             <Grid
               container
@@ -298,7 +300,7 @@ export default function CardGrid() {
 
           {mobilityWorkflows.length ? <>
             <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4 }}>
-              Mobilität
+              {t('mobility')}
             </Typography>
             <Grid
               container
@@ -314,7 +316,7 @@ export default function CardGrid() {
 
           {shoppingWorkflows.length ? <>
             <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4 }}>
-              Online Shopping
+              {t('shopping')}
             </Typography>
             <Grid
               container
@@ -329,7 +331,7 @@ export default function CardGrid() {
             </Grid></> : <></>}
           {streamingWorkflows.length ? <>
             <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4 }}>
-              Streaminganbieter
+              {t('streaming_providers')}
             </Typography>
             <Grid
               container
@@ -344,7 +346,7 @@ export default function CardGrid() {
 
           {originalWorkflows.length ? <>
             <Typography variant='h6' gutterBottom sx={{ borderTop: 1, borderColor: 'primary.main', paddingTop: 2, marginTop: 4 }}>
-              Sonstige
+              {t('other')}
             </Typography>
             <Grid
               container
@@ -359,10 +361,10 @@ export default function CardGrid() {
 
           <Box sx={{ my: 4 }}>
             <Typography variant="h4" sx={{ marginTop: 6 }}>
-              Lokale Datenanfrageprozesse
+              {t('local_data_requests')}
             </Typography>
             <Typography variant="body1">
-              Hier können Sie Dienste sehen bei denen Sie manuell eine Datenanfrage gestellt haben und diesen Prozess (den sogenannten Klickpfad) aufgezeichnet haben. Eine neue Aufzeichnung können Sie mit dem Button im Menü oben rechts starten.
+              {t('local_data_requests_description')}
             </Typography>
           </Box>
           {localWorkflows.length ? <>
@@ -377,7 +379,7 @@ export default function CardGrid() {
               ))}
 
             </Grid></> : <Typography>
-            Zur Zeit liegen keine lokalen Aufzeichnungen vor
+            {t('no_local_data_requests')}
           </Typography>}
           {/* End Card grid */}
 
@@ -406,11 +408,10 @@ export default function CardGrid() {
               noValidate
               autoComplete="off">
               <Typography id="modal-modal-title" variant="h6" component="h2" sx={{ mb: 2 }}>
-                Neuen Klickpfad aufzeichnen
+                {t('record_new_clickpath')}
               </Typography>
               <Typography id="modal-modal-description" sx={{ mb: 2 }}>
-                Hier können sie einen neuen Klickpfad zur Automatisierung einer Datenanfrage aufzeichenen.
-                Als ersten Schritt geben sie bitte die URL / Internetadresse des Onlineformulars für die Datenanfrage an.
+                {t('record_new_clickpath_description')}
               </Typography>
               <TextField
                 required
@@ -421,9 +422,7 @@ export default function CardGrid() {
                 inputRef={formularUrlRef}
                 sx={{ mb: 2 }} />
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                Nach dem Klick auf den "Aufzeichnung starten" Button  wird ein neuer Tab mit der angegebenen URL geöffnet. Hier können sie wie gewohnt ihre Daten beantragen.
-                Nur ihre Klicks werden aufgezeichnet, keine eigegebenen Daten oder sonstige Informationen.
-                Nach dem Absenden der Datenanfrage beenden sie die Aufzeichnung über den roten Button. Der Klickpfand wird lokal gespeichert und erscheint in der Übersicht.
+                {t('record_new_clickpath_description_2')}
               </Typography>
               <Button onClick={() => {
                 handleStartRecording();
@@ -431,7 +430,7 @@ export default function CardGrid() {
               }}
                 sx={{ mt: 2 }}
               >
-                Aufzeichnung starten
+                {t('start_recording')}
               </Button>
             </Box>
           </Modal>
@@ -450,10 +449,12 @@ export default function CardGrid() {
           <Grid item xs></Grid>
           <Grid item xs={7} alignContent={"center"}>
             <StyledTypography variant="h5" align="center" gutterBottom marginTop={2}>
-              DARA - Data Access Request Assistant
+              {t('footer_title')}
             </StyledTypography>
             <Typography align='center' gutterBottom>
-              Dieses Tool wurde vom Fachgebiet <a href='https://www.tu.berlin/ise'>Information Systems Engineering</a> <br />der Technischen Universität Berlin <br /> im Rahmen des Projekts <br />"Datensouveränität durch KI-basierte Transparenz und Auskunft" (<a href='https://daskita.github.io/'>DaSKITA</a>) entwickelt.
+              <Trans i18nKey="footer_text">
+                Dieses Tool wurde vom Fachgebiet <a href='https://www.tu.berlin/ise'>Information Systems Engineering</a> <br />der Technischen Universität Berlin <br /> im Rahmen des Projekts <br />"Datensouveränität durch KI-basierte Transparenz und Auskunft" (<a href='https://daskita.github.io/'>DaSKITA</a>) entwickelt.
+              </Trans>
             </Typography>
           </Grid>
           <Grid item xs>
