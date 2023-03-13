@@ -48,15 +48,15 @@ export default function ExtensionAvailabilityCheck() {
                 BackdropProps={{ style: { position: 'absolute' }, invisible: true }}
             >
                 <DialogTitle id="alert-dialog-title">
-                    {`${t('extension_not_available')}`}
+                    {t('extension_not_available')}
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
-                        `${t('extension_not_available_text')}`
+                        {t('extension_not_available_text')}
                     </DialogContentText>
                     <br></br>
                     <DialogContentText id="alert-dialog-description" sx={{ 'text-align': 'center' }} >
-                        `${t('extension_not_available_text2')}`
+                        {t('extension_not_available_text2')}
                     </DialogContentText>
                     <br></br>
                     <Container sx={{ 'align': 'center' }}>
