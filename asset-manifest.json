@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/dara-frontend/static/css/main.30a3ec98.css",
-    "main.js": "/dara-frontend/static/js/main.bb408d37.js",
+    "main.js": "/dara-frontend/static/js/main.96d0ed00.js",
     "static/media/ptble_logo.jpg": "/dara-frontend/static/media/ptble_logo.cedfd4402195f7db3684.jpg",
     "static/media/bmuv_logo.svg": "/dara-frontend/static/media/bmuv_logo.6ebb2559436d0ddda7a991f49adc997e.svg",
     "index.html": "/dara-frontend/index.html",
     "static/media/getFetch.cjs": "/dara-frontend/static/media/getFetch.40f37ddea2378391108f.cjs",
     "main.30a3ec98.css.map": "/dara-frontend/static/css/main.30a3ec98.css.map",
-    "main.bb408d37.js.map": "/dara-frontend/static/js/main.bb408d37.js.map"
+    "main.96d0ed00.js.map": "/dara-frontend/static/js/main.96d0ed00.js.map"
   },
   "entrypoints": [
     "static/css/main.30a3ec98.css",
-    "static/js/main.bb408d37.js"
+    "static/js/main.96d0ed00.js"
   ]
 }
